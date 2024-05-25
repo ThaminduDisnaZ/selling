@@ -23,7 +23,7 @@ if (response == "Success") {
    document.getElementById("msgdiv1").className = "alert alert-dismissible fade show py-2 bg-info d-block";
 
 
-   fname.value = "";
+   fname.value = ".";
    lname.value = "";
    email.value = "";
    mobile.value = "";
