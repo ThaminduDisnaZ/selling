@@ -1,3 +1,6 @@
+<?php require "../connection.php"; ?>
+
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -41,13 +44,13 @@
 
     <div class="main-wrapper">
 
-    <?php
+        <?php
 require "adminHeader.php";
 ?>
 
-       
 
-<?php
+
+        <?php
 require "sideheader.php";
 ?>
 
@@ -86,21 +89,285 @@ require "sideheader.php";
                         <h4 class="title">About Product</h4>
 
                         <div class="row">
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Product Name / Title*"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Product Sub-title"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Product Price*"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Product Discount"></div>
-                            <div class="col-12 mb-30"><textarea class="form-control" placeholder="Product Description*"></textarea></div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Product Name" id="pname"></div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Product Sub-title" id="psname"></div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Product Price*" id="pprice"></div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Product Discount" id="pdiscount"></div>
+                            <div class="box-body">
+                                <div class="quill mb-30">
+                                  <textarea name="" id="pdescription"  placeholder="Product Description" ></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
+                                    placeholder="Quantity"></div>
                             <div class="col-lg-6 col-12 mb-30">
-                                <select class="form-control select2">
-                                    <option value="status">Status</option>
-                                    <option value="publish">Publish</option>
-                                    <option value="draft">Draft</option>
+                                <select class="form-control select2" id="category">
+                                    <option value="status">Select Category</option>
+
+
+
+                                    <?php
+
+                                        $category_rs = Database::search("SELECT * FROM `category`");
+                                        $category_num = $category_rs->num_rows;
+
+                                        for ($x = 0; $x < $category_num; $x++) {
+                                            $category_data = $category_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $category_data["category_id"] ?>">
+                                        <?php echo $category_data["category"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
                                 </select>
                             </div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Meta Title"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Meta Keyword"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" placeholder="Aditional Description Image Link"></div>
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="brand">
+                                    <option value="status">Select Brand</option>
+
+
+
+                                    <?php
+
+                                        $brand_rs = Database::search("SELECT * FROM `brand`");
+                                        $brand_num = $brand_rs->num_rows;
+
+                                        for ($x = 0; $x < $brand_num; $x++) {
+                                            $brand_data = $brand_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $brand_data["brand_id"] ?>">
+                                        <?php echo $brand_data["brand"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="model">
+                                    <option value="status">Select Model</option>
+
+
+
+                                    <?php
+
+                                        $model_rs = Database::search("SELECT * FROM `model`");
+                                        $model_num = $model_rs->num_rows;
+
+                                        for ($x = 0; $x < $model_num; $x++) {
+                                            $model_data = $model_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $model_data["model_id"] ?>">
+                                        <?php echo $model_data["model"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="display">
+                                    <option value="status">Select Display</option>
+
+
+
+                                    <?php
+
+                                        $display_rs = Database::search("SELECT * FROM `display`");
+                                        $display_num = $display_rs->num_rows;
+
+                                        for ($x = 0; $x < $display_num; $x++) {
+                                            $display_data = $display_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $display_data["display_id"] ?>">
+                                        <?php echo $display_data["display"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="cpu">
+                                    <option value="status">Select CPU</option>
+
+
+
+                                    <?php
+
+                                        $cpu_rs = Database::search("SELECT * FROM `cpu`");
+                                        $cpu_num = $cpu_rs->num_rows;
+
+                                        for ($x = 0; $x < $cpu_num; $x++) {
+                                            $cpu_data = $cpu_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $cpu_data["cpu_id"] ?>">
+                                        <?php echo $cpu_data["cpu"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="ram">
+                                    <option value="status">Select RAM</option>
+
+
+
+                                    <?php
+
+                                        $ram_rs = Database::search("SELECT * FROM `ram`");
+                                        $ram_num = $ram_rs->num_rows;
+
+                                        for ($x = 0; $x < $ram_num; $x++) {
+                                            $ram_data = $ram_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $ram_data["ram_id"] ?>">
+                                        <?php echo $ram_data["ram"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="gpu">
+                                    <option value="status">Select GPU</option>
+
+
+
+                                    <?php
+
+                                        $gpu_rs = Database::search("SELECT * FROM `gpu`");
+                                        $gpu_num = $gpu_rs->num_rows;
+
+                                        for ($x = 0; $x < $gpu_num; $x++) {
+                                            $gpu_data = $gpu_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $gpu_data["gpu_id"] ?>">
+                                        <?php echo $gpu_data["gpu"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="storage">
+                                    <option value="status">Select Storage</option>
+
+
+
+                                    <?php
+
+                                        $storage_rs = Database::search("SELECT * FROM `storage`");
+                                        $storage_num = $storage_rs->num_rows;
+
+                                        for ($x = 0; $x < $storage_num; $x++) {
+                                            $storage_data = $storage_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $storage_data["storage_id"] ?>">
+                                        <?php echo $storage_data["storage"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="size">
+                                    <option value="status">Select Size</option>
+
+
+
+                                    <?php
+
+                                        $size_rs = Database::search("SELECT * FROM `size`");
+                                        $size_num = $size_rs->num_rows;
+
+                                        for ($x = 0; $x < $size_num; $x++) {
+                                            $size_data = $size_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $size_data["size_id"] ?>">
+                                        <?php echo $size_data["size"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Meta Keyword"></div>
                         </div>
 
                         <h4 class="title">Product Gallery</h4>
@@ -112,23 +379,17 @@ require "sideheader.php";
                             </div>
                         </div>
 
-                        <h4 class="title">Additional Information</h4>
 
-                        <div class="row">
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 1"></div>
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 2"></div>
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 3"></div>
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 4"></div>
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 5"></div>
-                            <div class="col-lg-4 col-12 mb-30"><input class="form-control" type="text" placeholder="Information 6"></div>
-                        </div>
 
                         <!-- Button Group Start -->
                         <div class="row">
                             <div class="d-flex flex-wrap justify-content-end col mbn-10">
-                                <button class="button button-outline button-primary mb-10 ml-10 mr-0">Save & Publish</button>
-                                <button class="button button-outline button-info mb-10 ml-10 mr-0">Save to Draft</button>
-                                <button class="button button-outline button-danger mb-10 ml-10 mr-0">Delete Product</button>
+                                <button class="button button-outline button-primary mb-10 ml-10 mr-0">Save &
+                                    Publish</button>
+                                <button class="button button-outline button-info mb-10 ml-10 mr-0">Save to
+                                    Draft</button>
+                                <button class="button button-outline button-danger mb-10 ml-10 mr-0">Delete
+                                    Product</button>
                             </div>
                         </div><!-- Button Group End -->
 
@@ -144,7 +405,8 @@ require "sideheader.php";
             <div class="container-fluid">
 
                 <div class="footer-copyright text-center">
-                    <p class="text-body-light">2022 &copy; <a href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
+                    <p class="text-body-light">2022 &copy; <a
+                            href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
                 </div>
 
             </div>
@@ -173,6 +435,8 @@ require "sideheader.php";
     <script src="assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
     <script src="assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
     <script src="assets/js/plugins/filepond/filepond.active.js"></script>
+    <script src="assets/js/plugins/quill/quill.min.js"></script>
+    <script src="assets/js/plugins/quill/quill.active.js"></script>
 
 </body>
 
