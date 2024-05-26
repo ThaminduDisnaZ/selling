@@ -97,13 +97,18 @@ require "sideheader.php";
                                     placeholder="Product Price*" id="pprice"></div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
                                     placeholder="Product Discount" id="pdiscount"></div>
+                                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    placeholder="Delivary Fee" id="delivery"></div>
                             <div class="box-body">
+                                
                                 <div class="quill mb-30">
                                   <textarea name="" id="pdescription"  placeholder="Product Description" ></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Quantity"></div>
+                                    placeholder="Quantity" id="qty"></div>
+
+
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="category">
                                     <option value="status">Select Category</option>
@@ -367,28 +372,42 @@ require "sideheader.php";
 
 
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
-                                    placeholder="Meta Keyword"></div>
+                                    placeholder="Meta Keyword" id="pmkeyword"></div>
                         </div>
 
                         <h4 class="title">Product Gallery</h4>
-
-                        <div class="product-upload-gallery row flex-wrap">
-                            <div class="col-12 mb-30">
-                                <p class="form-help-text mt-0">Upload Maximum 800 x 800 px & Max size 2mb.</p>
-                                <input class="file-pond" type="file" multiple>
+                         <div class="col-12">
+                                <div class="row">
+                                   
+                                    <div class=" col-12 ">
+                                        <div class="row">
+                                            <div class="col-3 border border-warning rounded ">
+                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i0" />
+                                            </div>
+                                            <div class="col-3 border border-warning rounded ml-10">
+                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i1" />
+                                            </div>
+                                            <div class="col-3 border border-warning rounded ml-10">
+                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-grid mt-3 mb-50">
+                                        <input type="file" class="d-none" id="imageuploader" multiple />
+                                        <label for="imageuploader" onclick="changeProductImage();" class="button button-outline button-secondary"> Select Images <i class="ti-upload"></i></label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
 
 
                         <!-- Button Group Start -->
                         <div class="row">
                             <div class="d-flex flex-wrap justify-content-end col mbn-10">
-                                <button class="button button-outline button-primary mb-10 ml-10 mr-0">Save &
+                                <button class="button button-outline button-primary mb-10 ml-10 mr-0" onclick="addProduct();">Save &
                                     Publish</button>
-                                <button class="button button-outline button-info mb-10 ml-10 mr-0">Save to
-                                    Draft</button>
-                                <button class="button button-outline button-danger mb-10 ml-10 mr-0">Delete
+                                <button class="button button-outline button-info mb-10 ml-10 mr-0"  onclick="changeProductImage();">Upload Images</button>
+                                <button class="button button-outline button-danger mb-10 ml-10 mr-0"  onclick="addProduct();">Delete
                                     Product</button>
                             </div>
                         </div><!-- Button Group End -->
@@ -437,6 +456,9 @@ require "sideheader.php";
     <script src="assets/js/plugins/filepond/filepond.active.js"></script>
     <script src="assets/js/plugins/quill/quill.min.js"></script>
     <script src="assets/js/plugins/quill/quill.active.js"></script>
+    <script src="./admin.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 
