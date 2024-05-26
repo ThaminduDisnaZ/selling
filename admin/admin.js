@@ -46,6 +46,8 @@ function loading() {
         if (request.readyState == 4 && request.status == 200) {
             var response = request.responseText;
             document.getElementById("tb").innerHTML = response;
+
+
         }
     };
 
@@ -172,11 +174,13 @@ function ubb() {
             if (response == "block") {
 
                 swal("User Blocked Successfull....!", "", "warning");
+           
 
 
             }
             if (response == "Active") {
 
+             
                 swal("User Active Successfull", "", "success");
 
             }

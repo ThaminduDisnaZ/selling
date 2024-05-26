@@ -15,18 +15,24 @@ while ($d = $rs->fetch_assoc()){
                                             <td><?php echo $d ["lname"]?></td>
                                             <td><?php echo $d ["email"]?></td>
                                             <td><?php echo $d ["mobile"]?></td>
-                                            <td><?php 
+
+                                            <?php 
                                             
                                             if ($d["status_id"] == 1) {
-                                                echo "Active";
+
+                                                ?> <td  class=" bg-success text-white"> <?php       echo "Active"; ?> </td><?php
+
+                                          
+                                                
+
                                             }  if ($d["status_id"] == 2) {
-                                                echo "Blocked";
+                                                ?> <td  class=" bg-danger text-white"> <?php       echo "Blocked"; ?> </td><?php
                                             }
 
                                               
                                             
 
-                                            ?></td>
+                                            ?>
                                         
                                         </tr>
 <?php

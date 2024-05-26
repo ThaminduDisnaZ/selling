@@ -59,20 +59,20 @@ if (isset($_SESSION["a"])) {
     <div class="main-wrapper">
 
 
-    <?php
+        <?php
 require "adminHeader.php";
 ?>
 
 
 
-<?php
+        <?php
 
 require "sideheader.php";
 
 ?>
 
 
-      
+
         <!-- Content Body Start -->
         <div class="content-body">
 
@@ -174,9 +174,10 @@ require "sideheader.php";
                                     <div class="header-search-form">
                                         <form action="#">
                                             <input type="text" placeholder="Search Here" id="userid">
-                                            <button data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="searchuserid();"><i class="zmdi zmdi-search"></i></button>
+                                            <button data-bs-toggle="modal" data-bs-target="#exampleModal3"
+                                                onclick="searchuserid();"><i class="zmdi zmdi-search"></i></button>
                                         </form>
-                                        <button class="header-search-close d-block d-xl-none" ><i
+                                        <button class="header-search-close d-block d-xl-none"><i
                                                 class="zmdi zmdi-close"></i></button>
                                     </div>
 
@@ -187,45 +188,47 @@ require "sideheader.php";
 
 
 
- <!--Vertically Centered Start-->
+                            <!--Vertically Centered Start-->
 
 
-                     
-                           
+
+
                             <!-- Modal -->
                             <div class="modal fade " id="exampleModal3">
                                 <div class=" modal-dialog modal-dialog-centered" id="udm2">
                                     <div class="modal-content">
-                                    
+
                                         <div class="modal-body" id="udm3">
                                             <h5>User Name</h5>
-                                            <p id="luname">This triggers a popover on click.</p>
+                                            <p id="luname"></p>
                                             <hr>
-                                            <h5 >User Email</h5>
-                                            <p id="lemail">This triggers a popover on click.</p>
+                                            <h5>User Email</h5>
+                                            <p id="lemail"></p>
                                             <hr>
                                             <h5>User Mobile Number</h5>
-                                            <p id="lmobile">This triggers a popover on click.</p>
+                                            <p id="lmobile"></p>
                                             <hr>
                                             <h5>User Adress</h5>
-                                            <p id="lno">This triggers a popover on click.</p>
-                                            <p id="lstreet">This triggers a popover on click.</p>
-                                            <p id="ldistrict">This triggers a popover on click.</p>
+                                            <p id="lno"></p>
+                                            <p id="lstreet"></p>
+                                            <p id="ldistrict"></p>
                                             <hr>
                                             <h5>User Block</h5>
-                                            <label class="adomx-switch danger"><input type="checkbox" id="lblock"> <i class="lever"></i> <span class="text">Danger</span></label>
-                                           <br>
-                                        <div class="modal-footer">
-                                            <button class="button button-danger" data-bs-dismiss="modal">Close</button>
-                                            <button class="button button-primary">Save changes</button>
+                                            <label class="adomx-switch danger"><input type="checkbox" id="lblock"> <i
+                                                    class="lever"></i> <span class="text">Danger</span></label>
+                                            <br>
+                                            <div class="modal-footer">
+                                                <button class="button button-danger"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button class="button button-primary">Save changes</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-                       
-</div>
-              
-                <!--Vertically Centered End-->
+
+                            <!--Vertically Centered End-->
 
 
 
@@ -361,6 +364,7 @@ require "sideheader.php";
 
                                     <!-- Table Body Start -->
                                     <tbody>
+
                                         <tr>
                                             <td class="fw-600">Alexander</td>
                                             <td>
@@ -372,61 +376,7 @@ require "sideheader.php";
                                                         data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
                                                             class="zmdi zmdi-info-outline"></i></span></span></td>
                                         </tr>
-                                        <tr>
-                                            <td class="fw-600">Linda</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-success d-flex justify-content-between fw-600">$20.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="fw-600">Patrick</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-danger d-flex justify-content-between fw-600">$120.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="fw-600">Jose</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-success d-flex justify-content-between fw-600">$1750.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="fw-600">Amber</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-warning d-flex justify-content-between fw-600">$165.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="fw-600">Linda</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-success d-flex justify-content-between fw-600">$20.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
+                                        
                                     </tbody><!-- Table Body End -->
 
                                 </table>
@@ -446,124 +396,7 @@ require "sideheader.php";
                             <!--Todo List Start-->
                             <ul class="todo-list">
 
-                                <!--Todo Item Start-->
-                                <li class="done">
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li>
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Mistaken idea of denouncing pleasure.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li>
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Encounter consequences that are.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li>
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li class="done">
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li>
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Nor again is there anyone who loves.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
-
-                                <!--Todo Item Start-->
-                                <li>
-                                    <div class="list-action">
-                                        <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                        <label class="adomx-checkbox"><input type="checkbox"> <i
-                                                class="icon"></i></label>
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                    <div class="list-content">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                    </div>
-                                    <div class="list-action right">
-                                        <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                    </div>
-                                </li>
-                                <!--Todo Item End-->
+                              
 
                             </ul>
                             <!--Todo List End-->
@@ -581,236 +414,8 @@ require "sideheader.php";
                     </div>
                 </div><!-- To Do List End -->
 
-                <!-- Chat Start -->
-                <div class="col-xlg-4 col-lg-6 col-12 mb-30">
-                    <div class="box">
-                        <div class="box-head">
-                            <h4 class="title">Recent Chats</h4>
-                        </div>
-                        <div class="box-body">
+                
 
-                            <div class="widget-chat-wrap custom-scroll">
-                                <ul class="widget-chat-list">
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Rebecca Mitchell</h5>
-                                                <span>Yesterday 05.30 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-1.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Jennifer White</h5>
-                                                <span>Today 06.30 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-2.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Roger Welch</h5>
-                                                <span>Today 06.31 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-3.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Rebecca Mitchell</h5>
-                                                <span>Yesterday 05.30 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-1.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Jennifer White</h5>
-                                                <span>Today 06.30 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-2.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="widget-chat">
-                                            <div class="head">
-                                                <h5>Roger Welch</h5>
-                                                <span>Today 06.31 am</span>
-                                                <a href="#"><i class="zmdi zmdi-replay"></i></a>
-                                            </div>
-                                            <div class="body">
-                                                <div class="image"><img src="assets/images/comment/comment-3.jpg"
-                                                        alt=""></div>
-                                                <div class="content">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="widget-chat-submission">
-                                <form action="#">
-                                    <input type="text" placeholder="Type something">
-                                    <div class="buttons">
-                                        <label
-                                            class="file-upload button button-sm button-box button-round button-primary"
-                                            for="chat-file-upload">
-                                            <input type="file" id="chat-file-upload" multiple>
-                                            <i class="zmdi zmdi-attachment-alt"></i>
-                                        </label>
-                                        <button
-                                            class="submit button button-sm button-box button-round button-primary"><i
-                                                class="zmdi zmdi-mail-send"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div><!-- Chat End -->
-
-                <!-- News & Updates Start -->
-                <div class="col-xlg-5 col-lg-6 col-12 mb-30">
-                    <!-- News & Updates Wrap Start -->
-                    <div class="box">
-                        <div class="box-head">
-                            <h4 class="title">News & Updates</h4>
-                        </div>
-                        <div class="box-body">
-                            <!-- News & Updates Inner Start -->
-                            <div class="news-update-inner">
-
-                                <!-- News Item -->
-                                <div class="news-item">
-
-                                    <!-- Content -->
-                                    <div class="content">
-                                        <!-- Category -->
-                                        <div class="categories">
-                                            <a href="#" class="new">New</a>
-                                            <a href="#" class="product">Product</a>
-                                        </div>
-                                        <!-- Title -->
-                                        <h4 class="title"><a href="#">Sed do eiusmod tempor incididunt ut labore. Lorem
-                                                Ipsum is simplydummy text of the printing and typesetting industry.</a>
-                                        </h4>
-                                        <!-- Meta -->
-                                        <ul class="meta">
-                                            <li><i class="zmdi zmdi-time"></i>10 Houre ago</li>
-                                            <li>By: <a href="#">Howard</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                <!-- News Item -->
-                                <div class="news-item">
-
-                                    <!-- Content -->
-                                    <div class="content">
-                                        <!-- Category -->
-                                        <div class="categories">
-                                            <a href="#" class="support">Support</a>
-                                        </div>
-                                        <!-- Title -->
-                                        <h4 class="title"><a href="#">Sed do eiusmod tempor labore. Lorem Ipsum is
-                                                simplydummy text of the printing and.</a></h4>
-                                        <!-- Meta -->
-                                        <ul class="meta">
-                                            <li><i class="zmdi zmdi-time"></i>10 Houre ago</li>
-                                            <li>By: <a href="#">Aaron</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                <!-- News Item -->
-                                <div class="news-item">
-
-                                    <!-- Content -->
-                                    <div class="content">
-                                        <!-- Category -->
-                                        <div class="categories">
-                                            <a href="#" class="refund">Refund</a>
-                                        </div>
-                                        <!-- Title -->
-                                        <h4 class="title"><a href="#">Sed do eiusmod typesetting industry. Lorem Ipsum
-                                                is simplydummy text of the printing and typesetting industry.</a></h4>
-                                        <!-- Meta -->
-                                        <ul class="meta">
-                                            <li><i class="zmdi zmdi-time"></i>10 Houre ago</li>
-                                            <li>By: <a href="#">Dylan</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                            </div><!-- News & Updates Inner End -->
-                        </div>
-                    </div><!-- News & Updates Wrap End -->
-                </div><!-- News & Updates End -->
-
-                <!-- Top Selling Country Start -->
-                <div class="col-xlg-7 col-12 mb-30">
-                    <div class="box">
-                        <div class="box-head">
-                            <h4 class="title">Top Selling Country</h4>
-                        </div>
-                        <div class="box-body">
-                            <div id="vmap-world-2" class="vmap vmap-world-2"></div>
-                        </div>
-                    </div>
-                </div><!-- Top Selling Country End -->
 
             </div>
 

@@ -2,9 +2,13 @@
  
  <?php
 
-session_start();
+
 
 if (isset($_SESSION["a"])) {
+    require "../connection.php";
+    $email = $_SESSION["a"]["email"];
+    $details_rs=Database::search("SELECT*FROM `user` ");
+    $data = $details_rs->fetch_assoc();
 ?>
 
 
@@ -75,7 +79,7 @@ if (isset($_SESSION["a"])) {
                                     </li>
 
                                     <!--Mail-->
-                                    <li class="adomx-dropdown col-auto">
+                                    <li class="adomx-dropdown col-auto ml-10">
                                         <a class="toggle" href="#"><i class="zmdi zmdi-email-open"></i><span class="badge"></span></a>
 
                                         <!-- Dropdown -->
@@ -132,7 +136,7 @@ if (isset($_SESSION["a"])) {
                                     </li>
 
                                     <!--Notification-->
-                                    <li class="adomx-dropdown col-auto">
+                                    <li class="adomx-dropdown col-auto  ml-10">
                                         <a class="toggle" href="#"><i class="zmdi zmdi-notifications"></i><span class="badge"></span></a>
 
                                         <!-- Dropdown -->
@@ -216,22 +220,22 @@ if (isset($_SESSION["a"])) {
                                     </li>
 
                                     <!--User-->
-                                    <li class="adomx-dropdown col-auto">
+                                    <li class="adomx-dropdown col-auto  ml-10">
                                         <a class="toggle" href="#">
                                             <span class="user">
                                         <span class="avatar">
                                             <img src="assets/images/avatar/avatar-1.jpg" alt="">
                                             <span class="status"></span>
                                             </span>
-                                            <span class="name">Madison Howard</span>
+                                            <span class="name"><?php echo $data["fname"]." ". $data["lname"];?></span>
                                             </span>
                                         </a>
 
                                         <!-- Dropdown -->
                                         <div class="adomx-dropdown-menu dropdown-menu-user">
                                             <div class="head">
-                                                <h5 class="name"><a href="#">Madison Howard</a></h5>
-                                                <a class="mail" href="#">mailnam@mail.com</a>
+                                                <h5 class="name"><a href="#"><?php echo $data["fname"]." ". $data["lname"];?></a></h5>
+                                                <a class="mail" href="#"><?php echo $email;?></a>
                                             </div>
                                             <div class="body">
                                                 <ul>
