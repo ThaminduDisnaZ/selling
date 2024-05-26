@@ -93,11 +93,11 @@ require "sideheader.php";
                                     placeholder="Product Name" id="pname"></div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
                                     placeholder="Product Sub-title" id="psname"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Product Price*" id="pprice"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Product Discount" id="pdiscount"></div>
-                                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
+                                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Delivary Fee" id="delivery"></div>
                             <div class="box-body">
                                 
