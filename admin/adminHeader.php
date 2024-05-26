@@ -1,3 +1,15 @@
+ 
+ 
+ <?php
+
+session_start();
+
+if (isset($_SESSION["a"])) {
+?>
+
+
+
+ 
  <!-- Header Section Start -->
  <div class="header-section">
             <div class="container-fluid">
@@ -250,3 +262,13 @@
                 </div>
             </div>
         </div><!-- Header Section End -->
+
+
+        <?php
+} else {
+    
+    header("Location: ./adminlogin.php");
+}
+
+
+?>

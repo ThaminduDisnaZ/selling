@@ -512,13 +512,14 @@ function addProduct() {
     var image = document.getElementById("imageuploader");
     var delivery = document.getElementById("delivery");
 
+    
     var f = new FormData();
    
     f.append("ti", title.value);
     f.append("st", stitle.value);
     f.append("pr", price.value);
     f.append("di", discount.value);
-    f.append("de", desc);
+    f.append("de", desc.innerHTML);
     f.append("qt", qty.value);
     f.append("ca", category.value);
     f.append("br", brand.value);
@@ -530,9 +531,9 @@ function addProduct() {
     f.append("str", storage.value);
     f.append("si", size.value);
     f.append("pm", pmkeyword.value);
-    f.append("de", delivery.value);
+    f.append("del", delivery.value);
 
-    
+  
 
     var file_count = image.files.length;
  

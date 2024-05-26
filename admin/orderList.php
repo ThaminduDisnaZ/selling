@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["a"])) {
+?>
+
+
+
+
+
+
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -211,3 +224,15 @@ require "sideheader.php";
 </body>
 
 </html>
+
+
+<?php
+
+
+} else {
+    
+    header("Location: ./adminlogin.php");
+}
+
+
+?>

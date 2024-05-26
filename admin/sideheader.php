@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["a"])) {
+?>
+
+
+
+  
+  
   <!-- Side Header Start -->
   <div class="side-header show">
       <button class="side-header-close"><i class="zmdi zmdi-close"></i></button>
@@ -25,3 +36,13 @@
 
       </div><!-- Side Header Inner End -->
   </div><!-- Side Header End -->
+
+
+  <?php
+} else {
+    
+    header("Location: ./adminlogin.php");
+}
+
+
+?>

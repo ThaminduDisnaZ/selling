@@ -1,10 +1,6 @@
 <?php
 require "../connection.php";
 
-session_start();
-
-$email =$_SESSION["a"]["email"];
-
 
 $title = $_POST["ti"];
 $stitle = $_POST["st"];
@@ -22,7 +18,8 @@ $gpu = $_POST["gp"];
 $storage = $_POST["str"];
 $size = $_POST["si"];
 $pmkeyword = $_POST["pm"];
-$delivery = $_POST["di"];
+$delivery = $_POST["del"];
+
 
 
 if (empty($title)) {
@@ -67,9 +64,9 @@ if (empty($title)) {
 
 
     Database::iud("INSERT INTO `product`
-    (`name`,`stitle`,`qty`,`price`,`discription`,`date`,`delivery_fee`,`display_id`,
+    (`name`,`stitle`,`qty`,`price`,`discount`,`discription`,`date`,`delivery_fee`,`display_id`,
     `brand_id`,`cpu_id`,`ram_id`,`gpu_id`,`storage_id`,`produt_status_id`,`model_id`,`category_id`,`size_id`) VALUES 
-    ('".$title."','".$stitle."','".$qty."','".$price."','".$desc."','".$date."','".$delivery."','".$display."',
+    ('".$title."','".$stitle."','".$qty."','".$price."','".$discount."','".$desc."','".$date."','".$delivery."','".$display."',
     '".$brand."','".$cpu."','".$ram."','".$gpu."','".$storage."','".$status."','".$model."','".$category."','".$size."')");
 
 

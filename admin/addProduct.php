@@ -1,4 +1,13 @@
-<?php require "../connection.php"; ?>
+
+<?php
+
+session_start();
+
+if (isset($_SESSION["a"])) {
+    require "../connection.php"; 
+?>
+
+
 
 
 <!doctype html>
@@ -101,13 +110,19 @@ require "sideheader.php";
                                     placeholder="Delivary Fee" id="delivery"></div>
                             <div class="box-body">
                                 
-                                <div class="quill mb-30">
-                                  <textarea name="" id="pdescription"  placeholder="Product Description" ></textarea>
+                                <div class="quill mb-30" >
+                                
+                                
                                 </div>
+
+
+
                             </div>
+
+
+                            
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Quantity" id="qty"></div>
-
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="category">
@@ -463,3 +478,12 @@ require "sideheader.php";
 </body>
 
 </html>
+
+<?php
+} else {
+    
+    header("Location: ./adminlogin.php");
+}
+
+
+?>
