@@ -72,3 +72,84 @@ function signin() {
    request.send(f);
 
 }
+
+function deleteFromCart(id) {
+
+   var r = new XMLHttpRequest();
+
+   r.onreadystatechange = function () {
+       if (r.readyState == 4) {
+           var t = r.responseText;
+           if (t == "success") {
+            swal("Remove From Cart", "Product removed from cart Successfull", "success");
+             setInterval(1009);
+               window.location.reload();
+
+           } else {
+
+
+            window.location.reload();
+            
+           }
+       }
+   }
+
+   r.open("GET", "deleteFromCartProcess.php?id=" + id, true);
+   r.send()
+}
+
+
+
+function addToCart(id) {
+ 
+   var r = new XMLHttpRequest();
+
+   r.onreadystatechange = function () {
+       if (r.readyState == 4) {
+           var t = r.responseText;
+        
+           if (t == "iq") {
+            swal("Add Cart","", "success");
+           }else
+           if (t == "Something Went Wrong") {
+            swal("Add Cart Error", t, "error");
+           }else
+           if (t == "Product added successfully") {
+            swal("Add Cart", t, "success");
+           }else
+           if (t == "Please Sign In or Register.") {
+            swal("Add Cart Failed", t, "error");
+           }else{
+            swal("Add Cart Failed", "t", "error");
+           }
+       }
+   }
+
+   r.open("GET", "addToCartProcess.php?id=" + id, true);
+
+   r.send();
+}
+
+
+function signout() {
+   var r = new XMLHttpRequest();
+
+   r.onreadystatechange = function () {
+       if (r.readyState == 4) {
+           var t = r.responseText;
+           if (t == "success") {
+
+               //window.location="home.php";
+
+               window.location.reload();
+
+           } else {
+               alert(t);
+           }
+       }
+
+   };
+
+   r.open("GET", "signoutProcess.php", true);
+   r.send();
+}

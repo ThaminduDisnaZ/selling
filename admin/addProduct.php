@@ -4,7 +4,7 @@
 session_start();
 
 if (isset($_SESSION["a"])) {
-    require "../connection.php"; 
+
 ?>
 
 
@@ -104,10 +104,18 @@ require "sideheader.php";
                                     placeholder="Product Sub-title" id="psname"></div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Product Price*" id="pprice"></div>
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Product Discount" id="pdiscount"></div>
+                            <div class="col-lg-3 col-12 mb-30"><input class="form-control" type="number"
+                                    placeholder="Product Discount (%)" id="pdiscount"></div>
+
+                                    <div class="col-lg-3 col-12 mb-30"><button class="button button-outline button-primary" onclick="caldis();">Calculate Discount</button></div>
+
+
                                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Delivary Fee" id="delivery"></div>
+                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis">
+                                
+                                  
+                                </h3 ></div>
                             <div class="box-body">
                                 
                                 <div class="quill mb-30" >

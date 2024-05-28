@@ -489,13 +489,43 @@ function changeProductImage() {
         } else {
             swal("Image Upload Error", "please select 3 or less than 3 images.", "error");
         }
+        
     }
 }
 
 
-function addProduct() {
+
+function caldis() {
+
+    var price = document.getElementById("pprice").value;
+    var discount = document.getElementById("pdiscount").value;
+ 
+ 
+ 
+    var totalamount = (discount * price) / 100 ;
+ 
+ 
+ 
+    var totald = price - totalamount;
+ 
+    var total = parseInt(totald.toFixed(0));
+ 
+   if (discount > 0) {
+      document.getElementById("caldis").innerHTML ="Total Price : Rs." + total +".00";
+
+   } else {
+     
+     document.getElementById("caldis").innerHTML = "No Discount" ;
+ 
+ 
+   }
+ 
+ }
 
 
+function addProduct(param) {
+
+  
 
     var title = document.getElementById("pname");
     var stitle = document.getElementById("psname");
@@ -515,8 +545,22 @@ function addProduct() {
     var pmkeyword = document.getElementById("pmkeyword");
     var image = document.getElementById("imageuploader");
     var delivery = document.getElementById("delivery");
+    var dispc = document.getElementById("caldis").innerHTML;
 
+    var priced = document.getElementById("pprice").value;
+    var discountd = document.getElementById("pdiscount").value; 
+    var totalamountd = (discountd * priced) / 100 ;
+    var totaldd = priced - totalamountd;
+    var totald = parseInt(totaldd.toFixed(0));
+   var caldis = document.getElementById("caldis").innerHTML ;
     
+  if (caldis == "No Discount") {
+        var dprice = 0;
+ 
+  } else {
+        var dprice = totald;
+  }
+
     var f = new FormData();
    
     f.append("ti", title.value);
@@ -536,6 +580,8 @@ function addProduct() {
     f.append("si", size.value);
     f.append("pm", pmkeyword.value);
     f.append("del", delivery.value);
+    f.append("dprice", dprice);
+
 
   
 
@@ -576,3 +622,4 @@ function addProduct() {
     request.send(f);
 
 }
+

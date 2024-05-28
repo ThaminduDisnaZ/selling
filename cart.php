@@ -1,10 +1,37 @@
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+  <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Topico - Clean, Minimal E-commerce HTML5 Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/preloader.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/backToTop.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+        <link rel="stylesheet" href="assets/css/ui-range-slider.css">
+        <link rel="stylesheet" href="assets/css/default.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     <!-- loader-->
 	  <link href="assets/css/pace.min.css" rel="stylesheet" />
 	  <script src="assets/js/pace.min.js"></script>
@@ -26,17 +53,30 @@
     <link href="assets/css/semi-dark.css" rel="stylesheet" />
     <link href="assets/css/header-colors.css" rel="stylesheet" />
     <?php $titlewindow = "Cart"; ?>
-    <title>Cart</title>
+
   </head>
   <body>
     
 
  <!--start wrapper-->
-    <div class="wrapper">
-   
-    <?php
+    <div class="wrapper">  <?php
                 require "heder.php";
             ?>
+    <?php 
+
+            if (isset($_SESSION["u"])) {
+
+$id = $_SESSION["u"]["user_id"];
+
+
+$total = 0;
+$subtotal = 0;
+$shipping = 0;
+
+?>
+
+   
+  
         <!-- start page content wrapper-->
         <div class="page-content-wrapper">
           <!-- start page content-->
@@ -49,7 +89,6 @@
 
             <!--end breadcrumb-->
 
-
             <!--start shop cart-->
             <section class="shop-page">
               <div class="shop-container">
@@ -58,195 +97,84 @@
                   <div class="card-body">
                     <div class="shop-cart">
                       <div class="row">
-                        <div class="col-12 col-xl-8">
-                          <div class="shop-cart-list">
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="row align-items-center g-3">
-                                  <div class="col-12 col-lg-6">
-                                    <div class="d-lg-flex align-items-start gap-3">
-                                      <div class="cart-img text-center text-lg-start">
-                                        <img src="assets/images/products/01.png" class="rounded" width="130" alt="">
-                                      </div>
-                                      <div class="cart-detail text-center text-lg-start">
-                                        <h6 class="mb-2">Regular Fit Polo T-Shirt</h6>
-                                        <p class="mb-0">Size: <span>Regular</span>
-                                        </p>
-                                        <p class="mb-2">Color: <span>White & Blue</span>
-                                        </p>
-                                        <h5 class="mb-0">$19.00</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="cart-action text-center">
-                                      <input type="number" class="form-control" value="2" min="1">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="text-center">
-                                      <div class="d-flex gap-2 justify-content-center justify-content-lg-end">
-                                        <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-x-circle'></i>Remove</a>
-                                        <a href="javascript:;" class="btn btn-outline-primary btn-ecomm"><i class='bx bx-heart mx-0'></i></a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                        
+                      <?php
 
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="row align-items-center g-3">
-                                  <div class="col-12 col-lg-6">
-                                    <div class="d-lg-flex align-items-start gap-3">
-                                      <div class="cart-img text-center text-lg-start">
-                                        <img src="assets/images/products/02.png" class="rounded" width="130" alt="">
-                                      </div>
-                                      <div class="cart-detail text-center text-lg-start">
-                                        <h6 class="mb-2">Regular Fit Polo T-Shirt</h6>
-                                        <p class="mb-0">Size: <span>Regular</span>
-                                        </p>
-                                        <p class="mb-2">Color: <span>White & Blue</span>
-                                        </p>
-                                        <h5 class="mb-0">$19.00</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="cart-action text-center">
-                                      <input type="number" class="form-control" value="2" min="1">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="text-center">
-                                      <div class="d-flex gap-2 justify-content-center justify-content-lg-end">
-                                        <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-x-circle'></i>Remove</a>
-                                        <a href="javascript:;" class="btn btn-outline-primary btn-ecomm"><i class='bx bx-heart mx-0'></i></a>
-                                      </div>
-                                    </div>
-                                  </div>
+$cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_id`='" . $id . "' ");
+$cart_num = $cart_rs->num_rows;
+
+if ($cart_num == 0) {
+?>
+<h1>No Items</h1>
+<?php
+                        } else {
+                        ?>
+                      <div class="col-12 col-lg-8">
+                            <form action="#">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-thumbnail">Images</th>
+                                                <th class="cart-product-name">Product</th>
+                                                <th class="product-price">Unit Price</th>
+                                                <th class="product-quantity">Quantity</th>
+                                                <th class="product-subtotal">Total</th>
+                                                <th class="product-remove">Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+
+for ($x = 0; $x < $cart_num; $x++) {
+    $cart_data = $cart_rs->fetch_assoc();
+
+    $product_rs = Database::search("SELECT * FROM `product` WHERE `product_id`='" . $cart_data["product_id"] . "'");
+    $product_data = $product_rs->fetch_assoc();
+
+    $total = $total + ($product_data["dprice"] * $cart_data["qty"]);
+
+    $data_rs = Database::search("SELECT * FROM `user`  WHERE `user_id`='" . $id . "' ");
+
+    $address_data = $data_rs->fetch_assoc();
+
+    $ship = $product_data["delivery_fee"];
+
+    $image_rs = Database::search("SELECT * FROM `images` WHERE `product_id`='".$product_data["product_id"]."'");
+    $image_data = $image_rs->fetch_assoc();
+
+    
+    
+
+?>
+
+
+                                            <tr>
+                                                <td class="product-thumbnail"><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo($image_data ["code"] ) ?> " alt=""></a></td>
+                                                <td class="product-name"><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php  echo($product_data["name"]) ?></a></td>
+                                                <td class="product-price"><span class="amount">Rs.<?php  echo($product_data["dprice"]) ?>.00</span></td>
+                                                <td class="product-quantity">
+                                                <?php  echo($cart_data["qty"]) ?>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">Rs.<?php  echo($total) ?>.00</span></td>
+                                                <td class="product-remove"><button  onclick="deleteFromCart(<?php echo $cart_data['id'];?>);"><i class="fa fa-times"></i></button></td>
+                                            </tr>
+                                            
+                                            <?php
+
+}
+
+?>
+
+
+
+                                        </tbody>
+                                    </table>
                                 </div>
-                              </div>
-                            </div>
-							
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="row align-items-center g-3">
-                                  <div class="col-12 col-lg-6">
-                                    <div class="d-lg-flex align-items-start gap-3">
-                                      <div class="cart-img text-center text-lg-start">
-                                        <img src="assets/images/products/03.png" class="rounded" width="130" alt="">
-                                      </div>
-                                      <div class="cart-detail text-center text-lg-start">
-                                        <h6 class="mb-2">Regular Fit Polo T-Shirt</h6>
-                                        <p class="mb-0">Size: <span>Regular</span>
-                                        </p>
-                                        <p class="mb-2">Color: <span>White & Blue</span>
-                                        </p>
-                                        <h5 class="mb-0">$19.00</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="cart-action text-center">
-                                      <input type="number" class="form-control" value="2" min="1">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="text-center">
-                                      <div class="d-flex gap-2 justify-content-center justify-content-lg-end">
-                                        <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-x-circle'></i>Remove</a>
-                                        <a href="javascript:;" class="btn btn-outline-primary btn-ecomm"><i class='bx bx-heart mx-0'></i></a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-							
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="row align-items-center g-3">
-                                  <div class="col-12 col-lg-6">
-                                    <div class="d-lg-flex align-items-start gap-3">
-                                      <div class="cart-img text-center text-lg-start">
-                                        <img src="assets/images/products/04.png" class="rounded" width="130" alt="">
-                                      </div>
-                                      <div class="cart-detail text-center text-lg-start">
-                                        <h6 class="mb-2">Regular Fit Polo T-Shirt</h6>
-                                        <p class="mb-0">Size: <span>Regular</span>
-                                        </p>
-                                        <p class="mb-2">Color: <span>White & Blue</span>
-                                        </p>
-                                        <h5 class="mb-0">$19.00</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="cart-action text-center">
-                                      <input type="number" class="form-control" value="2" min="1">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="text-center">
-                                      <div class="d-flex gap-2 justify-content-center justify-content-lg-end">
-                                        <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-x-circle'></i>Remove</a>
-                                        <a href="javascript:;" class="btn btn-outline-primary btn-ecomm"><i class='bx bx-heart mx-0'></i></a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-							
-                           <div class="card">
-                              <div class="card-body">
-                                <div class="row align-items-center g-3">
-                                  <div class="col-12 col-lg-6">
-                                    <div class="d-lg-flex align-items-start gap-3">
-                                      <div class="cart-img text-center text-lg-start">
-                                        <img src="assets/images/products/05.png" class="rounded" width="130" alt="">
-                                      </div>
-                                      <div class="cart-detail text-center text-lg-start">
-                                        <h6 class="mb-2">Regular Fit Polo T-Shirt</h6>
-                                        <p class="mb-0">Size: <span>Regular</span>
-                                        </p>
-                                        <p class="mb-2">Color: <span>White & Blue</span>
-                                        </p>
-                                        <h5 class="mb-0">$19.00</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="cart-action text-center">
-                                      <input type="number" class="form-control" value="2" min="1">
-                                    </div>
-                                  </div>
-                                  <div class="col-12 col-lg-3">
-                                    <div class="text-center">
-                                      <div class="d-flex gap-2 justify-content-center justify-content-lg-end">
-                                        <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-x-circle'></i>Remove</a>
-                                        <a href="javascript:;" class="btn btn-outline-primary btn-ecomm"><i class='bx bx-heart mx-0'></i></a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-							
-                            <div class="card">
-                              <div class="card-body">
-                                <div class="d-lg-flex align-items-center gap-3">
-                                  <a href="javascript:;" class="btn btn-primary btn-ecomm"><i class='bx bx-shopping-bag'></i> Continue Shoping</a>
-                                  <a href="javascript:;" class="btn btn-light btn-ecomm ms-auto"><i class='bx bx-x-circle'></i> Clear Cart</a>
-                                  <a href="javascript:;" class="btn btn-white btn-ecomm"><i class='bx bx-refresh'></i> Update Cart</a>
-                                </div>
-                              </div>
-                            </div>
-							
-                          </div>
+                            </form>
                         </div>
+
+                        
                         <div class="col-12 col-xl-4">
                           <div class="card">
                             <div class="card-body">
@@ -261,17 +189,7 @@
                             </div>
                             <div class="card">
                               <div class="card-body">
-                                <p class="fs-5">Estimate Shipping and Tax</p>
-                                <div class="my-3 border-top"></div>
-                                <div class="mb-3">
-                                  <label class="form-label">Country Name</label>
-                                  <select class="form-select">
-                                    <option selected>United States</option>
-                                    <option value="1">Australia</option>
-                                    <option value="2">India</option>
-                                    <option value="3">Canada</option>
-                                  </select>
-                                </div>
+                               
                                 <div class="mb-3">
                                   <label class="form-label">State/Province</label>
                                   <select class="form-select">
@@ -297,7 +215,7 @@
                                 <p class="mb-0">Discount: <span class="float-end">--</span>
                                 </p>
                                 <div class="my-3 border-top"></div>
-                                <h5 class="mb-0">Order Total: <span class="float-end">212.00</span></h5>
+                                <h5 class="mb-0">Order Total: <span class="float-end">Rs.<?php echo ($shipping + $total) ?>.00</span></h5>
                                 <div class="my-4"></div>
                                 <div class="d-grid"> <a href="javascript:;" class="btn btn-primary btn-ecomm">Proceed to Checkout</a>
                                 </div>
@@ -306,6 +224,13 @@
                            </div>
                           </div>
                         </div>
+
+                        <?php
+                        }
+
+                        ?>
+
+
                       </div>
                       <!--end row-->
                     </div>
@@ -391,7 +316,13 @@
          <!--start overlay-->
           <div class="overlay nav-toggle-icon"></div>
          <!--end overlay-->
+         <?php
 
+} else {
+    header("Location:error.html");
+}
+
+?>
      </div>
   <!--end wrapper-->
 
@@ -407,10 +338,27 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <!--plugins-->
     <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/vendor/waypoints.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/meanmenu.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/backToTop.js"></script>
+        <script src="assets/js/jquery.fancybox.min.js"></script>
+        <script src="assets/js/countdown.js"></script>
+        <script src="assets/js/nice-select.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/magnific-popup.min.js"></script>
+        <script src="assets/js/jquery-ui-slider-range.js"></script>
+        <script src="assets/js/ajax-form.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/main.js"></script>
     <!-- Main JS-->
     <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
 
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

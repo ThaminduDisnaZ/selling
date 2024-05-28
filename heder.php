@@ -1,317 +1,387 @@
+<?php
+ require_once "./connection.php";
+ session_start();
+ ?>
 
-    <!--start top header-->
-    <header class="top-header">
-      <nav class="navbar navbar-expand gap-3">
-    
-        <h1>Net Pixel</h1>
 
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Catagories</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cart.php">Cart</a>
-              </li>
-         
-            </ul>
-        <form class="searchbar">
-          <div class="position-absolute top-50 translate-middle-y search-icon ms-3">
-            <ion-icon name="search-outline"></ion-icon>
-          </div>
-          <input class="form-control" type="text" placeholder="Search for anything">
-          <div class="position-absolute top-50 translate-middle-y search-close-icon">
-            <ion-icon name="close-outline"></ion-icon>
-          </div>
-        </form>
-        <div class="top-navbar-right ">
+<!-- header area start -->
+<header>
+    <div class="header__area">
+        <div class="header__top d-none d-sm-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
+                        <div class="header__welcome">
+                            <span>Welcome to Net Pixel Store</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-7">
+                        <div class="header__action d-flex justify-content-center justify-content-md-end">
+                            <ul>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">My Wishlist</a></li>
+                                <li><a href="#">Compare</a></li>
 
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item">
-              <a class="nav-link mobile-search-button" href="javascript:;">
-                <div class="">
-                  <ion-icon name="search-outline"></ion-icon>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link dark-mode-icon" href="javascript:;">
-                <div class="mode-icon">
-                  <ion-icon name="moon-outline"></ion-icon>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item dropdown dropdown-large dropdown-apps">
-              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-                <div class="">
-                  <ion-icon name="apps-outline"></ion-icon>
-                </div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                <div class="row row-cols-3 g-3 p-3">
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-purple text-white">
-                      <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Orders</div>
-                  </div>
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-info text-white">
-                      <ion-icon name="people-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Teams</div>
-                  </div>
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-success text-white">
-                      <ion-icon name="shield-checkmark-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Tasks</div>
-                  </div>
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-danger text-white">
-                      <ion-icon name="videocam-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Media</div>
-                  </div>
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-warning text-white">
-                      <ion-icon name="file-tray-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Files</div>
-                  </div>
-                  <div class="col text-center">
-                    <div class="app-box mx-auto bg-gradient-branding text-white">
-                      <ion-icon name="notifications-outline"></ion-icon>
-                    </div>
-                    <div class="app-title">Alerts</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown dropdown-large">
-              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-                <div class="position-relative">
-                  <span class="notify-badge">8</span>
-                  <ion-icon name="notifications-outline"></ion-icon>
-                </div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end">
-                <a href="javascript:;">
-                  <div class="msg-header">
-                    <p class="msg-header-title">Notifications</p>
-                    <p class="msg-header-clear ms-auto">Marks all as read</p>
-                  </div>
-                </a>
-                <div class="header-notifications-list">
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-primary">
-                        <ion-icon name="cart-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
-                            ago</span></h6>
-                        <p class="msg-info">You have recived new orders</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-danger">
-                        <ion-icon name="person-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
-                            ago</span></h6>
-                        <p class="msg-info">5 new user registered</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-success">
-                        <ion-icon name="document-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
-                            ago</span></h6>
-                        <p class="msg-info">The pdf files generated</p>
-                      </div>
-                    </div>
-                  </a>
+                                <?php if (isset($_SESSION["u"])) {
 
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-info">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">New Product Approved <span class="msg-time float-end">2 hrs ago</span></h6>
-                        <p class="msg-info">Your new product has approved</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-warning">
-                        <ion-icon name="send-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
-                            ago</span></h6>
-                        <p class="msg-info">5.1 min avarage time response</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-danger">
-                        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
-                            ago</span></h6>
-                        <p class="msg-info">New customer comments recived</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-primary">
-                        <ion-icon name="albums-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
-                            ago</span></h6>
-                        <p class="msg-info">24 new authors joined last week</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-success">
-                        <ion-icon name="shield-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
-                            ago</span></h6>
-                        <p class="msg-info">Successfully shipped your item</p>
-                      </div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="notify text-warning">
-                        <ion-icon name="cafe-outline"></ion-icon>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
-                            ago</span></h6>
-                        <p class="msg-info">45% less alerts last 4 weeks</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <a href="javascript:;">
-                  <div class="text-center msg-footer">View All Notifications</div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown dropdown-user-setting">
-              <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-                <div class="user-setting">
-                  <img src="assets/images/avatars/06.png" class="user-img" alt="">
-                </div>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex flex-row align-items-center gap-2">
-                      <img src="assets/images/avatars/06.png" alt="" class="rounded-circle" width="54" height="54">
-                      <div class="">
-                        <h6 class="mb-0 dropdown-user-name">Pakaya</h6>
-                        <small class="mb-0 dropdown-user-designation text-secondary">Ponnayek</small>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li>
-                  <a class="dropdown-item" href="userprofile.php">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="person-outline"></ion-icon>
-                      </div>
-                      
-                      <div class="ms-3"><span>Profile</span></div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="settings-outline"></ion-icon>
-                      </div>
-                      <div class="ms-3"><span>Setting</span></div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-                      </div>
-                      <div class="ms-3"><span>Dashboard</span></div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="wallet-outline"></ion-icon>
-                      </div>
-                      <div class="ms-3"><span>Earnings</span></div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="cloud-download-outline"></ion-icon>
-                      </div>
-                      <div class="ms-3"><span>Downloads</span></div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li>
-                  <a class="dropdown-item" href="javascript:;">
-                    <div class="d-flex align-items-center">
-                      <div class="">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                      </div>
-                      <div class="ms-3"><span>Logout</span></div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+                                     $data = $_SESSION["u"];
+                                     $u_id = $data["user_id"];
+                                     ?>
+                                <li><button onclick="signout();"><a>Sign Out</a></button></li>
 
-          </ul>
+                                <li>
+                                    <p><?php echo $data["fname"]; ?></p>
+                                </li>
 
+
+
+                                <?php
+                                 } else {
+                                    $u_id = "";
+                                      ?>
+
+                                <li><a href="login.php">Sign In</a></li>
+
+                                <?php
+                                 } ?>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    </header>
-    <!--end top header-->
+        <div class="header__info">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-3">
+                        <div
+                            class="header__info-left d-flex justify-content-center justify-content-sm-between align-items-center">
+                            <div class="logo">
+                                <a href="index.php">
+                                    <h1>Net Pixel</h1>
+                                </a>
+                            </div>
+                            <div class="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
+                                <div class="header__hotline-icon">
+                                    <i class="fal fa-headset"></i>
+                                </div>
+                                <div class="header__hotline-info">
+                                    <span>Hotline:</span>
+                                    <h6><a href="tel:06-900-6789-00">0764501212</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9">
+                        <div class="header__info-right">
+                            <div class="header__search f-left d-none d-sm-block">
+                                <form action="#">
+                                    <div class="header__search-box">
+                                        <input type="text" placeholder="Search For Products...">
+                                        <button type="submit">Search</button>
+                                    </div>
+                                    <div class="header__search-cat">
+                                        <select>
+                                            <option>All Categories</option>
+                                            <?php
+                                             $category_rs = Database::search(
+                                                 "SELECT*FROM `category`"
+                                             );
+                                             $category_num =
+                                                 $category_rs->num_rows;
+
+                                             for (
+                                                 $x = 0;
+                                                 $x < $category_num;
+                                                 $x++
+                                             ) {
+                                                 $category_data = $category_rs->fetch_assoc(); ?>
+
+                                            <option value="<?php echo $category_data["category_id"]; ?>">
+                                                <?php echo $category_data[
+                                                     "category"
+                                                 ]; ?></option>
+
+                                            <?php
+                                             }
+                                             ?>
 
 
+
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <?php
+                             $cart_rs = Database::search(
+                                 "SELECT * FROM `cart` WHERE cart.user_id='" .
+                                     $u_id .
+                                     "' "
+                             );
+                             $cart_num = $cart_rs->num_rows;
+                             ?>
+
+
+                            <div class="cart__mini-wrapper d-none d-md-flex f-right p-relative">
+                                <a href="javascript:void(0);" class="cart__toggle">
+                                    <span class="cart__total-item"><?php echo $cart_num; ?></span>
+                                </a>
+
+
+
+                                <div class="cart__mini">
+                                    <div class="cart__close"><button type="button" class="cart__close-btn"><i
+                                                class="fal fa-times"></i></button></div>
+                                    <ul>
+                                        <li>
+                                            <div class="cart__title border-bottom">
+                                                <h4 class="">My Cart</h4>
+
+
+                                                <span>(<?php echo $cart_num; ?> Item in Cart)</span>
+
+                                            </div>
+
+                                            <?php if ($cart_num == 0) { ?>
+                                            <br><br><br>
+                                            <h3 class="text-center">No Item</h3>
+
+
+                                            <?php } else {
+                                                 $total = 0;
+                                                 $subtotal = 0;
+                                                 $shipping = 0;
+                                                 ?>
+
+
+
+
+                                        </li>
+
+
+
+                                        <?php for (
+                                             $x = 0;
+                                             $x < $cart_num;
+                                             $x++
+                                         ) {
+
+                                             $cart_data = $cart_rs->fetch_assoc();
+
+                                             $product_rs = Database::search(
+                                                 "SELECT * FROM `product` WHERE `product_id`='" .
+                                                     $cart_data["product_id"] .
+                                                     "'"
+                                             );
+                                             $product_data = $product_rs->fetch_assoc();
+
+                                             $total =
+                                                 $total +
+                                                 $product_data["dprice"] *
+                                                     $cart_data["qty"];
+
+                                             $data_rs = Database::search(
+                                                 "SELECT * FROM `user`  WHERE `user_id`='" .
+                                                     $u_id .
+                                                     "' "
+                                             );
+
+                                             $address_data = $data_rs->fetch_assoc();
+
+                                             $ship =
+                                                 $product_data["delivery_fee"];
+
+                                             $image_rs = Database::search(
+                                                 "SELECT * FROM `images` WHERE `product_id`='" .
+                                                     $product_data[
+                                                         "product_id"
+                                                     ] .
+                                                     "'"
+                                             );
+                                             $image_data = $image_rs->fetch_assoc();
+                                             ?>
+
+
+                                        <li>
+                                            <div class="cart__item d-flex justify-content-between align-items-center">
+                                                <div class="cart__inner d-flex">
+                                                    <div class="cart__thumb">
+                                                        <a href="product-details.html">
+                                                            <img src="admin/<?php echo $image_data[
+                                                                 "code"
+                                                             ]; ?>" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="cart__details">
+                                                        <h6><a href="product-details.html">
+                                                                <?php echo $product_data[
+                                                                     "name"
+                                                                 ]; ?> </a></h6>
+                                                        <div class="cart__price">
+                                                            <span>Rs.<?php echo $product_data[
+                                                                 "dprice"
+                                                             ]; ?>.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart__del">
+                                                    <button onclick="deleteFromCart(<?php echo $cart_data[
+                                                         "id"
+                                                     ]; ?>);">
+                                                        <i class="fal fa-trash-alt"></i></button>
+                                                </div>
+                                            </div>
+                                        </li>
+
+
+
+                                        <?php
+                                         } ?>
+
+                                        <li>
+                                            <div class="cart__sub d-flex justify-content-between align-items-center">
+                                                <h6>Car Subtotal</h6>
+                                                <span class="cart__sub-total">Rs.<?php echo $total; ?>.00</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="checkout.html" class="t-y-btn w-100 mb-10">Proceed to checkout</a>
+                                            <a href="cart.php" class="t-y-btn t-y-btn-border w-100 mb-10">view add edit
+                                                cart</a>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-6 col-6">
+                        <div class="header__bottom-left d-flex d-xl-block align-items-center">
+                            <div class="side-menu d-xl-none mr-20">
+                                <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i
+                                        class="fas fa-bars"></i></button>
+                            </div>
+                            <div class="main-menu d-none d-md-block">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="index.php">Home <i class="far fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="index.php">Home Style 1</a></li>
+                                                <li><a href="index-2.html">Home Style 2</a></li>
+                                                <li><a href="index-3.html">Home Style 3</a></li>
+                                                <li><a href="index-4.html">Home Style 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="product.html">Features <i class="far fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="product.html">Product Type</a></li>
+                                                <li><a href="product.html">Product Features <i
+                                                            class="far fa-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="product-details.html">Simple Product</a></li>
+                                                        <li><a href="product-details-config.html">Configurable
+                                                                Product</a></li>
+                                                        <li><a href="product-details-group.html">Group Product</a></li>
+                                                        <li><a href="product-details-download.html">Downloadable
+                                                                Product</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="product.html">Shop By Brand</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Blog <i class="far fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-detaills.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">about us</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                        <li>
+                                            <a href="about.html">pages <i class="far fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="register.html">Register</a></li>
+                                                <li><a href="cart.php">Cart</a></li>
+                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="error.html">404 Error</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3  col-sm-6  col-6 d-md-none d-lg-block">
+                        <div class="header__bottom-right d-flex justify-content-end">
+                            <div class="header__currency">
+                                <select>
+                                    <option>USD</option>
+                                    <option>USD</option>
+                                    <option>USD</option>
+                                    <option>USD</option>
+                                    <option>USD</option>
+                                </select>
+                            </div>
+                            <div class="header__lang d-md-none d-lg-block">
+                                <select>
+                                    <option>English</option>
+                                    <option>Bangla</option>
+                                    <option>Arabic</option>
+                                    <option>Hindi</option>
+                                    <option>Urdu</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header area end -->
+
+
+    <!-- offcanvas area start -->
+    <div class="offcanvas__area">
+        <div class="offcanvas__wrapper">
+            <div class="offcanvas__close">
+                <button class="offcanvas__close-btn" id="offcanvas__close-btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="offcanvas__content">
+                <div class="offcanvas__logo mb-40">
+                    <a href="index.html">
+                        <img src="assets/img/logo/logo-black.png" alt="logo">
+                    </a>
+                </div>
+                <div class="offcanvas__search mb-25">
+                    <form action="#">
+                        <input type="text" placeholder="What are you searching for?">
+                        <button type="submit"><i class="far fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="mobile-menu fix"></div>
+                <div class="offcanvas__action">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas area end -->
+    <div class="body-overlay"></div>
+    <!-- offcanvas area end -->

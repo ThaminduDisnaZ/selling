@@ -6,8 +6,8 @@ $display = $_POST["d"];
 
 if (empty($display)) {
     echo("Please Enter New display Name...");
-}else if(strlen($display) > 20){
-    echo("Your display Name Should be less than 20 characters");
+}else if(strlen($display) > 50){
+    echo("Your display Name Should be less than 50 characters");
 }else{
     $rs = Database::search("SELECT * FROM `display` WHERE `display` = '".$display."' ");
     $num = $rs->num_rows;

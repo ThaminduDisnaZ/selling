@@ -7,6 +7,7 @@ $lname = $_POST["l"];
 $email = $_POST["e"];
 $mobile = $_POST["m"];
 $password = $_POST["p"];
+$status = "1";
 
 if (empty($fname)) {
    echo("Please Enter Your First Name");
@@ -41,7 +42,7 @@ if (empty($fname)) {
         echo("Your Email or Mobile Number Already Exists");
     } else {
         Database::iud("INSERT INTO `user` (`fname`,`lname`,`email`,`mobile`,`password`,`status_id`) 
-        VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','1') ");
+        VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."') ");
           echo("Success");
     }
 }

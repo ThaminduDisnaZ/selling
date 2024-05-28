@@ -6,8 +6,8 @@ $cpu = $_POST["c"];
 
 if (empty($cpu)) {
     echo("Please Enter New cpu Name...");
-}else if(strlen($cpu) > 20){
-    echo("Your cpu Name Should be less than 20 characters");
+}else if(strlen($cpu) > 50){
+    echo("Your cpu Name Should be less than 50 characters");
 }else{
     $rs = Database::search("SELECT * FROM `cpu` WHERE `cpu` = '".$cpu."' ");
     $num = $rs->num_rows;

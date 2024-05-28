@@ -6,8 +6,8 @@ $gpu = $_POST["g"];
 
 if (empty($gpu)) {
     echo("Please Enter New gpu Name...");
-}else if(strlen($gpu) > 20){
-    echo("Your gpu Name Should be less than 20 characters");
+}else if(strlen($gpu) > 50){
+    echo("Your gpu Name Should be less than 50 characters");
 }else{
     $rs = Database::search("SELECT * FROM `gpu` WHERE `gpu` = '".$gpu."' ");
     $num = $rs->num_rows;

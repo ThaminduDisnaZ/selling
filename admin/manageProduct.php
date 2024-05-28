@@ -52,11 +52,11 @@ if (isset($_SESSION["a"])) {
 
     <div class="main-wrapper">
 
-    <?php
+        <?php
 require "adminHeader.php";
 ?>
 
-       
+
         <?php
 require "sideheader.php";
 ?>
@@ -97,91 +97,68 @@ require "sideheader.php";
                                 </tr>
                             </thead>
                             <tbody>
+
+
+                                <?php
+
+$product_rs = Database::search("SELECT * FROM `product`");
+
+
+
+while  ($p = $product_rs->fetch_assoc()) {
+   
+$image_rs= Database::search("SELECT*FROM `images`WHERE `product_id`='".$p["product_id"]."'");
+$image_data=$image_rs->fetch_assoc();
+
+$order_rs= Database::search("SELECT*FROM `orders`WHERE `product_id`='".$p["product_id"]."'");
+$order_count=$order_rs->num_rows;
+?>
                                 <tr>
-                                    <td>#MSP40022</td>
-                                    <td><img src="assets/images/product/list-product-1.jpg" alt="" class="product-image rounded-circle"></td>
-                                    <td><a href="#">Spro 4 Laptop</a></td>
-                                    <td>$600.00</td>
-                                    <td>03</td>
-                                    <td>12</td>
-                                    <td>13 Feb 2018</td>
-                                    <td><span class="badge badge-danger">Out of stock</span></td>
+                                    <td><?php echo($p["product_id"]); ?></td>
+                                    <td><img src="<?php echo $image_data["code"];?>" alt=""
+                                            class="product-image rounded-circle w-25"></td>
+                                    <td><a href="../<?php echo "singleProductView.php?id=" . $p["product_id"]; ?>"><?php echo($p["name"]); ?></a></td>
+                                    <td>Rs.<?php echo($p["dprice"]); ?>.00</td>
+                                    <td><?php echo($order_count); ?></td>
+                                    <td><?php echo($p["qty"]); ?></td>
+                                    <td><?php echo($p["date"]); ?></td>
+
+
+<?php
+
+
+if ($p["qty"] > 0) {
+    ?>  <td><span class="badge badge-success">In stock</span></td> <?php
+} else {
+   ?>   <td><span class="badge badge-danger">Out of stock</span></td>  <?php 
+}
+
+
+?>
+                                   
+
+
+
                                     <td>
                                         <div class="table-action-buttons">
-                                            <a class="view button button-box button-xs button-primary" href="invoice-details.html"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
-                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
+                                            <a class="view button button-box button-xs button-primary"
+                                                href="../<?php echo "singleProductView.php?id=" . $p["product_id"]; ?>"><i class="zmdi zmdi-more"></i></a>
+                                            <a class="edit button button-box button-xs button-info" href="<?php echo "updateProduct.php?id=" . $p["product_id"]; ?>"><i
+                                                    class="zmdi zmdi-edit"></i></a>
+                                            <a class="delete button button-box button-xs button-danger" href="#"><i
+                                                    class="zmdi zmdi-delete"></i></a>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>#MSP40023</td>
-                                    <td><img src="assets/images/product/list-product-2.jpg" alt="" class="product-image rounded-circle"></td>
-                                    <td><a href="#">Spro 4 Laptop</a></td>
-                                    <td>$600.00</td>
-                                    <td>03</td>
-                                    <td>12</td>
-                                    <td>13 Feb 2018</td>
-                                    <td><span class="badge badge-success">Published</span></td>
-                                    <td>
-                                        <div class="table-action-buttons">
-                                            <a class="view button button-box button-xs button-primary" href="invoice-details.html"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
-                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#MSP40024</td>
-                                    <td><img src="assets/images/product/list-product-3.jpg" alt="" class="product-image rounded-circle"></td>
-                                    <td><a href="#">Spro 4 Laptop</a></td>
-                                    <td>$600.00</td>
-                                    <td>03</td>
-                                    <td>12</td>
-                                    <td>13 Feb 2018</td>
-                                    <td><span class="badge badge-danger">Out of stock</span></td>
-                                    <td>
-                                        <div class="table-action-buttons">
-                                            <a class="view button button-box button-xs button-primary" href="invoice-details.html"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
-                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#MSP40025</td>
-                                    <td><img src="assets/images/product/list-product-4.jpg" alt="" class="product-image rounded-circle"></td>
-                                    <td><a href="#">Spro 4 Laptop</a></td>
-                                    <td>$600.00</td>
-                                    <td>03</td>
-                                    <td>12</td>
-                                    <td>13 Feb 2018</td>
-                                    <td><span class="badge badge-success">Published</span></td>
-                                    <td>
-                                        <div class="table-action-buttons">
-                                            <a class="view button button-box button-xs button-primary" href="invoice-details.html"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
-                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#MSP40026</td>
-                                    <td><img src="assets/images/product/list-product-5.jpg" alt="" class="product-image rounded-circle"></td>
-                                    <td><a href="#">Spro 4 Laptop</a></td>
-                                    <td>$600.00</td>
-                                    <td>03</td>
-                                    <td>12</td>
-                                    <td>13 Feb 2018</td>
-                                    <td><span class="badge badge-success">Published</span></td>
-                                    <td>
-                                        <div class="table-action-buttons">
-                                            <a class="view button button-box button-xs button-primary" href="invoice-details.html"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="#"><i class="zmdi zmdi-edit"></i></a>
-                                            <a class="delete button button-box button-xs button-danger" href="#"><i class="zmdi zmdi-delete"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <?php
+}
+
+?>
+
+
+                             
+
+
                             </tbody>
                         </table>
                     </div>
@@ -197,7 +174,8 @@ require "sideheader.php";
             <div class="container-fluid">
 
                 <div class="footer-copyright text-center">
-                    <p class="text-body-light">2022 &copy; <a href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
+                    <p class="text-body-light">2022 &copy; <a
+                            href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
                 </div>
 
             </div>

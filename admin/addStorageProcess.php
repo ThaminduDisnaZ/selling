@@ -6,8 +6,8 @@ $storage = $_POST["s"];
 
 if (empty($storage)) {
     echo("Please Enter storage Name...");
-}else if(strlen($storage) > 20){
-    echo("Your storage Name Should be less than 20 characters");
+}else if(strlen($storage) > 50){
+    echo("Your storage Name Should be less than 50 characters");
 }else{
     $rs = Database::search("SELECT * FROM `storage` WHERE `storage` = '".$storage."' ");
     $num = $rs->num_rows;
