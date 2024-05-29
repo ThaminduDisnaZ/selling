@@ -38,11 +38,11 @@ if ($type == "1") {
                         $new_img_extension =".svg";
                     }
     
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }
@@ -84,11 +84,11 @@ if ($type == "2") {
                         $new_img_extension =".svg";
                     }
     
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }
@@ -128,11 +128,11 @@ if ($type == "3") {
                         $new_img_extension =".svg";
                     }
     
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }
@@ -174,11 +174,11 @@ if ($type == "4") {
                         $new_img_extension =".svg";
                     }
     
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }
@@ -221,11 +221,11 @@ if ($type == "5") {
                         $new_img_extension =".svg";
                     }
     
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }
@@ -267,12 +267,11 @@ if ($type == "6") {
                     }else if($file_type=="image/svg+xml"){
                         $new_img_extension =".svg";
                     }
-    
-                    $file_name ="./resource/banner/".$title."_".$x."_".uniqid().$new_img_extension;
+                    $file_name ="./resource/banner/".$title."_"."_".uniqid().$new_img_extension;
                     move_uploaded_file($img_file["tmp_name"],$file_name);
     
                     
-                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`)VALUES('".$file_name."','".$type."')");
+                    Database::iud("INSERT INTO `banner`(`path`,`banner_type_id`,`b_id`)VALUES('".$file_name."','".$type."', '".$x."')");
                 }else {
                     echo ("File type not allowed!");
                 }

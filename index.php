@@ -35,22 +35,22 @@
     <!-- Add your site or application content here -->
 
     <!-- preloader area start -->
-    <!-- <div id="loading">
+  <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <div id="object"></div>
             </div>
         </div>
-    </div> -->
+    </div> 
     <!-- preloader area end -->
 
 
     <!-- back to top start -->
-    <!-- <div class="progress-wrap">
+<div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
-    </div> -->
+    </div> 
     <!-- back to top end -->
 
 
@@ -59,13 +59,113 @@
 
     <?php
       include "heder.php" ;
+
+      $b10_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '1' ");
+      $b10_data = $b10_rs->fetch_assoc();
+
+ $img10 = $b10_data["path"];
+
+
+ $b11_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1'  AND `banner_type_id` = '1'");
+ $b11_data = $b11_rs->fetch_assoc();
+
+$img11 = $b11_data["path"];
+
+
+$b12_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2'  AND `banner_type_id` = '1'");
+$b12_data = $b12_rs->fetch_assoc();
+
+$img12 = $b12_data["path"];
+
+
+
+
+$b20_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '2' ");
+$b20_data = $b20_rs->fetch_assoc();
+
+$img20 = $b20_data["path"];
+
+
+
+$b30_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '3' ");
+$b30_data = $b30_rs->fetch_assoc();
+
+$img30 = $b30_data["path"];
+
+$b31_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '3' ");
+$b31_data = $b31_rs->fetch_assoc();
+
+$img31 = $b31_data["path"];
+
+
+
+
+
+$b60_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '4' ");
+$b60_data = $b60_rs->fetch_assoc();
+
+$img60 = $b60_data["path"];
+
+$b61_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '4' ");
+$b61_data = $b61_rs->fetch_assoc();
+
+$img61 = $b61_data["path"];
+
+$b62_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2' AND `banner_type_id` = '4' ");
+$b62_data = $b62_rs->fetch_assoc();
+
+$img62 = $b62_data["path"];
+
+
+
+
+
+
+
+$b40_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '5' ");
+$b40_data = $b40_rs->fetch_assoc();
+
+$img40 = $b40_data["path"];
+
+$b41_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '5' ");
+$b41_data = $b41_rs->fetch_assoc();
+
+$img41 = $b41_data["path"];
+
+
+
+
+
+
+
+$b50_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '6' ");
+$b50_data = $b50_rs->fetch_assoc();
+
+$img50 = $b50_data["path"];
+
+
+
+$b51_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '6' ");
+$b51_data = $b51_rs->fetch_assoc();
+
+$img51 = $b51_data["path"];
+
+
+
+$b52_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2' AND `banner_type_id` = '6' ");
+$b52_data = $b52_rs->fetch_assoc();
+
+$img52 = $b52_data["path"];
+
+
+
      ?>
 
 
 
     <main>
         <!-- slider area satrt -->
-        <section class="slider__area pt-50 pb-50" data-background="assets/img/slider/slider-bg-1.jpg">
+        <section class="slider__area pt-50 pb-50" data-background="admin/<?php echo $img20; ?>">
             <div class="container">
                 <div class="row">
 
@@ -73,25 +173,37 @@
                         <div class="row">
                             <div class="col-xl-9 custom-col-9 col-lg-8">
                                 <div class="slider__inner slider-active">
+
+
+                          
+
+
                                     <div class="single-slider w-img">
-                                        <img src="assets/img/slider/01/slider-1.jpg" alt="slider">
+                                        <img src="admin/<?php echo $img10; ?>" alt="slider">
                                     </div>
                                     <div class="single-slider w-img">
-                                        <img src="assets/img/slider/01/slider-2.jpg" alt="slider">
+                                        <img src="admin/<?php echo $img11; ?>" alt="slider">
                                     </div>
                                     <div class="single-slider w-img">
-                                        <img src="assets/img/slider/01/slider-3.jpg" alt="slider">
+                                        <img src="admin/<?php echo $img12; ?>" alt="slider">
                                     </div>
+
+
+
+
+
+
+
                                 </div>
                             </div>
                             <div class="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
                                 <div class="banner__area">
                                     <div class="banner__item mb-20 w-img">
-                                        <a href="product-details.html"><img src="assets/img/banner/top/banner-top-1.jpg"
+                                        <a href="product-details.html"><img src="admin/<?php echo $img30; ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="banner__item w-img">
-                                        <a href="product-details.html"><img src="assets/img/banner/top/banner-top-2.jpg"
+                                        <a href="product-details.html"><img src="admin/<?php echo $img31; ?>"
                                                 alt=""></a>
                                     </div>
                                 </div>
@@ -173,17 +285,17 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item w-img mb-30">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-1.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img60; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-2.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img61; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-3.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img62; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -191,850 +303,6 @@
         </section>
         <!-- banner area end -->
 
-        <!-- best selling area start -->
-        <!-- <section class="best__sell pt-15 pb-40 grey-bg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="section__head d-md-flex justify-content-between mb-40">
-                            <div class="section__title">
-                                <h3>Best Selling<span>Products</span></h3>
-                            </div>
-                            <div class="product__nav-tab mr-75">
-                                <ul class="nav nav-tabs" id="best-sell-tab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="new-tab" data-bs-toggle="tab"
-                                            data-bs-target="#new" type="button" role="tab" aria-controls="new"
-                                            aria-selected="true">New Arrival</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="featured-tab" data-bs-toggle="tab"
-                                            data-bs-target="#featured" type="button" role="tab" aria-controls="featured"
-                                            aria-selected="false">Featured</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="hot-tab" data-bs-toggle="tab" data-bs-target="#hot"
-                                            type="button" role="tab" aria-controls="hot" aria-selected="false">Hot
-                                            Sale</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="random-tab" data-bs-toggle="tab"
-                                            data-bs-target="#random" type="button" role="tab" aria-controls="random"
-                                            aria-selected="false">Random</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="tab-content" id="best-sell">
-                            <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
-                                <div class="product__slider owl-carousel">
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-1.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-2.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> High Quality
-                                                    Glass Ultra-Thin Kitchen Scale</a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$500.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-3.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-4.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> LG 27UD58:
-                                                    £347.21, Ebuyer.com </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$560.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-5.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-6.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung
-                                                    C49J89: £875, Debenhams Plus </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$450.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-7.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-8.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blink Home
-                                                    Security Camera System 01 </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-9.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-10.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blue t-shir
-                                                    for men (X, M, XL, XXL) </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-11.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-12.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung A20
-                                                    Pro Ultra CPU 4/64 GB </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-7.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-8.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blink Home
-                                                    Security Camera System 01 </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
-                                <div class="product__slider owl-carousel">
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-1.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-2.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> High Quality
-                                                    Glass Ultra-Thin Kitchen Scale</a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$500.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-3.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-4.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> LG 27UD58:
-                                                    £347.21, Ebuyer.com </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$560.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-5.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-6.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung
-                                                    C49J89: £875, Debenhams Plus </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$450.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-7.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-8.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blink Home
-                                                    Security Camera System 01 </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-9.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-10.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blue t-shir
-                                                    for men (X, M, XL, XXL) </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-11.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-12.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung A20
-                                                    Pro Ultra CPU 4/64 GB </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-7.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-8.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blink Home
-                                                    Security Camera System 01 </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="hot" role="tabpanel" aria-labelledby="hot-tab">
-                                <div class="product__slider owl-carousel">
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-1.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-2.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> High Quality
-                                                    Glass Ultra-Thin Kitchen Scale</a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$500.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-3.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-4.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> LG 27UD58:
-                                                    £347.21, Ebuyer.com </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$560.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-5.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-6.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung
-                                                    C49J89: £875, Debenhams Plus </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$450.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-7.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-8.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blink Home
-                                                    Security Camera System 01 </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-9.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-10.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Blue t-shir
-                                                    for men (X, M, XL, XXL) </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="product-details.html" class="w-img">
-                                                <img src="assets/img/shop/product/product-11.jpg" alt="product">
-                                                <img class="second-img" src="assets/img/shop/product/product-12.jpg"
-                                                    alt="product">
-                                            </a>
-                                            <div class="product__action p-absolute">
-                                                <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-                                                    <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <h6 class="product-name">
-                                                <a class="product-item-link" href="product-details.html"> Samsung A20
-                                                    Pro Ultra CPU 4/64 GB </a>
-                                            </h6>
-                                            <div class="rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <span class="price">$720.00</span>
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="random" role="tabpanel" aria-labelledby="random-tab">
-                                <div class="product__slider owl-carousel">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- best selling area end -->
 
         <!-- best selling area start -->
 
@@ -1171,7 +439,7 @@ if ($product_data["qty"] > 0) {
                                         </div>
                                         <div class="product__add-btn">
                                             <button type="button"
-                                            onclick="addToCart(<?php echo $product_data['product_id']; ?>);">Add to
+                                                onclick="addToCart(<?php echo $product_data['product_id']; ?>);">Add to
                                                 Cart</button>
                                         </div>
                                     </div>
@@ -1202,17 +470,17 @@ if ($product_data["qty"] > 0) {
 
 
         <!-- banner area start -->
-        <section class="banner__area pt-20 grey-bg-2">
+        <section class="banner__area pt-20 grey-bg-2 border-danger border-top-100">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-4.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img40; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-5.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img41; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -1377,17 +645,17 @@ if ($product_data["qty"] > 0) {
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-6.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img50; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-7.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img51; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="assets/img/banner/banner-8.jpg" alt=""></a>
+                            <a href="product-details.html"><img src="admin/<?php echo $img52; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -1430,34 +698,37 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
   ?>
 
                                     <div class="product__thumb product__thumb-sale p-relative">
-                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>" class="w-img">
+                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"
+                                            class="w-img">
                                             <img src="admin/<?php echo $image_data["code"];?>" alt="product">
-                                            
+
                                         </a>
                                     </div>
                                     <div class="product__content">
                                         <h6 class="product-name">
-                                            <a class="product-item-link" href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo $product_data["name"];?></a>
+                                            <a class="product-item-link"
+                                                href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo $product_data["name"];?></a>
                                         </h6>
 
                                         <?php
                                             if ($product_data["discount"] > 0) {
                                                 ?>
-                                                  <span class="price-old">Rs. <del><?php echo $product_data["price"];?>.00</del> </span>
-                                                   
-                                               
-                                                  <span class="new new-2">Rs.<?php echo $product_data["price"];?>.00</span>
-                                                <?php
+                                        <span class="price-old">Rs. <del><?php echo $product_data["price"];?>.00</del>
+                                        </span>
+
+
+                                        <span class="new new-2">Rs.<?php echo $product_data["price"];?>.00</span>
+                                        <?php
                                             }else {
                                                 ?>
-                                                  <span class="new new-2">Rs.<?php echo $product_data["price"];?>.00</span>
-                                         
+                                        <span class="new new-2">Rs.<?php echo $product_data["price"];?>.00</span>
 
-                                                <?php
+
+                                        <?php
                                             }
                                             ?>
-                                       
-                                       
+
+
                                     </div>
                                 </div>
 
@@ -1465,13 +736,13 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
 
 
 
-<?php
+                                <?php
 
  }
 
 ?>
 
-                                
+
                             </div>
                         </div>
                     </div>

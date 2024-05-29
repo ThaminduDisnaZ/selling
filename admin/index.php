@@ -6,15 +6,6 @@ if (isset($_SESSION["a"])) {
 ?>
 
 
-
-
-
-
-
-
-
-
-
 <!doctype html>
 <html class="no-js" lang="en">
 
