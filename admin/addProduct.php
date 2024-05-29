@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -107,20 +106,28 @@ require "sideheader.php";
                             <div class="col-lg-3 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Product Discount (%)" id="pdiscount"></div>
 
-                                    <div class="col-lg-3 col-12 mb-30"><button class="button button-outline button-primary" onclick="caldis();">Calculate Discount</button></div>
+
+                            <div class="col-lg-3 col-12 mb-30"><button class="button button-outline button-primary"
+                                    onclick="caldis();">Calculate Discount</button></div>
 
 
-                                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Delivary Fee" id="delivery"></div>
-                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis">
-                                
-                                  
-                                </h3 ></div>
+                            <div class="col-lg-6 col-12 mb-30 text-center">
+                                <h3 id="caldis">
+
+
+                                </h3>
+                            </div>
+                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
+                                    placeholder="Quantity" id="qty"></div>
+
+
                             <div class="box-body">
-                                
-                                <div class="quill mb-30" >
-                                
-                                
+
+                                <div class="quill mb-30">
+
+
                                 </div>
 
 
@@ -128,9 +135,7 @@ require "sideheader.php";
                             </div>
 
 
-                            
-                            <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Quantity" id="qty"></div>
+
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="category">
@@ -148,6 +153,33 @@ require "sideheader.php";
                                         ?>
                                     <option value="<?php echo $category_data["category_id"] ?>">
                                         <?php echo $category_data["category"] ?></option>
+                                    <?php
+                                        }
+
+                                     ?>
+
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="warranty">
+                                    <option value="status">Select Warranty</option>
+
+
+
+                                    <?php
+
+                                        $warranty_rs = Database::search("SELECT * FROM `warranty`");
+                                        $warranty_num = $warranty_rs->num_rows;
+
+                                        for ($x = 0; $x < $warranty_num; $x++) {
+                                            $warranty_data = $warranty_rs->fetch_assoc();
+                                        ?>
+                                    <option value="<?php echo $warranty_data["warranty_id"] ?>">
+                                        <?php echo $warranty_data["warranty"] ?></option>
                                     <?php
                                         }
 
@@ -399,38 +431,46 @@ require "sideheader.php";
                         </div>
 
                         <h4 class="title">Product Gallery</h4>
-                         <div class="col-12">
-                                <div class="row">
-                                   
-                                    <div class=" col-12 ">
-                                        <div class="row">
-                                            <div class="col-3 border border-warning rounded ">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i0" />
-                                            </div>
-                                            <div class="col-3 border border-warning rounded ml-10">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i1" />
-                                            </div>
-                                            <div class="col-3 border border-warning rounded ml-10">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i2" />
-                                            </div>
+                        <div class="col-12">
+                            <div class="row">
+
+                                <div class=" col-12 ">
+                                    <div class="row">
+                                        <div class="col-3 border border-warning rounded ">
+                                            <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid"
+                                                style="width: 250px;" id="i0" />
+                                        </div>
+                                        <div class="col-3 border border-warning rounded ml-10">
+                                            <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid"
+                                                style="width: 250px;" id="i1" />
+                                        </div>
+                                        <div class="col-3 border border-warning rounded ml-10">
+                                            <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid"
+                                                style="width: 250px;" id="i2" />
                                         </div>
                                     </div>
-                                    <div class="col-6 d-grid mt-3 mb-50">
-                                        <input type="file" class="d-none" id="imageuploader" multiple />
-                                        <label for="imageuploader" onclick="changeProductImage();" class="button button-outline button-secondary"> Select Images <i class="ti-upload"></i></label>
-                                    </div>
+                                </div>
+                                <div class="col-6 d-grid mt-3 mb-50">
+                                    <input type="file" class="d-none" id="imageuploader" multiple />
+                                    <label for="imageuploader" onclick="changeProductImage();"
+                                        class="button button-outline button-secondary"> Select Images <i
+                                            class="ti-upload"></i></label>
                                 </div>
                             </div>
+                        </div>
 
 
 
                         <!-- Button Group Start -->
                         <div class="row">
                             <div class="d-flex flex-wrap justify-content-end col mbn-10">
-                                <button class="button button-outline button-primary mb-10 ml-10 mr-0" onclick="addProduct();">Save &
+                                <button class="button button-outline button-primary mb-10 ml-10 mr-0"
+                                    onclick="addProduct();">Save &
                                     Publish</button>
-                                <button class="button button-outline button-info mb-10 ml-10 mr-0"  onclick="changeProductImage();">Upload Images</button>
-                                <button class="button button-outline button-danger mb-10 ml-10 mr-0"  onclick="addProduct();">Delete
+                                <button class="button button-outline button-info mb-10 ml-10 mr-0"
+                                    onclick="changeProductImage();">Upload Images</button>
+                                <button class="button button-outline button-danger mb-10 ml-10 mr-0"
+                                    onclick="addProduct();">Delete
                                     Product</button>
                             </div>
                         </div><!-- Button Group End -->

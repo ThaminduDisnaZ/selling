@@ -113,7 +113,7 @@ if (isset($_GET["id"])  ) {
             <div class="add-edit-product-wrap col-12">
 
                 <div class="add-edit-product-form">
-                    <form action="#">
+                
 
                         <h4 class="title">About Product</h4>
 
@@ -132,7 +132,7 @@ if (isset($_GET["id"])  ) {
 
                                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Delivary Fee" id="delivery" value="<?php echo ($product_data["delivery_fee"]); ?>"></div>
-                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis" value=""><?php echo ($product_data["dprice"]); ?>
+                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis" value="">Discount Price Now: Rs.<?php echo ($product_data["dprice"]); ?>.00
                                 
                                   
                                 </h3 ></div>
@@ -149,32 +149,60 @@ if (isset($_GET["id"])  ) {
 
 
                             
+
+
+
+                            
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
                                     placeholder="Quantity" id="qty" value="<?php echo ($product_data["qty"]); ?>"></div>
 
                             <div class="col-lg-6 col-12 mb-30">
-                                <select class="form-control select2" id="category">
-                                    <?php
-                                    
-                                    
-                                    $categoryi_rs = Database::search("SELECT * FROM `category` WHERE category_id ='" .$product_data["category_id"] . "'");
+                            <select class="form-control select2" id="category">
+    <?php
+    $categoryi_rs = Database::search("SELECT * FROM `category` WHERE category_id ='" . $product_data["category_id"] . "'");
+    $categoryi_data =  $categoryi_rs->fetch_assoc();
+    ?>
+    <option value="<?php echo $categoryi_data["category_id"] ?>"><?php echo ($categoryi_data["category"]) ?></option>
+
+    <?php
+    $category_rs = Database::search("SELECT * FROM `category`");
+    $category_num = $category_rs->num_rows;
+    for ($x = 0; $x < $category_num; $x++) {
+        $category_data = $category_rs->fetch_assoc();
+        ?>
+        <option value="<?php echo $category_data["category_id"] ?>">
+            <?php echo $category_data["category"] ?></option>
+    <?php
+    }
+    ?>
+</select>
+                            </div>
+
+                            <div class="col-lg-6 col-12 mb-30">
+                                <select class="form-control select2" id="warranty">
                                    
-                                    $categoryi_data =  $categoryi_rs->fetch_assoc();
+                                <?php
+                                    
+                                    
+                                    $warranty_rs = Database::search("SELECT * FROM `warranty` WHERE warranty_id ='" .$product_data["warranty_id"] . "'");
+                                   
+                                    $warranty_data =  $warranty_rs->fetch_assoc();
                                     ?>
-                                    <option value="<?php echo $category_data["category_id"] ?>"><?php echo ($categoryi_data["category"]) ?></option>
+                                    <option value="<?php echo $warranty_data["warranty_id"] ?>"><?php echo ($warranty_data["warranty"]) ?></option>
+
 
 
 
                                     <?php
 
-                                        $category_rs = Database::search("SELECT * FROM `category`");
-                                        $category_num = $category_rs->num_rows;
+                                        $warranty_rs = Database::search("SELECT * FROM `warranty`");
+                                        $warranty_num = $warranty_rs->num_rows;
 
-                                        for ($x = 0; $x < $category_num; $x++) {
-                                            $category_data = $category_rs->fetch_assoc();
+                                        for ($x = 0; $x < $warranty_num; $x++) {
+                                            $warranty_data = $warranty_rs->fetch_assoc();
                                         ?>
-                                    <option value="<?php echo $category_data["category_id"] ?>">
-                                        <?php echo $category_data["category"] ?></option>
+                                    <option value="<?php echo $warranty_data["warranty_id"] ?>">
+                                        <?php echo $warranty_data["warranty"] ?></option>
                                     <?php
                                         }
 
@@ -185,11 +213,17 @@ if (isset($_GET["id"])  ) {
                                 </select>
                             </div>
 
-
-
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="brand">
-                                    <option value="status">Select Brand</option>
+                                <?php
+                                    
+                                    
+                                    $brand_rs = Database::search("SELECT * FROM `brand` WHERE brand_id ='" .$product_data["brand_id"] . "'");
+                                   
+                                    $brand_data =  $brand_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $brand_data["brand_id"] ?>"><?php echo ($brand_data["brand"]) ?></option>
+
 
 
 
@@ -219,7 +253,18 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="model">
-                                    <option value="status">Select Model</option>
+
+                                <?php
+                                    
+                                    
+                                    $model_rs = Database::search("SELECT * FROM `model` WHERE model_id ='" .$product_data["model_id"] . "'");
+                                   
+                                    $model_data =  $model_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $model_data["model_id"] ?>"><?php echo ($model_data["model"]) ?></option>
+
+
+
 
 
 
@@ -246,7 +291,17 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="display">
-                                    <option value="status">Select Display</option>
+                                <?php
+                                    
+                                    
+                                    $display_rs = Database::search("SELECT * FROM `display` WHERE display_id ='" .$product_data["display_id"] . "'");
+                                   
+                                    $display_data =  $display_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $display_data["display_id"] ?>"><?php echo ($display_data["display"]) ?></option>
+
+
+
 
 
 
@@ -274,7 +329,19 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="cpu">
-                                    <option value="status">Select CPU</option>
+                                <?php
+                                    
+                                    
+                                    $cpu_rs = Database::search("SELECT * FROM `cpu` WHERE cpu_id ='" .$product_data["cpu_id"] . "'");
+                                   
+                                    $cpu_data =  $cpu_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $cpu_data["cpu_id"] ?>"><?php echo ($cpu_data["cpu"]) ?></option>
+
+
+
+
+
 
 
 
@@ -303,7 +370,17 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="ram">
-                                    <option value="status">Select RAM</option>
+                                <?php
+                                    
+                                    
+                                    $ram_rs = Database::search("SELECT * FROM `ram` WHERE ram_id ='" .$product_data["ram_id"] . "'");
+                                   
+                                    $ram_data =  $ram_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $ram_data["ram_id"] ?>"><?php echo ($ram_data["ram"]) ?></option>
+
+
+
 
 
 
@@ -330,7 +407,16 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="gpu">
-                                    <option value="status">Select GPU</option>
+                                <?php
+                                    
+                                    
+                                    $gpu_rs = Database::search("SELECT * FROM `gpu` WHERE gpu_id ='" .$product_data["gpu_id"] . "'");
+                                   
+                                    $gpu_data =  $gpu_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $gpu_data["gpu_id"] ?>"><?php echo ($gpu_data["gpu"]) ?></option>
+
+
 
 
 
@@ -359,7 +445,17 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="storage">
-                                    <option value="status">Select Storage</option>
+                              
+                                <?php
+                                    
+                                    
+                                    $storage_rs = Database::search("SELECT * FROM `storage` WHERE storage_id ='" .$product_data["storage_id"] . "'");
+                                   
+                                    $storage_data =  $storage_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $storage_data["storage_id"] ?>"><?php echo ($storage_data["storage"]) ?></option>
+
+
 
 
 
@@ -387,7 +483,16 @@ if (isset($_GET["id"])  ) {
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="size">
-                                    <option value="status">Select Size</option>
+                                   
+                                <?php
+                                    
+                                    
+                                    $size_rs = Database::search("SELECT * FROM `size` WHERE size_id ='" .$product_data["size_id"] . "'");
+                                   
+                                    $size_data =  $size_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $size_data["size_id"] ?>"><?php echo ($size_data["size"]) ?></option>
+
 
 
 
@@ -428,18 +533,35 @@ if (isset($_GET["id"])  ) {
                         <h4 class="title">Product Gallery</h4>
                          <div class="col-12">
                                 <div class="row">
-                                   
+                                
+                                <?php
+                              
+                        $image_rs = Database::search("SELECT * FROM `images` WHERE `product_id`='"  .$pid  . "'");
+                        $image_num = $image_rs->num_rows;
+                        $img = array();
+                 
+
+?>
                                     <div class=" col-12 ">
                                         <div class="row">
-                                            <div class="col-3 border border-warning rounded ">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i0" />
-                                            </div>
-                                            <div class="col-3 border border-warning rounded ml-10">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i1" />
-                                            </div>
-                                            <div class="col-3 border border-warning rounded ml-10">
-                                                <img src="assets\images\gallery\profile-gallery-2.jpg" class="img-fluid" style="width: 250px;" id="i2" />
-                                            </div>
+
+<?php
+
+for ($x = 0 ; $x < $image_num ; $x++) {
+        
+
+    $image_data = $image_rs->fetch_assoc();
+    $img[$x] = $image_data["code"];
+    ?>
+    <div class="col-3 border border-warning rounded ">
+    <img src="<?php echo $img["$x"]; ?>" class="img-fluid" style="width: 250px;" id="<?php echo[$x]?>" />
+</div>
+<?php
+}
+
+?>
+                                          
+
                                         </div>
                                     </div>
                                     <div class="col-6 d-grid mt-3 mb-50">
@@ -454,15 +576,14 @@ if (isset($_GET["id"])  ) {
                         <!-- Button Group Start -->
                         <div class="row">
                             <div class="d-flex flex-wrap justify-content-end col mbn-10">
-                                <button class="button button-outline button-primary mb-10 ml-10 mr-0" onclick="addProduct();">Save &
-                                    Publish</button>
-                                <button class="button button-outline button-info mb-10 ml-10 mr-0"  onclick="changeProductImage();">Upload Images</button>
-                                <button class="button button-outline button-danger mb-10 ml-10 mr-0"  onclick="addProduct();">Delete
-                                    Product</button>
+                                <button class="button button-outline button-primary mb-10 ml-10 mr-0" onclick="updateProduct(<?php echo ($pid) ?>)">Save &
+                                    Update</button>
+                                <button class="button button-outline button-info mb-10 ml-10 mr-0"  onclick="cancelup();">Cancel</button>
+                             
                             </div>
                         </div><!-- Button Group End -->
 
-                    </form>
+              
                 </div>
 
             </div><!-- Add or Edit Product End -->

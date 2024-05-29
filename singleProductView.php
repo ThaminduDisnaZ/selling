@@ -6,6 +6,8 @@ if (isset($_GET["id"])  ) {
 
     $pid = $_GET["id"];
 
+
+
     $product_rs = Database::search("SELECT product.name, product.stitle, product.qty, product.price,
     product.discount,product.dprice, product.discription, product.date, product.delivery_fee,
     product.display_id, product.brand_id, product.cpu_id, product.ram_id, product.gpu_id, product.storage_id,

@@ -20,6 +20,8 @@ $size = $_POST["si"];
 $pmkeyword = $_POST["pm"];
 $delivery = $_POST["del"];
 $dprice = $_POST["dprice"];
+$warranty = $_POST["war"];
+
 
 
 
@@ -29,6 +31,8 @@ if (empty($title)) {
     echo ("Please Enter Product Title");
 }else if (empty($discount)) {
     echo ("Please Press Discount Calculate Button");
+}else if (empty($warranty)) {
+    echo ("Please Enter Warranty");
 }else if (empty($stitle)) {
     echo ("Please Enter Product Sub-Title");
 }else if (empty($delivery)) {
@@ -70,9 +74,9 @@ if (empty($title)) {
 
     Database::iud("INSERT INTO `product`
     (`name`,`stitle`,`qty`,`price`,`discount`,`dprice`,`discription`,`date`,`delivery_fee`,`display_id`,
-    `brand_id`,`cpu_id`,`ram_id`,`gpu_id`,`storage_id`,`produt_status_id`,`model_id`,`category_id`,`size_id`) VALUES 
+    `brand_id`,`cpu_id`,`ram_id`,`gpu_id`,`storage_id`,`produt_status_id`,`model_id`,`category_id`,`size_id`,`warranty_id`,`bestsell_id`,`flashsell_id`) VALUES 
     ('".$title."','".$stitle."','".$qty."','".$price."','".$discount."','".$dprice."','".$desc."','".$date."','".$delivery."','".$display."',
-    '".$brand."','".$cpu."','".$ram."','".$gpu."','".$storage."','".$status."','".$model."','".$category."','".$size."')");
+    '".$brand."','".$cpu."','".$ram."','".$gpu."','".$storage."','".$status."','".$model."','".$category."','".$size."','".$warranty."', '2','2')");
 
 
 

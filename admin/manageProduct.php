@@ -143,7 +143,7 @@ if ($p["qty"] > 0) {
                                         <div class="table-action-buttons">
                                             <a class="view button button-box button-xs button-primary"
                                                 href="../<?php echo "singleProductView.php?id=" . $p["product_id"]; ?>"><i class="zmdi zmdi-more"></i></a>
-                                            <a class="edit button button-box button-xs button-info" href="<?php echo "updateProduct.php?id=" . $p["product_id"]; ?>"><i
+                                            <a class="edit button button-box button-xs button-info" href="<?php echo "updateProduct.php?id=" .$p["product_id"]; ?>"><i
                                                     class="zmdi zmdi-edit"></i></a>
                                             <a class="delete button button-box button-xs button-danger" href="#"><i
                                                     class="zmdi zmdi-delete"></i></a>

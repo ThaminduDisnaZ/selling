@@ -288,6 +288,39 @@ function addstorage() {
     request.send(f);
 
 }
+
+
+
+function addwarranty(){
+
+  
+        var addwarranty = document.getElementById("addwarranty");
+    
+        var f = new FormData();
+        f.append("addwarranty", addwarranty.value);
+    
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+    
+            if (request.readyState == 4 && request.status == 200) {
+    
+                var response = request.responseText;
+    
+                if (response == "Success") {
+                    swal("Warranty Added Successfully", "", "success");
+                } else {
+                    swal(response, "", "error");
+                }
+    
+            }
+    
+        }
+    
+    
+        request.open("POST", "addWarrantyProcess.php", true);
+        request.send(f);
+
+}
 // ***********************************************************************************
 function addgpu() {
     var addgpu = document.getElementById("addgpu");
@@ -522,6 +555,8 @@ function caldis() {
  
  }
 
+ 
+
 
 function addProduct(param) {
 
@@ -553,6 +588,7 @@ function addProduct(param) {
     var totaldd = priced - totalamountd;
     var totald = parseInt(totaldd.toFixed(0));
    var caldis = document.getElementById("caldis").innerHTML ;
+   var warranty = document.getElementById("warranty") ;
     
   if (caldis == "No Discount") {
         var dprice = 0;
@@ -581,6 +617,7 @@ function addProduct(param) {
     f.append("pm", pmkeyword.value);
     f.append("del", delivery.value);
     f.append("dprice", dprice);
+    f.append("war", warranty.value);
 
 
   
@@ -621,5 +658,81 @@ function addProduct(param) {
     request.open("POST", "addProductProcess.php", true);
     request.send(f);
 
+}
+
+function cancelup(){
+
+    window.location = "./manageProduct.php";
+
+}
+
+
+
+
+function updateProduct(pid) {
+    var title = document.getElementById("pname");
+    var stitle = document.getElementById("psname");
+    var price = document.getElementById("pprice");
+    var discount = document.getElementById("pdiscount");
+    var desc = document.getElementById("pdescription");
+    var qty = document.getElementById("qty");
+    var category = document.getElementById("category");
+    var brand = document.getElementById("brand");
+    var model = document.getElementById("model");
+    var display = document.getElementById("display");
+    var cpu = document.getElementById("cpu");
+    var ram = document.getElementById("ram");
+    var gpu = document.getElementById("gpu");
+    var storage = document.getElementById("storage");
+    var size = document.getElementById("size");
+    var pmkeyword = document.getElementById("pmkeyword");
+    var image = document.getElementById("imageuploader");
+    var delivery = document.getElementById("delivery");
+    var warranty = document.getElementById("warranty");
+    
+    // Calculate discounted price
+    var priced = parseFloat(price.value);
+    var discountd = parseFloat(discount.value);
+    var totalamountd = (discountd * priced) / 100;
+    var totaldd = priced - totalamountd;
+    var totald = parseInt(totaldd.toFixed(0));
+    var dprice = discountd > 0 ? totald : 0;
+
+    var formData = new FormData();
+    formData.append("id", pid); // Add product ID to form data
+    formData.append("ti", title.value);
+    formData.append("st", stitle.value);
+    formData.append("pr", price.value);
+    formData.append("di", discount.value);
+    formData.append("de", desc.innerHTML);
+    formData.append("qt", qty.value);
+    formData.append("ca", category.value);
+    formData.append("br", brand.value);
+    formData.append("mo", model.value);
+    formData.append("dis", display.value);
+    formData.append("cp", cpu.value);
+    formData.append("ra", ram.value);
+    formData.append("gp", gpu.value);
+    formData.append("str", storage.value);
+    formData.append("si", size.value);
+    formData.append("pm", pmkeyword.value);
+    formData.append("del", delivery.value);
+    formData.append("dprice", dprice);
+    formData.append("war", warranty.value);
+
+    var file_count = image.files.length;
+    for (var x = 0; x < file_count; x++) {
+        formData.append("image" + x, image.files[x]);
+    }
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
+            swal("Add Product Error", response, "error");
+        }
+    }
+    request.open("POST", "updateProductProcess.php", true);
+    request.send(formData);
 }
 

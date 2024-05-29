@@ -184,6 +184,16 @@ require "sideheader.php";
                         </div>
                     </div>
 
+                    <div class="row align-items-center mb-25">
+                        <label for="formLayoutUsername1">Add Warranty</label>
+                        <div class="col-9 ">
+                            <input type="text" class="form-control secondary" placeholder="Input New Warranty" id="addwarranty">
+                        </div>
+                        <div class="col-2 ">
+                            <button class="button button-outline button-secondary  "onclick="addwarranty();"><span>Add</span></button>
+                        </div>
+                    </div>
+
 
 
 
