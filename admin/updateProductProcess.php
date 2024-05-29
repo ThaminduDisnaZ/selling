@@ -122,12 +122,9 @@ if($lenght<=3 && $lenght > 0){
    
     for($x = 0; $x < $lenght;$x++){
    
-        if(isset($_FILES)){
-            
+        if(isset($_FILES)){         
 
 
-
-            echo ("New Warranty Updated</b> <br/>");
             $img_file = $_FILES["i".$x];
             $file_type  = $img_file["type"];
 
@@ -157,10 +154,7 @@ if($lenght<=3 && $lenght > 0){
         }
     }
 
-}else{
-    echo ("Invalid Image Count!");
 }
-
 
 
 }else{

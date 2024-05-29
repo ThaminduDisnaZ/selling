@@ -730,10 +730,11 @@ function updateProduct(pid) {
     formData.append("dprice", dprice);
     formData.append("war", warranty.value);
 
-    var img_count = images.files.length;
 
-    for (var x = 0; x < img_count; x++) {
+
+    for (var x = 0; x < 3; x++) {
         formData.append("i" + x, images.files[x]);
+       
     }
 
     var request = new XMLHttpRequest();
@@ -741,7 +742,14 @@ function updateProduct(pid) {
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
             var response = request.responseText;
-            alert(response);
+         
+          if (response == "") {
+         
+            document.getElementById("updatemsg").innerHTML = "Not Changes";
+          }else{
+            document.getElementById("updatemsg").innerHTML = response;
+
+          }
         }
     }
     request.open("POST", "updateProductProcess.php", true);
