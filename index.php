@@ -199,11 +199,11 @@ $img52 = $b52_data["path"];
                             <div class="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
                                 <div class="banner__area">
                                     <div class="banner__item mb-20 w-img">
-                                        <a href="product-details.html"><img src="admin/<?php echo $img30; ?>"
+                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img30; ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="banner__item w-img">
-                                        <a href="product-details.html"><img src="admin/<?php echo $img31; ?>"
+                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img31; ?>"
                                                 alt=""></a>
                                     </div>
                                 </div>
@@ -285,17 +285,17 @@ $img52 = $b52_data["path"];
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item w-img mb-30">
-                            <a href="product-details.html"><img src="admin/<?php echo $img60; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img60; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img61; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img61; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img62; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img62; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -475,12 +475,12 @@ if ($product_data["qty"] > 0) {
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img40; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img40; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img41; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img41; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -558,7 +558,7 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
                                             <span class="price"><?php echo $product_data["name"];?>
                                                 <h6 class="product-name">
                                                     <a class="product-item-link"
-                                                        href="product-details.html">#<?php echo $product_data["stitle"];?></a>
+                                                        href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>">#<?php echo $product_data["stitle"];?></a>
                                                 </h6>
 
                                                 <div class="rating">
@@ -645,17 +645,17 @@ if ($product_data["qty"] > 0) {
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img50; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img50; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img51; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img51; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="product-details.html"><img src="admin/<?php echo $img52; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img52; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -994,7 +994,7 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <div class="product__modal-content">
-                                        <h4><a href="product-details.html">Samsung C49J89: £875, Debenhams Plus</a></h4>
+                                        <h4><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo $product_data["name"];?></a></h4>
                                         <div class="product__modal-des mb-40">
                                             <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit
                                                 eorum claritatem. Investigationes demonstraverunt </p>
