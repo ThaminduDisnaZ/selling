@@ -756,3 +756,36 @@ function updateProduct(pid) {
     request.send(formData);
 }
 
+function updateBanner() {
+
+    var title = document.getElementById("banner");
+    var images = document.getElementById("imageuploader");
+
+    var f = new FormData();
+
+    f.append("title",title.value);
+
+    for (var x = 0; x < 3; x++) {
+        f.append("i" + x, images.files[x]);
+       
+    }
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function (){
+
+        if (request.readyState == 4 && request.status == 200) {
+            
+           var response = request.responseText;
+
+           alert(response);
+
+        }
+
+    }
+
+    request.open("POST","addBannerProcess.php", true);
+    request.send(f);
+
+
+}
