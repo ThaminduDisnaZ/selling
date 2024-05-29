@@ -504,13 +504,16 @@ function addsize() {
 
 
 function changeProductImage() {
+
+
+    
     var image = document.getElementById("imageuploader");
 
     image.onchange = function () {
         var file_count = image.files.length;
 
         if (file_count <= 3) {
-
+     
             for (x = 0; x < file_count; x++) {
                 var file = this.files[x];
                 var url = window.URL.createObjectURL(file);
@@ -688,18 +691,25 @@ function updateProduct(pid) {
     var pmkeyword = document.getElementById("pmkeyword");
     var image = document.getElementById("imageuploader");
     var delivery = document.getElementById("delivery");
-    var warranty = document.getElementById("warranty");
-    
-    // Calculate discounted price
-    var priced = parseFloat(price.value);
-    var discountd = parseFloat(discount.value);
-    var totalamountd = (discountd * priced) / 100;
+    var warranty = document.getElementById("warranty");    
+    var priced = document.getElementById("pprice").value;
+    var discountd = document.getElementById("pdiscount").value; 
+    var totalamountd = (discountd * priced) / 100 ;
     var totaldd = priced - totalamountd;
     var totald = parseInt(totaldd.toFixed(0));
-    var dprice = discountd > 0 ? totald : 0;
+   var caldis = document.getElementById("caldis").innerHTML ;
+   var images = document.getElementById("imageuploader");
+ 
+    
+  if (caldis == "No Discount") {
+        var dprice = 0;
+ 
+  } else {
+        var dprice = totald;
+  }
 
     var formData = new FormData();
-    formData.append("id", pid); // Add product ID to form data
+    formData.append("id", pid);
     formData.append("ti", title.value);
     formData.append("st", stitle.value);
     formData.append("pr", price.value);
@@ -720,16 +730,18 @@ function updateProduct(pid) {
     formData.append("dprice", dprice);
     formData.append("war", warranty.value);
 
-    var file_count = image.files.length;
-    for (var x = 0; x < file_count; x++) {
-        formData.append("image" + x, image.files[x]);
+    var img_count = images.files.length;
+
+    for (var x = 0; x < img_count; x++) {
+        formData.append("i" + x, images.files[x]);
     }
 
     var request = new XMLHttpRequest();
+
     request.onreadystatechange = function () {
-        if (request.readyState == 4 && request.status == 200) {
+        if (request.readyState == 4) {
             var response = request.responseText;
-            swal("Add Product Error", response, "error");
+            alert(response);
         }
     }
     request.open("POST", "updateProductProcess.php", true);

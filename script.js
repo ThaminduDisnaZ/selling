@@ -120,7 +120,7 @@ function addToCart(id) {
            if (t == "Please Sign In or Register.") {
             swal("Add Cart Failed", t, "error");
            }else{
-            swal("Add Cart Failed", "t", "error");
+            swal("Add Cart Failed", t, "error");
            }
        }
    }

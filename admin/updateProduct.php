@@ -138,13 +138,14 @@ if (isset($_GET["id"])  ) {
                                 </h3 ></div>
                             <div class="box-body">
                                 
-                                <div class="quill mb-30" >
-                                
-                                
-                                </div>
+                               
 
 
-
+                                <div class="quill">
+                                <p>Hello World!</p>
+                                <p>Some initial <strong>bold</strong> text</p>
+                                <p><br></p>
+                            </div>
                             </div>
 
 
@@ -539,27 +540,26 @@ if (isset($_GET["id"])  ) {
                         $image_rs = Database::search("SELECT * FROM `images` WHERE `product_id`='"  .$pid  . "'");
                         $image_num = $image_rs->num_rows;
                         $img = array();
+                        $img [0] = "resource/addproductimg.svg";
+                        $img [1] = "resource/addproductimg.svg";
+                        $img [2] = "resource/addproductimg.svg";
                  
 
 ?>
                                     <div class=" col-12 ">
                                         <div class="row">
 
-<?php
 
-for ($x = 0 ; $x < $image_num ; $x++) {
-        
-
-    $image_data = $image_rs->fetch_assoc();
-    $img[$x] = $image_data["code"];
-    ?>
-    <div class="col-3 border border-warning rounded ">
-    <img src="<?php echo $img["$x"]; ?>" class="img-fluid" style="width: 250px;" id="<?php echo[$x]?>" />
+    <div class="col-3 border border-warning rounded mr-10">
+    <img src="<?php echo($img[0]); ?>" class="img-fluid" style="width: 250px;" id="i0" />
 </div>
-<?php
-}
+<div class="col-3 border border-warning rounded mr-10">
+    <img src="<?php echo($img[1]); ?>" class="img-fluid" style="width: 250px;" id="i1" />
+</div>
+<div class="col-3 border border-warning rounded mr-10">
+    <img src="<?php echo($img[2]); ?>" class="img-fluid" style="width: 250px;" id="i2" />
+</div>
 
-?>
                                           
 
                                         </div>
@@ -576,8 +576,26 @@ for ($x = 0 ; $x < $image_num ; $x++) {
                         <!-- Button Group Start -->
                         <div class="row">
                             <div class="d-flex flex-wrap justify-content-end col mbn-10">
-                                <button class="button button-outline button-primary mb-10 ml-10 mr-0" onclick="updateProduct(<?php echo ($pid) ?>)">Save &
+                                <button class="button button-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3" onclick="updateProduct(<?php echo ($pid) ?>)">Save &
                                     Update</button>
+
+                                    <div class="modal fade" id="exampleModal3">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Update Status</h5>
+                                            <button class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p id="updatemsg"></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="button button-primary" data-bs-dismiss="modal">Ok</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                                 <button class="button button-outline button-info mb-10 ml-10 mr-0"  onclick="cancelup();">Cancel</button>
                              
                             </div>
