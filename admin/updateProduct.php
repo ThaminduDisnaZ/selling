@@ -136,15 +136,13 @@ if (isset($_GET["id"])  ) {
                                 
                                   
                                 </h3 ></div>
-                            <div class="box-body">
+                            <div class="box-body mb-25">
                                 
                                
 
 
                                 <div class="quill">
-                                <p>Hello World!</p>
-                                <p>Some initial <strong>bold</strong> text</p>
-                                <p><br></p>
+                                
                             </div>
                             </div>
 

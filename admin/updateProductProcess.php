@@ -112,18 +112,18 @@ if($p_data["warranty_id"] != $warranty){
 } 
 
 
-Database::iud("DELETE FROM `images` WHERE `product_id` = '".$pid."'");
+
 
 $lenght = sizeof($_FILES);
 $allowed_img_extentions = array("image/jpg","image/jpeg","image/png","image/svg+xml");
 
 
 if($lenght<=3 && $lenght > 0){
-   
+    Database::iud("DELETE FROM `images` WHERE `product_id` = '".$pid."'");
     for($x = 0; $x < $lenght;$x++){
    
         if(isset($_FILES)){         
-
+            
 
             $img_file = $_FILES["i".$x];
             $file_type  = $img_file["type"];

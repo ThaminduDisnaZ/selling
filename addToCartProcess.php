@@ -31,7 +31,7 @@ if(isset($_SESSION["u"])){
             if($product_qty>=$new_qty){
 
                 Database::iud("UPDATE `cart`SET`qty`='".$new_qty."'WHERE `product_id`='".$pid."' AND `user_id`='".$email."'");
-                echo("Product Updated");
+                echo("Product Already Added in Cart");
             }else{
                 echo("iq");
             }
