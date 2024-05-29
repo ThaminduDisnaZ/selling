@@ -5,6 +5,8 @@ session_start();
 
 if (isset($_SESSION["a"])) {
 
+ 
+
 ?>
 
 
@@ -61,7 +63,25 @@ require "adminHeader.php";
 
         <?php
 require "sideheader.php";
+if (isset($_GET["id"])  ) {
+
+    $pid = $_GET["id"];
+
+    $product_rs = Database::search("SELECT product.name, product.stitle, product.qty, product.price,
+    product.discount,product.dprice, product.discription, product.date, product.delivery_fee,
+    product.display_id, product.brand_id, product.cpu_id, product.ram_id, product.gpu_id, product.storage_id,
+    product.produt_status_id, product.model_id, product.category_id, product.size_id, product.warranty_id,
+    model.model AS model, brand.brand AS brand FROM `product`
+    LEFT JOIN model ON product.model_id = model.model
+    LEFT JOIN brand ON product.brand_id = brand.brand
+    WHERE product.product_id='" . $pid . "'");
+
+
+    $product_num = $product_rs->num_rows;
+    $product_data = $product_rs->fetch_assoc();
+
 ?>
+
 
 
 
@@ -99,20 +119,20 @@ require "sideheader.php";
 
                         <div class="row">
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
-                                    placeholder="Product Name" id="pname"></div>
+                                    placeholder="Product Name" id="pname" value="<?php echo ($product_data["name"]); ?>"></div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text"
-                                    placeholder="Product Sub-title" id="psname"></div>
+                                    placeholder="Product Sub-title" id="psname" value="<?php echo ($product_data["stitle"]); ?>"></div>
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Product Price*" id="pprice"></div>
+                                    placeholder="Product Price*" id="pprice" value="<?php echo ($product_data["price"]); ?>"></div>
                             <div class="col-lg-3 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Product Discount (%)" id="pdiscount"></div>
+                                    placeholder="Product Discount (%)" id="pdiscount" value="<?php echo ($product_data["discount"]); ?>"></div>
 
                                     <div class="col-lg-3 col-12 mb-30"><button class="button button-outline button-primary" onclick="caldis();">Calculate Discount</button></div>
 
 
                                     <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Delivary Fee" id="delivery"></div>
-                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis">
+                                    placeholder="Delivary Fee" id="delivery" value="<?php echo ($product_data["delivery_fee"]); ?>"></div>
+                                    <div class="col-lg-6 col-12 mb-30 text-center"><h3 id="caldis" value=""><?php echo ($product_data["dprice"]); ?>
                                 
                                   
                                 </h3 ></div>
@@ -130,11 +150,18 @@ require "sideheader.php";
 
                             
                             <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="number"
-                                    placeholder="Quantity" id="qty"></div>
+                                    placeholder="Quantity" id="qty" value="<?php echo ($product_data["qty"]); ?>"></div>
 
                             <div class="col-lg-6 col-12 mb-30">
                                 <select class="form-control select2" id="category">
-                                    <option value="status">Select Category</option>
+                                    <?php
+                                    
+                                    
+                                    $categoryi_rs = Database::search("SELECT * FROM `category` WHERE category_id ='" .$product_data["category_id"] . "'");
+                                   
+                                    $categoryi_data =  $categoryi_rs->fetch_assoc();
+                                    ?>
+                                    <option value="<?php echo $category_data["category_id"] ?>"><?php echo ($categoryi_data["category"]) ?></option>
 
 
 
@@ -477,7 +504,7 @@ require "sideheader.php";
     <script src="assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js"></script>
     <script src="assets/js/plugins/filepond/filepond-plugin-image-preview.min.js"></script>
     <script src="assets/js/plugins/filepond/filepond.active.js"></script>
-    <script src="assets/js/plugins/quill/quill.min.js"></script>
+    <script src="assets/js/plugins/quill/quill.min2.js"></script>
     <script src="assets/js/plugins/quill/quill.active.js"></script>
     <script src="./admin.js"></script>
 
@@ -488,6 +515,10 @@ require "sideheader.php";
 </html>
 
 <?php
+
+} else {
+    header("location:./error.html");
+}
 } else {
     
     header("Location: ./adminlogin.php");
