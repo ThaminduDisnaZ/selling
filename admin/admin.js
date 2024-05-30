@@ -778,7 +778,9 @@ function updateBanner() {
             
            var response = request.responseText;
 
-           alert(response);
+      
+           swal("Add Product Successfull",response, "success");
+           window.location.reload();
 
         }
 

@@ -35,22 +35,22 @@
     <!-- Add your site or application content here -->
 
     <!-- preloader area start -->
-  <div id="loading">
+    <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <div id="object"></div>
             </div>
         </div>
-    </div> 
+    </div>
     <!-- preloader area end -->
 
 
     <!-- back to top start -->
-<div class="progress-wrap">
+    <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
-    </div> 
+    </div>
     <!-- back to top end -->
 
 
@@ -165,7 +165,8 @@ $img52 = $b52_data["path"];
 
     <main>
         <!-- slider area satrt -->
-        <section class="slider__area pt-50 pb-50" data-background="admin/<?php echo $img20; ?>">
+        <section class="slider__area pt-50 pb-50" id="banners" data-background="admin/<?php echo $img20; ?>"
+            style="background-image: url(&quot; admin/<?php echo $img20; ?>  &quot;);">
             <div class="container">
                 <div class="row">
 
@@ -175,7 +176,7 @@ $img52 = $b52_data["path"];
                                 <div class="slider__inner slider-active">
 
 
-                          
+
 
 
                                     <div class="single-slider w-img">
@@ -199,12 +200,14 @@ $img52 = $b52_data["path"];
                             <div class="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
                                 <div class="banner__area">
                                     <div class="banner__item mb-20 w-img">
-                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img30; ?>"
-                                                alt=""></a>
+                                        <a
+                                            href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                                src="admin/<?php echo $img30; ?>" alt=""></a>
                                     </div>
                                     <div class="banner__item w-img">
-                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img31; ?>"
-                                                alt=""></a>
+                                        <a
+                                            href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                                src="admin/<?php echo $img31; ?>" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -280,22 +283,25 @@ $img52 = $b52_data["path"];
         <!-- features area end -->
 
         <!-- banner area start -->
-        <section class="banner__area pt-20 pb-10 grey-bg-2">
+        <section class="banner__area pt-20 pb-10 grey-bg-2" id="banners2">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item w-img mb-30">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img60; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img60; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img61; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img61; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img62; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img62; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -309,7 +315,7 @@ $img52 = $b52_data["path"];
 
 
 
-        <section class="best__sell pt-15 pb-40 grey-bg-2">
+        <section class="best__sell pt-15 pb-40 grey-bg-2" id="hp1">
             <div class="container">
                 <div class="row">
 
@@ -354,10 +360,7 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE `category_id`='".$cdata
  $product_num = $product_rs->num_rows;
 
  for($z=0;$z<$product_num;$z++){
-  $product_data=$product_rs->fetch_assoc();
-
-  
-
+  $product_data=$product_rs->fetch_assoc(); 
    $image_rs= Database::search("SELECT*FROM `images`WHERE `product_id`='".$product_data["product_id"]."'");
    $image_data=$image_rs->fetch_assoc();
 
@@ -470,17 +473,19 @@ if ($product_data["qty"] > 0) {
 
 
         <!-- banner area start -->
-        <section class="banner__area pt-20 grey-bg-2 border-danger border-top-100">
+        <section class="banner__area pt-20 grey-bg-2 border-danger border-top-100" id="banners3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img40; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img40; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img41; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img41; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -489,37 +494,36 @@ if ($product_data["qty"] > 0) {
         <!-- banner area end -->
 
         <!-- Flash sell area start -->
-        <section class="best__sell pt-15 pb-40 grey-bg-2">
-            <div class="container">
-                <div class="row">
+        <div class="container" id="hp2">
+            <div class="row">
 
 
-                    <div class="col-xl-12">
-                        <div class="section__head d-md-flex justify-content-between mb-40">
-                            <div class="section__title">
-                                <h3>Top Flash DEELS</h3>
-                            </div>
+                <div class="col-xl-12">
+                    <div class="section__head d-md-flex justify-content-between mb-40">
+                        <div class="section__title">
+                            <h3>Top Flash DEELS</h3>
                         </div>
-
                     </div>
 
-
-
-
-
-
-
-
-
-
                 </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="tab-content" id="best-sell">
-                            <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
-                                <div class="product__slider owl-carousel">
 
-                                    <?php
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="tab-content" id="best-sell">
+                        <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
+                            <div class="product__slider owl-carousel">
+
+                                <?php
 
 $product_rs=Database::search("SELECT*FROM `product`WHERE 
 `flashsell_id`='1'ORDER BY `date`");
@@ -535,54 +539,54 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
 
   ?>
 
-                                    <div class="product__item white-bg">
-                                        <div class="product__thumb p-relative">
-                                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"
-                                                class="w-img">
-                                                <img src="admin/<?php echo $image_data["code"];?>" alt="product">
+                                <div class="product__item white-bg">
+                                    <div class="product__thumb p-relative">
+                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"
+                                            class="w-img">
+                                            <img src="admin/<?php echo $image_data["code"];?>" alt="product">
 
-                                            </a>
-                                            <div class="product__action p-absolute">
+                                        </a>
+                                        <div class="product__action p-absolute">
+                                            <ul>
+                                                <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
+                                                </li>
+                                                <li><a href="#" title="Quick View" data-bs-toggle="modal"
+                                                        data-bs-target="#productModalId"><i
+                                                            class="fal fa-search"></i></a></li>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product__content text-center">
+                                        <span class="price"><?php echo $product_data["name"];?>
+                                            <h6 class="product-name">
+                                                <a class="product-item-link"
+                                                    href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>">#<?php echo $product_data["stitle"];?></a>
+                                            </h6>
+
+                                            <div class="rating">
                                                 <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i
-                                                                class="fal fa-heart"></i></a></li>
-                                                    <li><a href="#" title="Quick View" data-bs-toggle="modal"
-                                                            data-bs-target="#productModalId"><i
-                                                                class="fal fa-search"></i></a></li>
-
-                                                    </li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="product__content text-center">
-                                            <span class="price"><?php echo $product_data["name"];?>
-                                                <h6 class="product-name">
-                                                    <a class="product-item-link"
-                                                        href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>">#<?php echo $product_data["stitle"];?></a>
-                                                </h6>
 
-                                                <div class="rating">
-                                                    <ul>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <?php
+                                            <?php
 
 if ($product_data["qty"] > 0) {
     ?>
 
-                                                <p class="text-success"><?php echo $product_data["qty"] ?> In Stock</p>
+                                            <p class="text-success"><?php echo $product_data["qty"] ?> In Stock</p>
 
-                                                <?php
+                                            <?php
 } else {
     ?>
-                                                <p class="text-danger">Out of Stock</p>
-                                                <?php
+                                            <p class="text-danger">Out of Stock</p>
+                                            <?php
 }
 
 
@@ -590,72 +594,75 @@ if ($product_data["qty"] > 0) {
 ?>
 
 
-                                                <?php
+                                            <?php
                                             if ($product_data["discount"] > 0) {
                                                 ?>
-                                                <p>
-                                                    <span class="price ">Rs.<s>
-                                                            <?php echo $product_data["price"];?>.00</s></span>
-                                                </p>
-                                                <span class="price">Rs.<?php echo $product_data["dprice"];?>.00</span>
-                                                <?php
+                                            <p>
+                                                <span class="price ">Rs.<s>
+                                                        <?php echo $product_data["price"];?>.00</s></span>
+                                            </p>
+                                            <span class="price">Rs.<?php echo $product_data["dprice"];?>.00</span>
+                                            <?php
                                             }else {
                                                 ?>
-                                                <br>
-                                                <span class="price">Rs.<?php echo $product_data["price"];?>.00</span>
+                                            <br>
+                                            <span class="price">Rs.<?php echo $product_data["price"];?>.00</span>
 
-                                                <?php
+                                            <?php
                                             }
                                             ?>
 
-                                        </div>
-                                        <div class="product__add-btn">
-                                            <button type="button"
-                                                onclick="addToCart(<?php echo $product_data['product_id']; ?>);">Add to
-                                                Cart</button>
-                                        </div>
                                     </div>
+                                    <div class="product__add-btn">
+                                        <button type="button"
+                                            onclick="addToCart(<?php echo $product_data['product_id']; ?>);">Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
 
-                                    <?php
+                                <?php
  }
 
 ?>
 
 
 
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <?php
+                </div>
+                <?php
 
  ?>
-                </div>
-
-
             </div>
+
+
+        </div>
 
 
         </section>
         <!-- Flash sell area end -->
 
         <!-- banner area start -->
-        <section class="banner__area pb-10 grey-bg-2">
+        <section class="banner__area pb-10 grey-bg-2" id="banners4">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img50; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img50; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img51; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img51; ?>" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="banner__item mb-30 w-img">
-                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo $img52; ?>" alt=""></a>
+                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img
+                                    src="admin/<?php echo $img52; ?>" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -664,7 +671,7 @@ if ($product_data["qty"] > 0) {
         <!-- banner area end -->
 
         <!-- onsale product area start -->
-        <section class="onsell__area pt-15 pb-35 grey-bg-2">
+        <section class="onsell__area pt-15 pb-35 grey-bg-2" id="hp3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -752,7 +759,7 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
         <!-- onsale product area end -->
 
         <!-- blog area start -->
-        <section class="blog__area pb-40 grey-bg-2">
+        <!-- <section class="blog__area pb-40 grey-bg-2">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -866,8 +873,1598 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- blog area end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- product area start -->
+        <section class="product__area box-plr-75 pb-70 d-none" id="searcharia">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xxl-2 col-xl-3 col-lg-4">
+                        <div class="product__widget">
+                            
+                        
+                        <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion1">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="true" aria-controls="collapseTwo">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__price-slider">
+                                                        <div>
+                                                            <form action="#">
+                                                                <input type="text" id="amount" readonly>
+                                                            </form>
+                                                        </div>
+                                                        <div id="slider-range"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                               By Categories
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__color pt-10">
+                                                 
+
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                          
+                                                          
+                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="true" aria-controls="collapseThree">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="true" aria-controls="collapseFour">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                aria-expanded="true" aria-controls="collapseFive">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                                aria-expanded="true" aria-controls="collapseSix">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSix" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                                aria-expanded="true" aria-controls="collapseSeven">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseSeven" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                                aria-expanded="true" aria-controls="collapseEight">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseEight" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseNine"
+                                                aria-expanded="true" aria-controls="collapseNine">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseNine" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div class="product__widget-item mb-15">
+                                <div class="accordion" id="productWidgetAccordion2">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button product__widget-title" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTen"
+                                                aria-expanded="true" aria-controls="collapseTen">
+                                                Price
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTen" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingThree" data-bs-parent="#productWidgetAccordion2">
+                                            <div class="accordion-body">
+                                                <div class="product__widget-content">
+                                                    <div class="product__size pt-10">
+                                                    <?php
+                                                  $crs=Database::search("SELECT*FROM `category`");
+                                                  $cnum=$crs->num_rows;
+                                                  
+                                                  for($y=0;$y<$c_num;$y++){
+                                                    $c_data= $crs->fetch_assoc();
+                                                        ?>
+                                                        
+
+<li>
+                                                             
+                                                             <input id="remember" type="checkbox">
+                                                             <label for="remember"><?php  echo($c_data["category"]) ?></label>
+                                                             <br>
+                                                         </li>
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            
+
+
+
+
+
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
+                        <div class="product__grid-wrapper">
+                            
+                            <div class="product__grid-item-wrapper pt-70">
+                                <div class="product__filter mb-50">
+                                    <div class="row align-items-center">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                            <div class="product__filter-left d-sm-flex align-items-center">
+                                                <div class="product__col">
+                                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link active" id="FourCol-tab"
+                                                                data-bs-toggle="tab" data-bs-target="#FourCol"
+                                                                type="button" role="tab" aria-controls="FourCol"
+                                                                aria-selected="true">
+                                                                <i class="fal fa-border-all"></i>
+                                                            </button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="FiveCol-tab"
+                                                                data-bs-toggle="tab" data-bs-target="#FiveCol"
+                                                                type="button" role="tab" aria-controls="FiveCol"
+                                                                aria-selected="false">
+                                                                <i class="fal fa-th"></i>
+                                                            </button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="list-tab" data-bs-toggle="tab"
+                                                                data-bs-target="#list" type="button" role="tab"
+                                                                aria-controls="list" aria-selected="false">
+                                                                <i class="fal fa-list"></i>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product__result pl-60">
+
+                                                <?php
+                                               
+                                                ?>
+                                                    <p>Showing 1-20 of 29 relults</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                            <div
+                                                class="product__filter-right d-flex align-items-center justify-content-md-end">
+                                                <div class="product__sorting product__show-no">
+                                                    <select>
+                                                        <option>10</option>
+                                                        <option>20</option>
+                                                        <option>30</option>
+                                                        <option>40</option>
+                                                    </select>
+                                                </div>
+                                                <div class="product__sorting product__show-position ml-20">
+                                                    <select>
+                                                        <option>Position</option>
+                                                        <option>Poduct Name</option>
+                                                        <option>Price</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="productGridTabContent">
+                                    <div class="tab-pane fade  show active" id="FourCol" role="tabpanel"
+                                        aria-labelledby="FourCol-tab">
+                                        <div class="row" id="searchru">                                      
+                                          
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="FiveCol" role="tabpanel"
+                                        aria-labelledby="FiveCol-tab">
+                                        <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-4">
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-1.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-2.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                High Quality Glass Ultra-Thin Kitchen Scale</a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$500.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-3.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-4.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html"> LG
+                                                                27UD58: £347.21, Ebuyer.com </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$560.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-5.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-6.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Samsung C49J89: £875, Debenhams Plus </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$450.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-7.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-8.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Blink Home Security Camera System 01 </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$720.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-9.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-10.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Blue t-shir for men (X, M, XL, XXL) </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$720.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-11.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-12.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Samsung A20 Pro Ultra CPU 4/64 GB </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$720.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-24.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-13.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Capacitive Touch Screen 22 Inch LCD Display </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$70.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-14.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-15.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                New Model Watch Mobile with Bpm Function </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$120.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-16.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-17.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Original Smart Phone for Original for iPhone 6s</a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$89.99</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-18.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-19.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link"
+                                                                href="product-details.html">Original Mobile Android Dual
+                                                                SIM Smart Phone </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$56.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-20.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-21.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">TF
+                                                                Camera Clock Support Bt 4.0 for Ios </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$320.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-22.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-23.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Ipad 2019 6th Gen 64GB Memory </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$250.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-2.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-1.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Ipad 2019 6th Gen 64GB Memory </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$250.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-23.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-7.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Ipad 2019 6th Gen 64GB Memory </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$250.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="product__item white-bg mb-30">
+                                                    <div class="product__thumb p-relative">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-4.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-23.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                        <div class="product__action p-absolute">
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Quick View"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#productModalId"><i
+                                                                            class="fal fa-search"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__content text-center">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">
+                                                                Ipad 2019 6th Gen 64GB Memory </a>
+                                                        </h6>
+                                                        <div class="rating">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="price">$250.00</span>
+                                                    </div>
+                                                    <div class="product__add-btn">
+                                                        <button type="button">Add to Cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+                                        <div class="row">
+                                            <div class="col-xxl-12">
+                                                <div class="product__item product__list white-bg mb-30 d-md-flex">
+                                                    <div class="product__thumb p-relative mr-20">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-1.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-2.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product__content">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link"
+                                                                href="product-details.html">Ipad 2019 6th Gen 64GB
+                                                                Memory</a>
+                                                        </h6>
+                                                        <div
+                                                            class="rating d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                            <div class="product-review-action ml-30">
+                                                                <span><a href="#">2 Reviews</a></span>
+                                                                <span><a href="#">Add Your Review</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="price">$500.00</span>
+                                                        <p class="product-text">Typi non habent claritatem insitam, est
+                                                            usus legentis in iis qui facit eorum claritatem.
+                                                            Investigationes demonstraverunt lectores legere me lius quod
+                                                            ii legunt saepius. Claritas est etiam processus. Lorem Ipsum
+                                                            has been the industry's standard dummy text ever since the
+                                                            1500s, when anunknown printer took a galley </p>
+                                                        <div class="product__list-features">
+                                                            <ul>
+                                                                <li>Light green crewneck sweatshirt.</li>
+                                                                <li>Hand pockets.</li>
+                                                                <li>Relaxed fit.</li>
+                                                                <li>Machine wash/dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div
+                                                            class="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <button class="t-y-btn mr-10">add to cart</button>
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item product__list white-bg mb-30 d-md-flex">
+                                                    <div class="product__thumb p-relative mr-20">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-3.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-4.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product__content">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link"
+                                                                href="product-details.html">Samsung Note 5 Pro, 4.5Ghz
+                                                                CPU </a>
+                                                        </h6>
+                                                        <div
+                                                            class="rating d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                            <div class="product-review-action ml-30">
+                                                                <span><a href="#">2 Reviews</a></span>
+                                                                <span><a href="#">Add Your Review</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="price">$240.00</span>
+                                                        <p class="product-text">Typi non habent claritatem insitam, est
+                                                            usus legentis in iis qui facit eorum claritatem.
+                                                            Investigationes demonstraverunt lectores legere me lius quod
+                                                            ii legunt saepius. Claritas est etiam processus. Lorem Ipsum
+                                                            has been the industry's standard dummy text ever since the
+                                                            1500s, when anunknown printer took a galley </p>
+                                                        <div class="product__list-features">
+                                                            <ul>
+                                                                <li>Light green crewneck sweatshirt.</li>
+                                                                <li>Hand pockets.</li>
+                                                                <li>Relaxed fit.</li>
+                                                                <li>Machine wash/dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div
+                                                            class="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <button class="t-y-btn mr-10">add to cart</button>
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item product__list white-bg mb-30 d-md-flex">
+                                                    <div class="product__thumb p-relative mr-20">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-5.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-6.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product__content">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link" href="product-details.html">TF
+                                                                Camera Clock Support Bt 4.0 for Ios</a>
+                                                        </h6>
+                                                        <div
+                                                            class="rating d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                            <div class="product-review-action ml-30">
+                                                                <span><a href="#">2 Reviews</a></span>
+                                                                <span><a href="#">Add Your Review</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="price">$120.00</span>
+                                                        <p class="product-text">Typi non habent claritatem insitam, est
+                                                            usus legentis in iis qui facit eorum claritatem.
+                                                            Investigationes demonstraverunt lectores legere me lius quod
+                                                            ii legunt saepius. Claritas est etiam processus. Lorem Ipsum
+                                                            has been the industry's standard dummy text ever since the
+                                                            1500s, when anunknown printer took a galley </p>
+                                                        <div class="product__list-features">
+                                                            <ul>
+                                                                <li>Light green crewneck sweatshirt.</li>
+                                                                <li>Hand pockets.</li>
+                                                                <li>Relaxed fit.</li>
+                                                                <li>Machine wash/dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div
+                                                            class="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <button class="t-y-btn mr-10">add to cart</button>
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item product__list white-bg mb-30 d-md-flex">
+                                                    <div class="product__thumb p-relative mr-20">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-7.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-8.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product__content">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link"
+                                                                href="product-details.html">Original Mobile Android Dual
+                                                                SIM Smart Phone</a>
+                                                        </h6>
+                                                        <div
+                                                            class="rating d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                            <div class="product-review-action ml-30">
+                                                                <span><a href="#">2 Reviews</a></span>
+                                                                <span><a href="#">Add Your Review</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="price">$90.00</span>
+                                                        <p class="product-text">Typi non habent claritatem insitam, est
+                                                            usus legentis in iis qui facit eorum claritatem.
+                                                            Investigationes demonstraverunt lectores legere me lius quod
+                                                            ii legunt saepius. Claritas est etiam processus. Lorem Ipsum
+                                                            has been the industry's standard dummy text ever since the
+                                                            1500s, when anunknown printer took a galley </p>
+                                                        <div class="product__list-features">
+                                                            <ul>
+                                                                <li>Light green crewneck sweatshirt.</li>
+                                                                <li>Hand pockets.</li>
+                                                                <li>Relaxed fit.</li>
+                                                                <li>Machine wash/dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div
+                                                            class="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <button class="t-y-btn mr-10">add to cart</button>
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item product__list white-bg mb-30 d-md-flex">
+                                                    <div class="product__thumb p-relative mr-20">
+                                                        <a href="product-details.html" class="w-img">
+                                                            <img src="assets/img/shop/product/product-9.jpg"
+                                                                alt="product">
+                                                            <img class="second-img"
+                                                                src="assets/img/shop/product/product-8.jpg"
+                                                                alt="product">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product__content">
+                                                        <h6 class="product-name">
+                                                            <a class="product-item-link"
+                                                                href="product-details.html">Original Smart Phone for
+                                                                Original for iPhone 6s</a>
+                                                        </h6>
+                                                        <div
+                                                            class="rating d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <ul>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                            <div class="product-review-action ml-30">
+                                                                <span><a href="#">2 Reviews</a></span>
+                                                                <span><a href="#">Add Your Review</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="price">$59.00</span>
+                                                        <p class="product-text">Typi non habent claritatem insitam, est
+                                                            usus legentis in iis qui facit eorum claritatem.
+                                                            Investigationes demonstraverunt lectores legere me lius quod
+                                                            ii legunt saepius. Claritas est etiam processus. Lorem Ipsum
+                                                            has been the industry's standard dummy text ever since the
+                                                            1500s, when anunknown printer took a galley </p>
+                                                        <div class="product__list-features">
+                                                            <ul>
+                                                                <li>Light green crewneck sweatshirt.</li>
+                                                                <li>Hand pockets.</li>
+                                                                <li>Relaxed fit.</li>
+                                                                <li>Machine wash/dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div
+                                                            class="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
+                                                            <button class="t-y-btn mr-10">add to cart</button>
+                                                            <ul>
+                                                                <li><a href="#" title="Add to Wishlist"><i
+                                                                            class="fal fa-heart"></i></a></li>
+                                                                <li><a href="#" title="Compare"><i
+                                                                            class="far fa-sliders-h"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="basic-pagination pt-30 pb-30">
+                                            <nav>
+                                                <ul>
+                                                    <li>
+                                                        <a href="blog.html">
+                                                            <i class="fal fa-chevron-double-left"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog.html">1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog.html" class="active">2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog.html">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog.html">
+                                                            <i class="fal fa-chevron-double-right"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product area end -->
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- subscribe area start -->
         <section class="subscribe__area pt-35 pb-30">
@@ -994,7 +2591,9 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <div class="product__modal-content">
-                                        <h4><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo $product_data["name"];?></a></h4>
+                                        <h4><a
+                                                href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo $product_data["name"];?></a>
+                                        </h4>
                                         <div class="product__modal-des mb-40">
                                             <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit
                                                 eorum claritatem. Investigationes demonstraverunt </p>

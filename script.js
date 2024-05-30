@@ -78,20 +78,20 @@ function deleteFromCart(id) {
    var r = new XMLHttpRequest();
 
    r.onreadystatechange = function () {
-       if (r.readyState == 4) {
-           var t = r.responseText;
-           if (t == "success") {
+      if (r.readyState == 4) {
+         var t = r.responseText;
+         if (t == "success") {
             swal("Remove From Cart", "Product removed from cart Successfull", "success");
-             setInterval(1009);
-               window.location.reload();
+            setInterval(1009);
+            window.location.reload();
 
-           } else {
+         } else {
 
 
             window.location.reload();
-            
-           }
-       }
+
+         }
+      }
    }
 
    r.open("GET", "deleteFromCartProcess.php?id=" + id, true);
@@ -101,28 +101,28 @@ function deleteFromCart(id) {
 
 
 function addToCart(id) {
- 
+
    var r = new XMLHttpRequest();
 
    r.onreadystatechange = function () {
-       if (r.readyState == 4) {
-           var t = r.responseText;
-        
-           if (t == "iq") {
-            swal("Add Cart","", "success");
-           }else
-           if (t == "Something Went Wrong") {
-            swal("Add Cart Error", t, "error");
-           }else
-           if (t == "Product added successfully") {
-            swal("Add Cart", t, "success");
-           }else
-           if (t == "Please Sign In or Register.") {
-            swal("Add Cart Failed", t, "error");
-           }else{
-            swal("Add Cart Failed", t, "error");
-           }
-       }
+      if (r.readyState == 4) {
+         var t = r.responseText;
+
+         if (t == "iq") {
+            swal("Add Cart", "", "success");
+         } else
+            if (t == "Something Went Wrong") {
+               swal("Add Cart Error", t, "error");
+            } else
+               if (t == "Product added successfully") {
+                  swal("Add Cart", t, "success");
+               } else
+                  if (t == "Please Sign In or Register.") {
+                     swal("Add Cart Failed", t, "error");
+                  } else {
+                     swal("Add Cart Failed", t, "error");
+                  }
+      }
    }
 
    r.open("GET", "addToCartProcess.php?id=" + id, true);
@@ -135,21 +135,72 @@ function signout() {
    var r = new XMLHttpRequest();
 
    r.onreadystatechange = function () {
-       if (r.readyState == 4) {
-           var t = r.responseText;
-           if (t == "success") {
+      if (r.readyState == 4) {
+         var t = r.responseText;
+         if (t == "success") {
 
-               //window.location="home.php";
+            //window.location="home.php";
 
-               window.location.reload();
+            window.location.reload();
 
-           } else {
-               alert(t);
-           }
-       }
+         } else {
+            alert(t);
+         }
+      }
 
    };
 
    r.open("GET", "signoutProcess.php", true);
    r.send();
+}
+
+
+function basicsearch(x) {
+
+  
+
+   document.getElementById("banners").className = "d-none";
+   document.getElementById("banners2").className = "d-none";
+   document.getElementById("banners3").className = "d-none";
+   document.getElementById("banners4").className = "d-none";
+   document.getElementById("hp1").className = "d-none";
+   document.getElementById("hp2").className = "d-none";
+   document.getElementById("hp3").className = "d-none";
+   document.getElementById("searcharia").className = "product__area box-plr-75 pb-70";
+
+
+var si = document.getElementById("searchinput");
+var sc = document.getElementById("searchcat");
+
+var f = new FormData();
+
+f.append("si" , si.value);
+f.append("sc" , sc.value);
+
+var request = new XMLHttpRequest ();
+
+request.onreadystatechange = function(){
+
+   if (request.readyState == 4 && request.status == 200) {
+
+      var response =  request.responseText;
+      document.getElementById("searchru").innerHTML = response;
+   
+      
+   }
+
+}
+
+
+request.open("POST","searchProcess.php" , true);
+request.send(f);
+
+
+
+  
+
+
+
+
+
 }

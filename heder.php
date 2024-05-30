@@ -78,14 +78,14 @@
                     <div class="col-xl-8 col-lg-9">
                         <div class="header__info-right">
                             <div class="header__search f-left d-none d-sm-block">
-                                <form action="#">
+                         
                                     <div class="header__search-box">
-                                        <input type="text" placeholder="Search For Products...">
-                                        <button type="submit">Search</button>
+                                        <input type="text" id="searchinput" placeholder="Search For Products...">
+                                        <button onclick="basicsearch(0);">Search</button>
                                     </div>
                                     <div class="header__search-cat">
-                                        <select>
-                                            <option>All Categories</option>
+                                        <select id="searchcat">
+                                            <option value="0">All Categories</option>
                                             <?php
                                              $category_rs = Database::search(
                                                  "SELECT*FROM `category`"
@@ -100,7 +100,7 @@
                                              ) {
                                                  $category_data = $category_rs->fetch_assoc(); ?>
 
-                                            <option value="<?php echo $category_data["category_id"]; ?>">
+                                            <option  value="<?php echo $category_data["category_id"]; ?>">
                                                 <?php echo $category_data[
                                                      "category"
                                                  ]; ?></option>
@@ -113,7 +113,7 @@
 
                                         </select>
                                     </div>
-                                </form>
+                        
                             </div>
 
                             <?php
