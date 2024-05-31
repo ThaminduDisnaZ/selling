@@ -19,19 +19,70 @@ function signup() {
          var response = request.responseText;
 
          if (response == "Success") {
-            document.getElementById("msg1").innerHTML = "Registration Successfully";
-            document.getElementById("msgdiv1").className = "alert alert-dismissible fade show py-2 bg-info d-block";
+            swal({
+               title: 'Check Your Email',
+               text: '',
+               timer: 3000
+             }).then(
+               function () {},
+               // handling the promise rejection
+               function (dismiss) {
+                 if (dismiss === 'timer') {
+                   console.log('I was closed by the timer')
+                 }
+               }
+             )
+            setTimeout(function () {
+               
+               swal("Type OTP Code here:", {
+                  content: "input",
+                })
+                .then((value) => {
+                  var fname = document.getElementById("fname");
+                  var email = document.getElementById("email");
+               var f = new FormData();
+               f.append("e", email.value);
+               f.append("f", fname.value);
+               f.append("otp" , value );
+   
+               var request2 = new XMLHttpRequest();
+   
+               request2.onreadystatechange = function(){
+                  if (request2.readyState == 4 && request2.status == 200) {
+                     response2 = request2.responseText;
+
+                     if (response2 == "Success") {
+                        swal("OTP ","Your Email Is Veryfied Successfull", "success");
+                        window.location.assign("login.php");
+                     }else if (response2 != "Success") {
+                        swal("OTP ","Your Email has been Very Failed : " + response2, "error");
+                     }
 
 
-            fname.value = "";
-            lname.value = "";
-            email.value = "";
-            mobile.value = "";
-            password.value = "";
+                   
+                     
+                  }
+               }
+   
+               request2.open("POST" , "otpVerifyProcess.php", true);
+               request2.send(f);
+   
+   
+                });
+   
+            },3000);
+           
+          
+
+
+    
 
          } else {
             document.getElementById("msg1").innerHTML = response;
             document.getElementById("msgdiv1").className = "alert alert-dismissible fade show py-2 bg-warning d-block";
+         
+
+
          }
 
 
@@ -61,8 +112,15 @@ function signin() {
          var response = request.responseText;
 
          if (response == "Success") {
+       
+
+       
+            
             window.location = "index.php";
          } else {
+
+        
+
             document.getElementById("msg2").innerHTML = response;
             document.getElementById("msgdiv2").className = "alert alert-dismissible fade show py-2 bg-warning d-block";
          }
@@ -184,23 +242,68 @@ request.onreadystatechange = function(){
    if (request.readyState == 4 && request.status == 200) {
 
       var response =  request.responseText;
-      document.getElementById("searchru").innerHTML = response;
-   
+      document.getElementById("searchru").innerHTML = response;   
       
    }
-
+}
+request.open("POST","searchProcess.php" , true);
+request.send(f);  
 }
 
 
-request.open("POST","searchProcess.php" , true);
+function filter(){
+
+var cat = document.getElementById("catsel");
+var bra = document.getElementById("brasel");
+var cpu = document.getElementById("cpusel");
+var dis = document.getElementById("dissel");
+var gpu = document.getElementById("gpusel");
+var ram = document.getElementById("ramsel");
+var mod = document.getElementById("modsel");
+var amo = document.getElementById("amount");
+
+
+
+var f = new FormData();
+
+f.append("ca", cat.value);
+f.append("br", bra.value);
+f.append("cp", cpu.value);
+f.append("di", dis.value);
+f.append("gp", gpu.value);
+f.append("ra", ram.value);
+f.append("mo", mod.value);
+f.append("am", amo.value);
+
+
+var request = new XMLHttpRequest();
+
+request.onreadystatechange = function(){
+
+
+   if (request.readyState == 4 ) {
+      
+      var response =  request.responseText;
+
+
+      document.getElementById("searchru").innerHTML = response;   
+
+
+   }
+
+
+
+
+}
+
+request.open("POST" , "advanceSearchProcess.php" , true);
 request.send(f);
 
 
 
-  
-
-
-
-
 
 }
+
+
+
+

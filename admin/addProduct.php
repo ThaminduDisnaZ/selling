@@ -92,7 +92,7 @@ require "sideheader.php";
             <div class="add-edit-product-wrap col-12">
 
                 <div class="add-edit-product-form">
-                    <form action="#">
+                   
 
                         <h4 class="title">About Product</h4>
 
@@ -475,7 +475,7 @@ require "sideheader.php";
                             </div>
                         </div><!-- Button Group End -->
 
-                    </form>
+                  
                 </div>
 
             </div><!-- Add or Edit Product End -->

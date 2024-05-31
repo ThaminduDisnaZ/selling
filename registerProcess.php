@@ -8,7 +8,7 @@ $email = $_POST["e"];
 $mobile = $_POST["m"];
 $password = $_POST["p"];
 $status = "1";
-
+$uid = uniqid();
 if (empty($fname)) {
    echo("Please Enter Your First Name");
 } else if(strlen($fname) > 20){
@@ -41,11 +41,77 @@ if (empty($fname)) {
     if ($num > 0) {
         echo("Your Email or Mobile Number Already Exists");
     } else {
-        Database::iud("INSERT INTO `user` (`fname`,`lname`,`email`,`mobile`,`password`,`status_id`) 
-        VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."') ");
-          echo("Success");
+        Database::iud("INSERT INTO `user` (`fname`,`lname`,`email`,`mobile`,`password`,`status_id`,`otp`,`uev_id`) 
+        VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."','".$uid."','2') ");
+          echo("Success"); 
+           
     }
 }
+
+$email = $email;
+$subject = "OTP Verify";
+$body = "
+<style>
+/* Email Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* Email Container */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Email Heading */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* OTP Code */
+.otp-code {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+/* Footer Text */
+.footer-text {
+    text-align: center;
+    color: #666;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1>Verify Your Account - OTP Verification</h1>
+<p>Dear ".$fname.",</p>
+<p>Thank you for registering with Net Pixel! To ensure the security of your account, we need to verify your email address.</p>
+<p>Please use the following one-time password (OTP) to complete your registration:</p>
+<div class='otp-code'><h3><b>". $uid ."</b></h3></div>
+<p>If you did not request this OTP, please disregard this email.</p>
+<p>Thank you for choosing Net Pixel! If you have any questions or need assistance, please don't hesitate to contact our support team at [Your Support Email Address].</p>
+<p class='footer-text'>Best regards,<br>Thamindu Disna<br>Net Pixel<br></p>
+</div>
+</body>
+";
+
+
+
+
+$altbody = "Net Pixel";
+
+
+
+require "admin/mailler.php";
 
 
 

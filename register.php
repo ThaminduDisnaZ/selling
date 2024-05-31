@@ -106,10 +106,28 @@
                 </div>
                 <div class="col-12 col-lg-12">
                   <div class="d-grid">
-                    <button type="button" class="btn btn-primary" onclick="signup();">Sign Up</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"   onclick="signup();">Sign Up</button>
                   </div>
                 </div>
                 
+                <!-- Modal -->
+<div class="modal fade" id="regbtn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 
                 <div class="alert alert-dismissible fade show py-2 bg-info d-none" id="msgdiv1">
                 <div class="d-flex align-items-center">
@@ -173,6 +191,7 @@
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

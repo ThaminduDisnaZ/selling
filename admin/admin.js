@@ -174,13 +174,13 @@ function ubb() {
             if (response == "block") {
 
                 swal("User Blocked Successfull....!", "", "warning");
-           
+
 
 
             }
             if (response == "Active") {
 
-             
+
                 swal("User Active Successfull", "", "success");
 
             }
@@ -291,34 +291,34 @@ function addstorage() {
 
 
 
-function addwarranty(){
+function addwarranty() {
 
-  
-        var addwarranty = document.getElementById("addwarranty");
-    
-        var f = new FormData();
-        f.append("addwarranty", addwarranty.value);
-    
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-    
-            if (request.readyState == 4 && request.status == 200) {
-    
-                var response = request.responseText;
-    
-                if (response == "Success") {
-                    swal("Warranty Added Successfully", "", "success");
-                } else {
-                    swal(response, "", "error");
-                }
-    
+
+    var addwarranty = document.getElementById("addwarranty");
+
+    var f = new FormData();
+    f.append("addwarranty", addwarranty.value);
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+
+        if (request.readyState == 4 && request.status == 200) {
+
+            var response = request.responseText;
+
+            if (response == "Success") {
+                swal("Warranty Added Successfully", "", "success");
+            } else {
+                swal(response, "", "error");
             }
-    
+
         }
-    
-    
-        request.open("POST", "addWarrantyProcess.php", true);
-        request.send(f);
+
+    }
+
+
+    request.open("POST", "addWarrantyProcess.php", true);
+    request.send(f);
 
 }
 // ***********************************************************************************
@@ -506,14 +506,14 @@ function addsize() {
 function changeProductImage() {
 
 
-    
+
     var image = document.getElementById("imageuploader");
 
     image.onchange = function () {
         var file_count = image.files.length;
 
         if (file_count <= 3) {
-     
+
             for (x = 0; x < file_count; x++) {
                 var file = this.files[x];
                 var url = window.URL.createObjectURL(file);
@@ -525,7 +525,7 @@ function changeProductImage() {
         } else {
             swal("Image Upload Error", "please select 3 or less than 3 images.", "error");
         }
-        
+
     }
 }
 
@@ -535,35 +535,35 @@ function caldis() {
 
     var price = document.getElementById("pprice").value;
     var discount = document.getElementById("pdiscount").value;
- 
- 
- 
-    var totalamount = (discount * price) / 100 ;
- 
- 
- 
+
+
+
+    var totalamount = (discount * price) / 100;
+
+
+
     var totald = price - totalamount;
- 
+
     var total = parseInt(totald.toFixed(0));
- 
-   if (discount > 0) {
-      document.getElementById("caldis").innerHTML ="Total Price : Rs." + total +".00";
 
-   } else {
-     
-     document.getElementById("caldis").innerHTML = "No Discount" ;
- 
- 
-   }
- 
- }
+    if (discount > 0) {
+        document.getElementById("caldis").innerHTML = "Total Price : Rs." + total + ".00";
 
- 
+    } else {
+
+        document.getElementById("caldis").innerHTML = "No Discount";
+
+
+    }
+
+}
+
+
 
 
 function addProduct(param) {
 
-  
+
 
     var title = document.getElementById("pname");
     var stitle = document.getElementById("psname");
@@ -586,22 +586,22 @@ function addProduct(param) {
     var dispc = document.getElementById("caldis").innerHTML;
 
     var priced = document.getElementById("pprice").value;
-    var discountd = document.getElementById("pdiscount").value; 
-    var totalamountd = (discountd * priced) / 100 ;
+    var discountd = document.getElementById("pdiscount").value;
+    var totalamountd = (discountd * priced) / 100;
     var totaldd = priced - totalamountd;
     var totald = parseInt(totaldd.toFixed(0));
-   var caldis = document.getElementById("caldis").innerHTML ;
-   var warranty = document.getElementById("warranty") ;
-    
-  if (caldis == "No Discount") {
+    var caldis = document.getElementById("caldis").innerHTML;
+    var warranty = document.getElementById("warranty");
+
+    if (caldis == "No Discount") {
         var dprice = 0;
- 
-  } else {
+
+    } else {
         var dprice = totald;
-  }
+    }
 
     var f = new FormData();
-   
+
     f.append("ti", title.value);
     f.append("st", stitle.value);
     f.append("pr", price.value);
@@ -623,36 +623,37 @@ function addProduct(param) {
     f.append("war", warranty.value);
 
 
-  
+
 
     var file_count = image.files.length;
- 
+
     for (var x = 0; x < file_count; x++) {
         f.append("image" + x, image.files[x]);
-        
+
     }
 
     var request = new XMLHttpRequest();
 
 
-    request.onreadystatechange = function() {
+    request.onreadystatechange = function () {
 
         if (request.readyState == 4 && request.status == 200) {
-     
+
             var response = request.responseText;
 
-            
+
 
             if (response == "Success") {
-                swal("Add Product Successfull","", "success");
+                swal("Add Product Successfull", "", "success");
+
+                window.location.reload();
             } else {
                 swal("Add Product Error", response, "error");
             }
-            
+
         }
 
     }
-
 
 
 
@@ -663,7 +664,7 @@ function addProduct(param) {
 
 }
 
-function cancelup(){
+function cancelup() {
 
     window.location = "./manageProduct.php";
 
@@ -691,22 +692,22 @@ function updateProduct(pid) {
     var pmkeyword = document.getElementById("pmkeyword");
     var image = document.getElementById("imageuploader");
     var delivery = document.getElementById("delivery");
-    var warranty = document.getElementById("warranty");    
+    var warranty = document.getElementById("warranty");
     var priced = document.getElementById("pprice").value;
-    var discountd = document.getElementById("pdiscount").value; 
-    var totalamountd = (discountd * priced) / 100 ;
+    var discountd = document.getElementById("pdiscount").value;
+    var totalamountd = (discountd * priced) / 100;
     var totaldd = priced - totalamountd;
     var totald = parseInt(totaldd.toFixed(0));
-   var caldis = document.getElementById("caldis").innerHTML ;
-   var images = document.getElementById("imageuploader");
- 
-    
-  if (caldis == "No Discount") {
+    var caldis = document.getElementById("caldis").innerHTML;
+    var images = document.getElementById("imageuploader");
+
+
+    if (caldis == "No Discount") {
         var dprice = 0;
- 
-  } else {
+
+    } else {
         var dprice = totald;
-  }
+    }
 
     var formData = new FormData();
     formData.append("id", pid);
@@ -734,7 +735,7 @@ function updateProduct(pid) {
 
     for (var x = 0; x < 3; x++) {
         formData.append("i" + x, images.files[x]);
-       
+
     }
 
     var request = new XMLHttpRequest();
@@ -742,14 +743,14 @@ function updateProduct(pid) {
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
             var response = request.responseText;
-         
-          if (response == "") {
-         
-            document.getElementById("updatemsg").innerHTML = "Not Changes";
-          }else{
-            document.getElementById("updatemsg").innerHTML = response;
 
-          }
+            if (response == "") {
+
+                document.getElementById("updatemsg").innerHTML = "Not Changes";
+            } else {
+                document.getElementById("updatemsg").innerHTML = response;
+
+            }
         }
     }
     request.open("POST", "updateProductProcess.php", true);
@@ -763,30 +764,30 @@ function updateBanner() {
 
     var f = new FormData();
 
-    f.append("title",title.value);
+    f.append("title", title.value);
 
     for (var x = 0; x < 3; x++) {
         f.append("i" + x, images.files[x]);
-       
+
     }
 
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function (){
+    request.onreadystatechange = function () {
 
         if (request.readyState == 4 && request.status == 200) {
-            
-           var response = request.responseText;
 
-      
-           swal("Add Product Successfull",response, "success");
-           window.location.reload();
+            var response = request.responseText;
+
+
+            swal("Add Product Successfull", response, "success");
+            window.location.reload();
 
         }
 
     }
 
-    request.open("POST","addBannerProcess.php", true);
+    request.open("POST", "addBannerProcess.php", true);
     request.send(f);
 
 
