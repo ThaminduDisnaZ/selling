@@ -224,12 +224,14 @@
                                                         <div class="cart__price">
                                                             <span>Rs.<?php echo $product_data[
                                                                  "dprice"
-                                                             ]; ?>.00</span>
+                                                             ]; ?>.00 x <?php echo $cart_data[
+                                                                "qty"
+                                                            ]; ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="cart__del">
-                                                    <button onclick="deleteFromCart(<?php echo ($cart_data["id"]); ?> ;">
+                                                    <button onclick="deleteFromCart(<?php echo ($cart_data["id"]) ?>) ">
                                                         <i class="fal fa-trash-alt"></i></button>
                                                 </div>
                                             </div>

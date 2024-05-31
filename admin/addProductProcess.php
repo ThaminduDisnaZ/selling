@@ -24,8 +24,11 @@ $warranty = $_POST["war"];
 
 
 
+if ($dprice == "0") {
 
+    $dprice = $price;
 
+}
 
 if (empty($title)) {
     echo ("Please Enter Product Title");

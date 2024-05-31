@@ -32,6 +32,14 @@ $dprice = $_POST['dprice'];
 $warranty = $_POST['war'];
 
 
+
+if ($dprice == "0") {
+
+    $dprice = $price;
+
+}
+
+
 $p_rs = Database::search("SELECT * FROM `product` ");
 $p_data = $p_rs->fetch_assoc();
 

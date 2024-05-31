@@ -8,6 +8,9 @@ if(isset($_SESSION["u"])){
 
     if(isset($_GET["id"])){
 
+
+        $qty = $_POST['qty'];
+
         $email = $_SESSION["u"]["user_id"];
         $pid = $_GET["id"];
 
@@ -30,13 +33,15 @@ if(isset($_SESSION["u"])){
 
             if($product_qty>=$new_qty){
 
-                Database::iud("UPDATE `cart`SET`qty`='".$new_qty."'WHERE `product_id`='".$pid."' AND `user_id`='".$email."'");
-                echo("Product Already Added in Cart");
+               Database::iud("UPDATE `cart`SET`qty`='".$qty + $new_qty."'WHERE `product_id`='".$pid."' AND `user_id`='".$email."'");
+               echo ("Product added successfully"); 
+            }else if($product_qty < $qty){
+                echo("Sorry..! Please Select 0 - ".$product_qty." Quantity" );
             }else{
                 echo("iq");
             }
         }else{
-             Database::iud("INSERT INTO `cart`(`product_id`,`user_id`,`qty`)VALUES ('".$pid."','".$email."','1')");
+             Database::iud("INSERT INTO `cart`(`product_id`,`user_id`,`qty`)VALUES ('".$pid."','".$email."','".$qty."')");
              echo ("Product added successfully"); 
         }
 

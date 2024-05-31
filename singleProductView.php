@@ -412,7 +412,7 @@ for ($x = 0; $x < $image_num; $x++) {
                                     
                                             <div class="pro-quan-area d-lg-flex align-items-center">
                                                 <div class="product-quantity mr-20 mb-25">
-                                                    <div class="cart-plus-minus p-relative"><input type="text"
+                                                    <div class="cart-plus-minus p-relative"><input id="pqty" type="text"
                                                             value="1" />
                                                     </div>
                                                 </div>

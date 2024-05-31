@@ -213,6 +213,8 @@
         </section>
         <!-- slider area end -->
 
+<input type="text" value="1" id="pqty" class="d-none">
+
         <!-- features area start -->
         <section class="features__area grey-bg-2 pt-40 pb-20 pl-10 pr-10">
             <div class="container">

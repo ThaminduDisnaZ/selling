@@ -29,44 +29,6 @@ if ($otp == $otp_data["otp"]) {
    $email = $e;
    $subject = "OTP Verify";
    $body = "
-   <style>
-   /* Email Body */
-   body {
-       font-family: Arial, sans-serif;
-       margin: 0;
-       padding: 0;
-       background-color: #f4f4f4;
-   }
-   /* Email Container */
-   .container {
-       max-width: 600px;
-       margin: 20px auto;
-       padding: 20px;
-       background-color: #fff;
-       border-radius: 8px;
-       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   }
-   /* Email Heading */
-   h1 {
-       color: #333;
-       text-align: center;
-       margin-bottom: 20px;
-   }
-   /* OTP Code */
-   .otp-code {
-       background-color: #f0f0f0;
-       padding: 10px;
-       text-align: center;
-       font-size: 24px;
-       border-radius: 4px;
-       margin-bottom: 20px;
-   }
-   /* Footer Text */
-   .footer-text {
-       text-align: center;
-       color: #666;
-   }
-   </style>
    </head>
    <body>
    <div class='container'>
