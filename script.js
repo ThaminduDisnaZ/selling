@@ -163,7 +163,7 @@ function addToCart(id) {
    var qty = document.getElementById("pqty");
 
    var f = new FormData();
-  
+
    f.append("qty", qty.value);
 
    var r = new XMLHttpRequest();
@@ -313,72 +313,90 @@ function filter() {
 
 
 
-function discode(){
+function discode() {
 
- var code =   document.getElementById("discode");
- var total =   document.getElementById("totalid");
+   var code = document.getElementById("discode");
+   var total = document.getElementById("totalid");
 
 
 
-  var f = new FormData();
+   var f = new FormData();
 
-  f.append("code", code.value);
-  f.append("total", total.value);
+   f.append("code", code.value);
+   f.append("total", total.value);
 
-  var request = new XMLHttpRequest();
+   var request = new XMLHttpRequest();
 
-  request.onreadystatechange = function () {
+   request.onreadystatechange = function () {
 
-   if (request.readyState == 4 && request.status == 200) {
-      
+      if (request.readyState == 4 && request.status == 200) {
 
-     var response = request.responseText;
 
-    
+         var response = request.responseText;
 
-      if (response == "ec") {
-         
-         swal("Promo Code", "Enter Discount Code", "error");
 
-      } else if(response == "wc") {
 
-         swal("Promo Code", "Code is Invalid", "error");
-         
-      }else if(response == "sww"){
-         swal("Promo Code", "Somthing Went Wrong", "error");
-      }else{
-         swal("Promo Code", "Congratulations...! You'r New Price is Rs."+ response+ ".00", "success");
-         document.getElementById("oto").innerHTML = "Rs."+ response+".00"
+         if (response == "ec") {
+
+            swal("Promo Code", "Enter Discount Code", "error");
+
+         } else if (response == "wc") {
+
+            swal("Promo Code", "Code is Invalid", "error");
+
+         } else if (response == "sww") {
+            swal("Promo Code", "Somthing Went Wrong", "error");
+         } else {
+            swal("Promo Code", "Congratulations...! You'r New Price is Rs." + response + ".00", "success");
+            document.getElementById("oto").value = response;
+         }
+
       }
 
    }
-   
-  }
 
-  request.open("POST" , "discodeProcess.php" , true);
-  request.send(f);
+   request.open("POST", "discodeProcess.php", true);
+   request.send(f);
 }
 
 
 
-function checkout(){
+function checkout() {
+
+   var total = document.getElementById("oto");
+   var code = document.getElementById("discode");
 
    request = new XMLHttpRequest();
 
-   request.onreadystatechange = function(){
+
+   var f = new FormData();
+
+   f.append("total", total.value);
+   f.append("code", code.value);
+   request.onreadystatechange = function () {
 
       if (request.readyState == 4 && request.status == 200) {
 
          var response = request.responseText;
 
-         alert(response);
-         
+         if (response == "success") {
+  
+            window.location.href = "checkout.php";
+
+         }else{
+            alert(response);
+         }
+ 
+
+
+
+
       }
 
    }
 
-   request.open("POST" , "checkoutProcess.php", true);
-   request.send();
+   request.open("POST", "checkoutProcess.php", true);
+   request.send(f);
 
 
 }

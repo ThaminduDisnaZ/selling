@@ -237,10 +237,10 @@
                                   <p class="mb-2">Shipping: <span class="float-end">Rs.<?php echo ($shipping) ?>.00</span>
                                   </p>
                                  
-                                  <p class="mb-0">Discount: <span class="float-end" id="dcode"></span>
+                                  <p class="mb-0">Discount: <span class="float-end" id="totalid"></span>
                                   </p>
                                   <div class="my-3 border-top"></div>
-                                  <h5 class="mb-0">Order Total: <span class="float-end" id="oto">Rs.<?php echo ($shipping + $order_total) ?>.00</span>
+                                  <h5 class="mb-0">Order Total: <span class="float-end">Rs.<input type="text" disabled id="oto" value="<?php echo ($shipping + $order_total) ?>"></span>
                                   </h5>
                                   <div class="my-4"></div>
                                   <div class="d-grid"> <button onclick="checkout();" class="btn btn-primary btn-ecomm">Proceed to
