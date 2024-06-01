@@ -6,6 +6,9 @@ require "./connection.php";
 if (isset($_SESSION["u"])) {
     $id = $_SESSION["u"]["user_id"];
 
+    $udat=Database::search("SELECT * FROM `user` WHERE `user_id` = '".$id."' ");
+    $udata = $udat->fetch_assoc();
+
     $cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_id`='" . $id . "' ");
     $cart_num = $cart_rs->num_rows;
 
@@ -58,7 +61,10 @@ if (isset($_SESSION["u"])) {
         "line_items" => $line_items
     ]);
     echo("success");
-
+    $subject = "Your Item is Placed";
+    $body = '<h1>Hello..! '.$udata["fname"].' ,</h1><p>An item has been placed in your shop, Net Pixel LK. Your Total Price Is Rs.'.$total_price.'.00 Please check your dashboard for more details.</p>';
+    $email = $udata["email"];
+    require  "./admin/mailler.php";
    
     http_response_code(303);
     header("Location: " . $checkout_session->url);
