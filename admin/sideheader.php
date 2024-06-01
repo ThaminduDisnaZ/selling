@@ -27,7 +27,7 @@ if (isset($_SESSION["a"])) {
                   <li><a href="odrderDetails.php"><i class="ti-menu"></i><span>Order Details</span></a></li>
                   <li><a href="manageProduct.php"><i class="ti-desktop"></i><span>Manage Product</span></a></li>
                   <li><a href="bannercustom.php"><i class="ti-desktop"></i><span>Banner Customizer</span></a></li>
-
+                  <li><a href="userManage.php"><i class="ti-user"></i><span>User Manager</span></a></li>
 
 
 

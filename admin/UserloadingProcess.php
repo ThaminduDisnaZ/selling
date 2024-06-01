@@ -6,13 +6,19 @@ include "../connection.php";
 
 $rs = Database::search("SELECT * FROM `user`");
 
+
+
+
+
 while ($d = $rs->fetch_assoc()){
+    $uid =$d ["user_id"];
+    
 
 ?>
                                         <tr>
                                             <th><?php echo $d ["user_id"]?></th>
-                                            <td><?php echo $d ["fname"]?></td>
-                                            <td><?php echo $d ["lname"]?></td>
+                                            <td><a class="state_hover" href="<?php echo "userDetails.php?id=" .  $uid; ?>" ><?php echo $d ["fname"]?></a></td>
+                                            <td><a class="state_hover" href="<?php echo "userDetails.php?id=" . $uid; ?>"> <?php echo $d ["lname"]?></a> </td>
                                             <td><?php echo $d ["email"]?></td>
                                             <td><?php echo $d ["mobile"]?></td>
 
@@ -35,6 +41,7 @@ while ($d = $rs->fetch_assoc()){
                                             ?>
                                         
                                         </tr>
+                                        
 <?php
 }
 

@@ -380,12 +380,19 @@ function checkout() {
          var response = request.responseText;
 
          if (response == "success") {
-  
+
             window.location.href = "checkout.php";
 
-         }else{
-            alert(response);
+         }else if(response == "uev"){
+            swal("Checkout Error", "Please Verify Your Email", "error");
          }
+         else if(response == "ua"){
+            swal("Checkout Error", "Please Update Your Address", "error");
+         } else if(response == "ssw"){
+            swal("Checkout Error", "Something Went Wrong", "error");
+         }
+ 
+ 
  
 
 

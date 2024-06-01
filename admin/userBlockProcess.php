@@ -2,6 +2,8 @@
 include "../connection.php";
 $uid = $_POST["uid"];
 
+
+
 $rs = Database::search("SELECT * FROM `user` WHERE `user_id` = '".$uid."'  ");
 $num = $rs->num_rows;
 

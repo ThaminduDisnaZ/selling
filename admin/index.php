@@ -149,6 +149,23 @@ require "sideheader.php";
 
             <div class="row mbn-30">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!--Responsive Table Start-->
                 <div class="col-12 mb-30">
                     <div class="box">
@@ -163,17 +180,22 @@ require "sideheader.php";
                                             class="zmdi zmdi-search"></i></button>
 
                                     <div class="header-search-form">
-                                        <form action="#">
+                                       
                                             <input type="text" placeholder="Search Here" id="userid">
                                             <button data-bs-toggle="modal" data-bs-target="#exampleModal3"
                                                 onclick="searchuserid();"><i class="zmdi zmdi-search"></i></button>
-                                        </form>
+                                      
                                         <button class="header-search-close d-block d-xl-none"><i
                                                 class="zmdi zmdi-close"></i></button>
                                     </div>
 
                                 </div>
                             </div>
+
+
+
+
+
 
 
 
@@ -220,13 +242,6 @@ require "sideheader.php";
                             </div>
 
                             <!--Vertically Centered End-->
-
-
-
-
-
-
-
 
 
 
@@ -460,6 +475,9 @@ require "sideheader.php";
     <script src="assets/js/plugins/vmap/vmap.active.js"></script>
     <script src="admin.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="assets/js/plugins/datatables/datatables.min.js"></script>
+    <script src="assets/js/plugins/datatables/datatables.active.js"></script>
+
 
 
 </body>

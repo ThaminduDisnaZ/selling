@@ -103,17 +103,36 @@
 
                       if ($cart_num == 0) {
                       ?>
-                        <h1>No Items</h1>
+                       <section class="error__area pt-60 pb-100">
+                <div class="container">
+                    <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+                        <div class="error__content text-center">
+                            <div class="error__number">
+                                <h1></h1>
+                            </div>
+                            <span>Not Item in Cart</span>
+                            <h2>Not Item in Cart</h2>
+                            
+                            <div class="error__search">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter Your Text...">
+                                    <button type="submit" class="t-y-btn t-y-btn-grey">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
                       <?php
                       } else {
                       ?>
                         <div class="col-12 col-lg-8">
                           <form action="#">
                             <div class="table-content table-responsive">
-                              <table class="table">
+                              <table class="table bg-black border-5 border-warning ">
                                 <thead>
                                   <tr>
-                                    <th class="product-thumbnail">Images</th>
+                                    <th class="product-thumbnail ">Images</th>
                                     <th class="cart-product-name">Product</th>
                                     <th class="product-price">Unit Price</th>
                                     <th class="product-quantity">Quantity</th>
@@ -149,7 +168,7 @@
                                   ?>
 
 
-                                    <tr>
+                                    <tr class=" border-2 border-warning ">
                                       <td class="product-thumbnail"><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><img src="admin/<?php echo ($image_data["code"]) ?> " alt=""></a></td>
                                       <td class="product-name"><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"><?php echo ($product_data["name"]) ?></a>
                                       </td>
@@ -218,16 +237,16 @@
                                     if ($adressnf) {
                                     ?><p><?php echo ("Address Not Found"); ?></p><?php
 
-                                                                            } else {
-                                                                              ?><p><?php echo ($udata["no"]); ?>,</p><?php
-                                                                        ?><p><?php echo ($udata["street"]); ?>,</p><?php
-                                                                            ?><p><?php echo ($citydata["name"]); ?>,</p><?php
-                                                                            }
+                                                                                } else {
+                                                                                  ?><p><?php echo ($udata["no"]); ?>,</p><?php
+                                                                                                                      ?><p><?php echo ($udata["street"]); ?>,</p><?php
+                                                                                                                    ?><p><?php echo ($citydata["name"]); ?>,</p><?php
+                                                                                                                      }
 
-                                                                              ?>
-                                   
+                                                                                                                        ?>
+
                                   </div>
-                                 
+
                                 </div>
                               </div>
                               <div class="card mb-0">
@@ -236,7 +255,7 @@
                                   </p>
                                   <p class="mb-2">Shipping: <span class="float-end">Rs.<?php echo ($shipping) ?>.00</span>
                                   </p>
-                                 
+
                                   <p class="mb-0">Discount: <span class="float-end" id="totalid"></span>
                                   </p>
                                   <div class="my-3 border-top"></div>

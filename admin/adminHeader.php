@@ -7,7 +7,7 @@
 if (isset($_SESSION["a"])) {
     require "../connection.php";
     $email = $_SESSION["a"]["email"];
-    $details_rs=Database::search("SELECT*FROM `user` ");
+    $details_rs=Database::search("SELECT*FROM `admin` ");
     $data = $details_rs->fetch_assoc();
 ?>
 
