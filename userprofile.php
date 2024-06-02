@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Adomx - Responsive Bootstrap 4 Admin Template</title>
+    <title>User Profile</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,153 +27,451 @@
 	============================================ -->
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/bootstrap.min.css">
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="assets/css/vendor/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/vendor/cryptocurrency-icons.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/themify-icons.css">
+    <link rel="stylesheet" href="assets/assets/css/vendor/cryptocurrency-icons.css">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins/plugins.css">
+    <link rel="stylesheet" href="assets/assets/css/plugins/plugins.css">
 
     <!-- Helper CSS -->
-    <link rel="stylesheet" href="assets/css/helper.css">
+    <link rel="stylesheet" href="assets/assets/css/helper.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/assets/css/style.css">
 
     <!-- Custom Style CSS Only For Demo Purpose -->
-    <link id="cus-style" rel="stylesheet" href="assets/css/style-primary.css">
+    <link id="cus-style" rel="stylesheet" href="assets/assets/css/style-primary.css">
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/backToTop.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+    <link rel="stylesheet" href="assets/css/ui-range-slider.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
-  <!--start wrapper-->
-  <div class="wrapper">
+<div class="main-wrapper">
+
 
     <?php
     require "heder.php";
     ?>
 
-    <!-- start page content wrapper-->
-    <div class="page-content-wrapper">
-      <!-- start page content-->
-      <div class="page-content">
+    <!-- Content Body Start -->
+    <div class="content-body">
+<?php     if (isset($_SESSION["u"])) {   ?>
+<!-- Page Headings Start -->
+<div class="row justify-content-between align-items-center mb-10">
 
-        <?php
-        require "breadcrumb.php";
-        ?>
+    <!-- Page Heading Start -->
+    <div class="col-12 col-lg-auto mb-20">
+        <div class="page-heading">
+            <h3>Your Profile</h3>
+        </div>
+    </div><!-- Page Heading End -->
 
+</div><!-- Page Headings End -->
 
-<?php if (isset($_SESSION["u"])) {
+<div class="row mbn-50">
 
-$data = $_SESSION["u"];
-$u_id = $data["user_id"];
-?>
+    <!--Author Top Start-->
+    <div class="col-12 mb-50">
+        <div class="author-top">
+            <div class="inner">
+                <div class="author-profile">
+                    <div class="image">
+                        <img src="resources\user-profile-images\user-image.jpg" class="" alt="">
+                      
+                        <button class="edit"><i class="zmdi zmdi-cloud-upload"></i>Change Image</button>
+                    </div>
+                    <div class="info">
+                        <h5>Madison Howard</h5>
+                        <span>UI UX Designer</span>
+                        <a href="#" class="edit"><i class="zmdi zmdi-edit"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Author Top End-->
 
+    <!--Timeline / Activities Start-->
+    <div class="col-xlg-8 col-12 mb-50">
+        <div class="box">
 
+            <div class="box-head">
+                <h3 class="title">Timeline / Activities</h3>
+            </div>
 
-        <div class="row">
-          <div class="col-12 col-lg-8 col-xl-9">
-            <div class="card overflow-hidden radius-10">
-              <div class="profile-cover position-relative mb-4">
-               
-<div class="align-items-center">   <img src="resources\user-profile-images\user-image.jpg" width="120px" class="rounded float-center m-5" alt="...">
+            <div class="box-body">
+
+                <div class="timeline-wrap row mbn-50">
+
+                    <div class="col-12 mb-50"><span class="timeline-date">13 february 2018</span></div>
+
+                    <div class="col-12 mb-50">
+                        <ul class="timeline-list">
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
+                                    </div>
+                                    <span class="time">5 min ago</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="gallery">
+                                        <div class="row mbn-30">
+
+                                            <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-1.jpg" alt=""></a></div>
+                                            <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-2.jpg" alt=""></a></div>
+                                            <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-3.jpg" alt=""></a></div>
+
+                                        </div>
+                                    </div>
+                                    <span class="time">65 min ago</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="video">
+                                        <a href="#"><i class="zmdi zmdi-play"></i></a>
+                                    </div>
+                                    <span class="time">3 hour ago</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
+                                    </div>
+                                    <span class="time">17 hour ago</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-12 mb-50"><span class="timeline-date">12 february 2018</span></div>
+
+                    <div class="col-12 mb-50">
+                        <ul class="timeline-list">
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
+                                    </div>
+                                    <span class="time">at 7pm</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <div class="details">
+                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <div class="gallery">
+                                        <div class="row mbn-30">
+
+                                            <div class="col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-4.jpg" alt=""></a></div>
+
+                                        </div>
+                                    </div>
+                                    <span class="time">at 12:30pm</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--Timeline / Activities End-->
+
+    <!--Right Sidebar Start-->
+    <div class="col-xlg-4 col-12 mb-50">
+        <div class="row mbn-30">
+
+            <!--Author Information Start-->
+            <div class="col-xlg-12 col-lg-6 col-12 mb-30">
+                <div class="box">
+                    <div class="box-head">
+                        <h3 class="title">Author Information</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form">
+                            <form action="#">
+                                <div class="row row-10 mbn-20">
+                                    <div class="col-sm-6 col-12 mb-20"><input type="text" class="form-control" value="Madison"></div>
+                                    <div class="col-sm-6 col-12 mb-20"><input type="text" class="form-control" value="Howard"></div>
+                                    <div class="col-sm-6 col-12 mb-20"><input type="text" class="form-control input-date-single" value="02/13/2018"></div>
+                                    <div class="col-sm-6 col-12 mb-20"><input type="text" class="form-control" value="(012) 345-6789" data-mask="(999) 999-9999"></div>
+                                    <div class="col-12 mb-20"><input type="email" class="form-control" value="domain@mail.com"></div>
+                                    <div class="col-12 mb-20"><input type="text" class="form-control" value="https//: www.domain.com"></div>
+                                    <div class="col-sm-6 col-12 mb-20"><input type="password" class="form-control" value="password"></div>
+                                    <div class="col-sm-6 col-12 mb-20"><input type="password" class="form-control" value="password"></div>
+                                    <div class="col-12 mt-10 mb-20">
+                                        <input type="submit" class="button button-primary button-outline" value="Save Changes">
+                                        <input type="submit" class="button button-danger button-outline" value="Delete Changes">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Author Information End-->
+
+            <!-- To Do List Start -->
+            <div class="col-xlg-12 col-lg-6 col-12 mb-30">
+                <div class="box">
+
+                    <div class="box-head">
+                        <h3 class="title">To-do List</h3>
+                    </div>
+
+                    <div class="box-body p-0">
+
+                        <!--Todo List Start-->
+                        <ul class="todo-list">
+
+                            <!--Todo Item Start-->
+                            <li class="done">
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li>
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Mistaken idea of denouncing pleasure.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li>
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Encounter consequences that are.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li>
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li class="done">
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li>
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Nor again is there anyone who loves.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                            <!--Todo Item Start-->
+                            <li>
+                                <div class="list-action">
+                                    <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
+                                    <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                                <div class="list-content">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error.</p>
+                                </div>
+                                <div class="list-action right">
+                                    <button class="remove"><i class="zmdi zmdi-delete"></i></button>
+                                </div>
+                            </li>
+                            <!--Todo Item End-->
+
+                        </ul>
+                        <!--Todo List End-->
+
+                        <!--Add Todo List Start-->
+                        <form action="#" class="todo-list-add-new" data-date="false">
+                            <label class="status"><input type="checkbox"><i class="icon zmdi zmdi-star-outline"></i></label>
+                            <input class="content" type="text" placeholder="Type new Task">
+                            <button class="submit"><i class="zmdi zmdi-plus-circle-o"></i></button>
+                        </form>
+                        <!--Add Todo List End-->
+
+                    </div>
+                </div>
+            </div><!-- To Do List End -->
+
+            <!-- Daily Sale Report Start -->
+            <div class="col-xlg-12 col-lg-6 col-12 mb-30">
+
+                <div class="box">
+                    <div class="box-head">
+                        <h3 class="title">Daily Sale Report</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table">
+
+                                <!-- Table Head Start -->
+                                <thead>
+                                    <tr>
+                                        <th>Client</th>
+                                        <th>Detail</th>
+                                        <th>Payment</th>
+                                    </tr>
+                                </thead><!-- Table Head End -->
+
+                                <!-- Table Body Start -->
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-600">Alexander</td>
+                                        <td>
+                                            <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
+                                        </td>
+                                        <td><span class="text-success d-flex justify-content-between fw-600">$500.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Linda</td>
+                                        <td>
+                                            <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
+                                        </td>
+                                        <td><span class="text-success d-flex justify-content-between fw-600">$20.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Patrick</td>
+                                        <td>
+                                            <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
+                                        </td>
+                                        <td><span class="text-danger d-flex justify-content-between fw-600">$120.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Jose</td>
+                                        <td>
+                                            <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
+                                        </td>
+                                        <td><span class="text-success d-flex justify-content-between fw-600">$1750.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Amber</td>
+                                        <td>
+                                            <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
+                                        </td>
+                                        <td><span class="text-warning d-flex justify-content-between fw-600">$165.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
+                                    </tr>
+                                </tbody><!-- Table Body End -->
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- Daily Sale Report End -->
+
+        </div>
+    </div>
+    <!--Right Sidebar End-->
+
 </div>
 
-             
-
-               
-              </div>
-              <div class="card-body">
-                <div class="mt-5 d-flex align-items-start justify-content-between">
-                  <div class="">
-                    <h3 class="mb-2"><?php echo($data["fname"]) ?> <?php echo($data["lname"]) ?></h3>
-                    <p class="mb-1"><?php echo($data["email"]) ?></p>
-                 
-                   
-                  </div>
-                 
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="mb-2">About Me</h4>
-                <p class="">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-xl-3">
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Location</h5>
-                <p class="mb-0"><ion-icon name="compass-sharp" class="me-2"></ion-icon>Kalkio Network</p>
-              </div>
-            </div>
-
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Connect</h5>
-                <p class=""><ion-icon name="globe-sharp" class="me-2"></ion-icon>www.example.com</p>
-                <p class=""><ion-icon name="logo-facebook" class="me-2"></ion-icon>Facebook</p>
-                <p class=""><ion-icon name="logo-twitter" class="me-2"></ion-icon>Twitter</p>
-                <p class="mb-0"><ion-icon name="logo-linkedin" class="me-2"></ion-icon>LinkedIn</p>
-              </div>
-            </div>
-
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Skills</h5>
-                <div class="mb-3">
-                  <p class="mb-1">Web Design</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 45%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">HTML5</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 55%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">PHP7</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 65%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">CSS3</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 75%"></div>
-                  </div>
-                </div>
-                <div class="mb-0">
-                  <p class="mb-1">Photoshop</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div><!--end row-->
 
 
+<?php }else{
 
+?>
 
-
-      </div>
-      <?php
-                                 } else {
-                                    $u_id = "";
-                                      ?>
 
 <section class="error__area pt-60 pb-100">
                 <div class="container">
@@ -183,116 +481,48 @@ $u_id = $data["user_id"];
                                 
                             </div>
                             <span>user not found</span>
-                            <h2>Please Login Your Account</h2>
-                          
+                            <h2>Please Login First</h2>
+                           
                             <div class="error__search">
-                               
-                                   
-                                    <a href="login.php"><button type="submit" class="t-y-btn t-y-btn-grey">Login</button></a>
-                                
+                           
+                                  
+                                    <a href="login.php" class="t-y-btn t-y-btn-grey">Login</a>
+                      
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-                                <?php
-                                 } ?>
-
-      <!-- end page content-->
-    </div>
 
 
+<?php
 
-    <!--Start Back To Top Button-->
-    <a href="javaScript:;" class="back-to-top"><ion-icon name="arrow-up-outline"></ion-icon></a>
-    <!--End Back To Top Button-->
-
-    <!--start switcher-->
-    <div class="switcher-body">
-      <button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><ion-icon name="color-palette-sharp" class="me-0"></ion-icon></button>
-      <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
-        <div class="offcanvas-header border-bottom">
-          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-          <h6 class="mb-0">Theme Variation</h6>
-          <hr>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1" checked>
-            <label class="form-check-label" for="LightTheme">Light</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2">
-            <label class="form-check-label" for="DarkTheme">Dark</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDark" value="option3">
-            <label class="form-check-label" for="SemiDark">Semi Dark</label>
-          </div>
-          <hr />
-          <h6 class="mb-0">Header Colors</h6>
-          <hr />
-          <div class="header-colors-indigators">
-            <div class="row row-cols-auto g-3">
-              <div class="col">
-                <div class="indigator headercolor1" id="headercolor1"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor2" id="headercolor2"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor3" id="headercolor3"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor4" id="headercolor4"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor5" id="headercolor5"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor6" id="headercolor6"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor7" id="headercolor7"></div>
-              </div>
-              <div class="col">
-                <div class="indigator headercolor8" id="headercolor8"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--end switcher-->
+}?>
+</div><!-- Content Body End -->
 
 
-    <!--start overlay-->
-    <div class="overlay nav-toggle-icon"></div>
-    <!--end overlay-->
+
+
 
   </div>
   <!--end wrapper-->
 
 
 
+ <!-- Global Vendor, plugins & Activation JS -->
+ <script src="assets/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="assets/assets/js/vendor/popper.min.js"></script>
+    <script src="assets/assets/js/vendor/bootstrap.min.js"></script>
+    <!--Plugins JS-->
+    <script src="assets/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="assets/assets/js/plugins/tippy4.min.js.js"></script>
+    <!--Main JS-->
+    <script src="assets/assets/js/main.js"></script>
 
-
-  <!-- JS Files-->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <!--plugins-->
-  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-
-  <!-- Main JS-->
-  <script src="assets/js/main.js"></script>
-  
-    <!-- JS here -->
+    <!-- Plugins & Activation JS For Only This Page -->
+    <script src="assets/assets/js/plugins/moment/moment.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/waypoints.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -311,7 +541,6 @@ $u_id = $data["user_id"];
     <script src="assets/js/main.js"></script>
     <script src="script.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 
 </body>
 
