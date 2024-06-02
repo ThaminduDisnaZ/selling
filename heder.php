@@ -18,7 +18,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-7">
                         <div class="header__action d-flex justify-content-center justify-content-md-end">
                             <ul>
-                                <li><a href="#">My Account</a></li>
+                                <li><a href="userprofile.php">My Account</a></li>
                                 <li><a href="#">My Wishlist</a></li>
                                 <li><a href="#">Compare</a></li>
 
