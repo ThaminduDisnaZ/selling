@@ -1,8 +1,7 @@
-
 <?php
- require_once "./connection.php";
+require_once "./connection.php";
 
- ?>
+?>
 
 
 
@@ -53,14 +52,18 @@
   <link rel="stylesheet" href="assets/css/ui-range-slider.css">
   <link rel="stylesheet" href="assets/css/default.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <link href="assets/css/dark-theme.css" rel="stylesheet" />
+  <link href="assets/css/semi-dark.css" rel="stylesheet" />
+  <link href="assets/css/header-colors.css" rel="stylesheet" />
+  <?php $titlewindow = "User Profile"; ?>
+
+  <title>User Profile</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.4/dist/css/uikit.min.css" />
 </head>
 
-<link href="assets/css/dark-theme.css" rel="stylesheet" />
-<link href="assets/css/semi-dark.css" rel="stylesheet" />
-<link href="assets/css/header-colors.css" rel="stylesheet" />
-<?php $titlewindow = "User Profile"; ?>
 
-<title>User Profile</title>
 </head>
 
 <body>
@@ -83,140 +86,144 @@
         ?>
 
 
-<?php if (isset($_SESSION["u"])) {
+        <?php if (isset($_SESSION["u"])) {
 
-$data = $_SESSION["u"];
-$u_id = $data["user_id"];
-?>
+          $data = $_SESSION["u"];
+          $u_id = $data["user_id"];
+        ?>
 
 
 
-        <div class="row">
-          <div class="col-12 col-lg-8 col-xl-9">
-            <div class="card overflow-hidden radius-10">
-              <div class="profile-cover position-relative mb-4">
-               
-<div class="align-items-center">   <img src="resources\user-profile-images\user-image.jpg" width="120px" class="rounded float-center m-5" alt="...">
-</div>
+          <div class="row">
+            <div class="col-12 col-lg-8 col-xl-9">
+              <div class="card overflow-hidden radius-10">
+                <div class="profile-cover position-relative mb-4">
 
-             
 
-               
-              </div>
-              <div class="card-body">
-                <div class="mt-5 d-flex align-items-start justify-content-between">
-                  <div class="">
-                    <h3 class="mb-2"><?php echo($data["fname"]) ?> <?php echo($data["lname"]) ?></h3>
-                    <p class="mb-1"><?php echo($data["email"]) ?></p>
+                
+                  <div class="align-items-center"> <img src="resources\user-profile-images\user-image.jpg" width="120px" class="rounded float-center m-5" alt="...">
                  
-                   
-                  </div>
-                 
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="mb-2">About Me</h4>
-                <p class="">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-4 col-xl-3">
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Location</h5>
-                <p class="mb-0"><ion-icon name="compass-sharp" class="me-2"></ion-icon>Kalkio Network</p>
-              </div>
-            </div>
-
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Connect</h5>
-                <p class=""><ion-icon name="globe-sharp" class="me-2"></ion-icon>www.example.com</p>
-                <p class=""><ion-icon name="logo-facebook" class="me-2"></ion-icon>Facebook</p>
-                <p class=""><ion-icon name="logo-twitter" class="me-2"></ion-icon>Twitter</p>
-                <p class="mb-0"><ion-icon name="logo-linkedin" class="me-2"></ion-icon>LinkedIn</p>
-              </div>
-            </div>
-
-            <div class="card radius-10">
-              <div class="card-body">
-                <h5 class="mb-3">Skills</h5>
-                <div class="mb-3">
-                  <p class="mb-1">Web Design</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 45%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">HTML5</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 55%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">PHP7</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 65%"></div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <p class="mb-1">CSS3</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 75%"></div>
-                  </div>
-                </div>
-                <div class="mb-0">
-                  <p class="mb-1">Photoshop</p>
-                  <div class="progress" style="height: 5px;">
-                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
-                  </div>
+                
+                
                 </div>
 
+
+
+                </div>
+                <div class="card-body">
+                  <div class="mt-5 d-flex align-items-start justify-content-between">
+                    <div class="">
+                      <h3 class="mb-2"><?php echo ($data["fname"]) ?> <?php echo ($data["lname"]) ?></h3>
+                      <p class="mb-1"><?php echo ($data["email"]) ?></p>
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="mb-2">About Me</h4>
+                  <p class="">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                </div>
               </div>
             </div>
+            <div class="col-12 col-lg-4 col-xl-3">
+              <div class="card radius-10">
+                <div class="card-body">
+                  <h5 class="mb-3">Location</h5>
+                  <p class="mb-0"><ion-icon name="compass-sharp" class="me-2"></ion-icon>Kalkio Network</p>
+                </div>
+              </div>
 
-          </div>
-        </div><!--end row-->
+              <div class="card radius-10">
+                <div class="card-body">
+                  <h5 class="mb-3">Connect</h5>
+                  <p class=""><ion-icon name="globe-sharp" class="me-2"></ion-icon>www.example.com</p>
+                  <p class=""><ion-icon name="logo-facebook" class="me-2"></ion-icon>Facebook</p>
+                  <p class=""><ion-icon name="logo-twitter" class="me-2"></ion-icon>Twitter</p>
+                  <p class="mb-0"><ion-icon name="logo-linkedin" class="me-2"></ion-icon>LinkedIn</p>
+                </div>
+              </div>
+
+              <div class="card radius-10">
+                <div class="card-body">
+                  <h5 class="mb-3">Skills</h5>
+                  <div class="mb-3">
+                    <p class="mb-1">Web Design</p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="mb-1">HTML5</p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar" role="progressbar" style="width: 55%"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="mb-1">PHP7</p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar" role="progressbar" style="width: 65%"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="mb-1">CSS3</p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                    </div>
+                  </div>
+                  <div class="mb-0">
+                    <p class="mb-1">Photoshop</p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div><!--end row-->
 
 
 
 
 
       </div>
-      <?php
-                                 } else {
-                                    $u_id = "";
-                                      ?>
+    <?php
+        } else {
+          $u_id = "";
+    ?>
 
-<section class="error__area pt-60 pb-100">
-                <div class="container">
-                    <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
-                        <div class="error__content text-center">
-                            <div class="error__number">
-                                
-                            </div>
-                            <span>user not found</span>
-                            <h2>Please Login Your Account</h2>
-                          
-                            <div class="error__search">
-                               
-                                   
-                                    <a href="login.php"><button type="submit" class="t-y-btn t-y-btn-grey">Login</button></a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <section class="error__area pt-60 pb-100">
+        <div class="container">
+          <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+            <div class="error__content text-center">
+              <div class="error__number">
 
-                                <?php
-                                 } ?>
+              </div>
+              <span>user not found</span>
+              <h2>Please Login Your Account</h2>
 
-      <!-- end page content-->
+              <div class="error__search">
+
+
+                <a href="login.php"><button type="submit" class="t-y-btn t-y-btn-grey">Login</button></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <?php
+        } ?>
+
+    <!-- end page content-->
     </div>
 
 
@@ -294,9 +301,6 @@ $u_id = $data["user_id"];
   <!--end wrapper-->
 
 
-
-
-
   <!-- JS Files-->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
@@ -308,26 +312,28 @@ $u_id = $data["user_id"];
 
   <!-- Main JS-->
   <script src="assets/js/main.js"></script>
-  
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/waypoints.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/meanmenu.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/backToTop.js"></script>
-    <script src="assets/js/jquery.fancybox.min.js"></script>
-    <script src="assets/js/countdown.js"></script>
-    <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery-ui-slider-range.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- JS here -->
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/vendor/waypoints.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/meanmenu.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/backToTop.js"></script>
+  <script src="assets/js/jquery.fancybox.min.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/nice-select.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery-ui-slider-range.js"></script>
+  <script src="assets/js/ajax-form.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.4/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.4/dist/js/uikit-icons.min.js"></script>
 
 
 </body>
