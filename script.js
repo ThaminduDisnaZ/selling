@@ -407,3 +407,100 @@ function checkout() {
 
 
 }
+
+
+function emailverify() {
+
+
+
+request = new XMLHttpRequest();
+
+request.onreadystatechange = function (){
+   if (request.readyState == 4 && request.status == 200) {
+     var response = request.responseText;
+   }
+}
+
+request.open("POST","otpVerifyProcess.php",true);
+request.send();
+
+
+
+
+
+
+
+
+
+
+
+
+   // if (response == "Success") {
+   //    swal({
+   //       title: 'Check Your Email',
+   //       text: '',
+   //       timer: 3000
+   //    }).then(
+   //       function () { },
+   //       // handling the promise rejection
+   //       function (dismiss) {
+   //          if (dismiss === 'timer') {
+   //             console.log('I was closed by the timer')
+   //          }
+   //       }
+   //    )
+   //    setTimeout(function () {
+
+   //       swal("Type OTP Code here:", {
+   //          content: "input",
+   //       })
+   //          .then((value) => {
+   //             var fname = document.getElementById("fname");
+   //             var email = document.getElementById("email");
+   //             var f = new FormData();
+   //             f.append("e", email.value);
+   //             f.append("f", fname.value);
+   //             f.append("otp", value);
+
+   //             var request2 = new XMLHttpRequest();
+
+   //             request2.onreadystatechange = function () {
+   //                if (request2.readyState == 4 && request2.status == 200) {
+   //                   response2 = request2.responseText;
+
+   //                   if (response2 == "Success") {
+   //                      swal("OTP ", "Your Email Is Veryfied Successfull", "success");
+   //                      window.location.assign("login.php");
+   //                   } else if (response2 != "Success") {
+   //                      swal("OTP ", "Your Email has been Very Failed : " + response2, "error");
+   //                   }
+
+
+
+
+   //                }
+   //             }
+
+   //             request2.open("POST", "otpVerifyProcess.php", true);
+   //             request2.send(f);
+
+
+   //          });
+
+   //    }, 3000);
+
+
+
+
+
+
+   // } else {
+   //    document.getElementById("msg1").innerHTML = response;
+   //    document.getElementById("msgdiv1").className = "alert alert-dismissible fade show py-2 bg-warning d-block";
+
+
+
+   // }
+
+
+}

@@ -1,5 +1,5 @@
 <?php
-
+echo("sdsds");
 require "./connection.php";
 $uid = uniqid();
 

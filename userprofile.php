@@ -71,7 +71,12 @@
 
     <!-- Content Body Start -->
     <div class="content-body">
-<?php     if (isset($_SESSION["u"])) {   ?>
+<?php     if (isset($_SESSION["u"])) {  
+  
+  $uid = $_SESSION["u"]["user_id"];
+  
+  
+  ?>
 <!-- Page Headings Start -->
 <div class="row justify-content-between align-items-center mb-10">
 
@@ -92,12 +97,34 @@
             <div class="inner">
                 <div class="author-profile">
                     <div class="image">
-                        <img src="resources\user-profile-images\user-image.jpg" class="" alt="">
+
+                    <?php 
+
+$urs = Database::search(" SELECT * FROM `user` WHERE `user_id`  = '".$uid."' ");
+$udata = $urs->fetch_assoc();
+
+$irs = Database::search(" SELECT * FROM `user_img` WHERE `user_id` = '".$uid."' ");
+$idata = $irs->fetch_assoc();
+$inum= $irs->num_rows;
+
+
+
+if ($inum == NULL) {
+  ?>
+      <img src="resources\user-profile-images\user-image.jpg" class="" alt="">
+  <?php
+  } else {
+  ?>
+      <img src="<?php echo $idata["path"]; ?>" class="" alt="">
+  <?php
+  }
+  ?>
+                       
                       
                         <button class="edit"><i class="zmdi zmdi-cloud-upload"></i>Change Image</button>
                     </div>
                     <div class="info">
-                        <h5>Madison Howard</h5>
+                        <h5><?php echo($udata["fname"]) ?> <?php echo($udata["lname"]) ?></h5>
                         <span>UI UX Designer</span>
                         <a href="#" class="edit"><i class="zmdi zmdi-edit"></i></a>
                     </div>
@@ -112,26 +139,35 @@
         <div class="box">
 
             <div class="box-head">
-                <h3 class="title">Timeline / Activities</h3>
+                <h3 class="title">Your Details</h3>
             </div>
 
             <div class="box-body">
 
                 <div class="timeline-wrap row mbn-50">
 
-                    <div class="col-12 mb-50"><span class="timeline-date">13 february 2018</span></div>
-
+                 
                     <div class="col-12 mb-50">
                         <ul class="timeline-list">
 
                             <li>
-                                <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                <span class="icon"><i class="zmdi zmdi-email"></i></span>
                                 <div class="details">
-                                    <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                    <h5 class="title"><a href="#">Your Email</a></h5>
                                     <div class="content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
+                                        <p><?php echo ($udata["email"]) ?></p>
                                     </div>
-                                    <span class="time">5 min ago</span>
+
+<?php if ($udata["uev_id"] == 1 ) {
+ ?>    <span class="time text-success zmdi zmdi-check-square"> Your Email is Verified</span> <?php
+} else {
+  ?>    <span class="time text-danger zmdi zmdi-close-circle"> Your Email is Not Verify</span>   <br>   <button onclick="emailverify();" class="t-y-btn t-y-btn-close">Verify Your Email</button> <?php
+}
+ ?>
+                                    <span class="time"></span>
+
+
+
                                 </div>
                             </li>
 
