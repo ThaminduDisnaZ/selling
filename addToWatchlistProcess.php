@@ -10,12 +10,11 @@ if(isset($_SESSION["u"])){
     if(isset($_GET["id"])){
 
 
-        $qty = $_POST['qty'];
-
-        $email = $_SESSION["u"]["user_id"];
+        
+        $uid = $_SESSION["u"]["user_id"];
         $pid = $_GET["id"];
 
-      
+      echo($pid);
 
         $cart_rs = Database::search("SELECT*FROM `cart`WHERE `product_id`='".$pid."'AND `user_id`='".$email."'");
         $cart_num =$cart_rs->num_rows;

@@ -447,20 +447,20 @@ function updateProfile() {
 }
 
 
-function addwatchlist(id) {
+// function addwatchlist(id) {
 
 
-  var r = new XMLHttpRequest();
+//   var r = new XMLHttpRequest();
 
-  r.onreadystatechange = function () {
-    if (r.readyState == 4) {
-      var t = r.responseText;
+//   r.onreadystatechange = function () {
+//     if (r.readyState == 4) {
+//       var t = r.responseText;
 
-   alert(t);
-    }
-  };
+//    alert(t);
+//     }
+//   };
 
-  r.open("POST", "addToWatchlistProcess.php?id=" + id, true);
+//   r.open("POST", "addToWatchlistProcess.php?id=" + id, true);
 
-  r.send();
-}
+//   r.send();
+// }

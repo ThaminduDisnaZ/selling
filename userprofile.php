@@ -2,7 +2,9 @@
 require_once "./connection.php";
 
 ?>
-<?php $titlewindow = "User Profile"; ?>
+<?php $titlewindow = "User Profile"; 
+
+?>
 
 
 
@@ -200,10 +202,26 @@ require_once "./connection.php";
                                             <div class="details">
                                                 <h5 class="title"><a href="#">Your Addressing Details</a></h5>
                                                 <div class="content">
-                                                    <p><b><?php echo ($udata["no"]) ?>,</b></p>
-                                                    <p><b><?php echo ($udata["street"]) ?>,</b></p>
-                                                    <p><b><?php echo ($cdata["name"]) ?>.</b></p>
-                                                    <br>
+
+                                                    <?php
+                                                    if ($udata["no"] = null || $udata["street"] == null) {
+                                                    ?><p><b>NO ADDRESS UPDATED. PLEASE UPDATE</b></p><?php
+                                                    } else {
+                                                    ?>
+
+                                                        <p><b><?php echo ($udata["no"]) ?>,</b></p>
+                                                        <p><b><?php echo ($udata["street"]) ?>,</b></p>
+                                                        <p><b><?php echo ($cdata["name"]) ?>.</b></p>
+                                                        <br>
+
+                                                    <?php
+
+
+                                                    }
+
+                                                    ?>
+
+
                                                     <p><b>T.P :-</b> <?php echo ($udata["mobile"]) ?></p>
                                                 </div>
 
@@ -265,10 +283,10 @@ require_once "./connection.php";
 
                                                                                             if ($ders["delivery_status_id"] == 1) {
                                                                                             ?> <h2 class="blink">Packing Your Order</h2> <?php
-                                                                                                                            }
+                                                                                                                                        }
 
 
-                                                                                                                                ?>
+                                                                                                                                            ?>
 
 
 
