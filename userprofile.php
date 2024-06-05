@@ -59,6 +59,27 @@ require_once "./connection.php";
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+
+    <style>
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h2.blink {
+            animation: blink 1s infinite;
+        }
+    </style>
+
 </head>
 
 <div class="main-wrapper">
@@ -170,43 +191,124 @@ require_once "./connection.php";
 
                                             </div>
                                         </li>
-
+                                        <?php
+                                        $crs = Database::search("SELECT * FROM `city` WHERE `city_id` = '" . $udata["city_id"] . "' ");
+                                        $cdata = $crs->fetch_assoc();
+                                        ?>
                                         <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                            <span class="icon"><i class="zmdi zmdi-home"></i></span>
                                             <div class="details">
-                                                <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
-                                                <div class="gallery">
-                                                    <div class="row mbn-30">
-
-                                                        <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-1.jpg" alt=""></a></div>
-                                                        <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-2.jpg" alt=""></a></div>
-                                                        <div class="col-md-4 col-sm-6 col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-3.jpg" alt=""></a></div>
-
-                                                    </div>
-                                                </div>
-                                                <span class="time">65 min ago</span>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details">
-                                                <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
-                                                <div class="video">
-                                                    <a href="#"><i class="zmdi zmdi-play"></i></a>
-                                                </div>
-                                                <span class="time">3 hour ago</span>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details">
-                                                <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
+                                                <h5 class="title"><a href="#">Your Addressing Details</a></h5>
                                                 <div class="content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
+                                                    <p><b><?php echo ($udata["no"]) ?>,</b></p>
+                                                    <p><b><?php echo ($udata["street"]) ?>,</b></p>
+                                                    <p><b><?php echo ($cdata["name"]) ?>.</b></p>
+                                                    <br>
+                                                    <p><b>T.P :-</b> <?php echo ($udata["mobile"]) ?></p>
                                                 </div>
-                                                <span class="time">17 hour ago</span>
+
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
+                                            <div class="details">
+                                                <h5 class="title"><a href="#">Your Orders</a></h5>
+                                                <div class="content">
+
+                                                    <?php
+                                                    $ors = Database::search("SELECT * FROM `orders` WHERE `user_id` = '" . $uid . "' ");
+
+
+
+                                                    while ($odata = $ors->fetch_assoc()) {
+
+
+                                                        $product_data1 = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $odata["product_id"] . "' ");
+                                                        $prs = $product_data1->fetch_assoc();
+
+                                                        $product_img = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $prs["product_id"] . "' ");
+                                                        $pimg = $product_img->fetch_assoc();
+
+                                                        $drs = Database::search(" SELECT * FROM `delivery` WHERE `order_id` = '" . $ors["order_id"] . "' ");
+                                                        $ders = $drs->fetch_assoc();
+                                                        $drnum = $drs->num_rows;
+
+                                                    ?>
+
+                                                        <!--Basic Example Start-->
+                                                        <div class="col-lg-6 col-12 mb-30">
+                                                            <div class="box">
+
+                                                                <div class="box-body">
+                                                                    <div class="d-flex">
+                                                                        <div class="flex-shrink-0">
+                                                                            <img width="45px" src="admin/<?php echo $pimg["code"] ?>" alt="...">
+                                                                        </div>
+                                                                        <div class="flex-grow-1 ms-3">
+                                                                            <h6 class="mt-0"><?php echo $prs["stitle"] ?></h6>
+                                                                            <!--Vertically Centered Start-->
+
+
+
+                                                                            <button class="button button-warning " data-bs-toggle="modal" data-bs-target="#exampleModal3">View Delivery Status</button>
+                                                                            <!-- Modal -->
+                                                                            <div class="modal fade" id="exampleModal3">
+                                                                                <div class="modal-dialog modal-dialog-centered">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title">Delivery Status</h5>
+                                                                                            <button class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            <?php
+
+                                                                                            if ($ders["delivery_status_id"] == 1) {
+                                                                                            ?> <h2 class="blink">Packing Your Order</h2> <?php
+                                                                                                                            }
+
+
+                                                                                                                                ?>
+
+
+
+                                                                                            <p class="blink">Place Your Order</p>
+                                                                                            <p class="blink">Ready to Deliver Your Order</p>
+                                                                                            <p class="blink">Delivering Your Order</p>
+                                                                                            <p class="blink">Delivered Your Order</p>
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                            <button class="button button-danger" data-bs-dismiss="modal">Close</button>
+                                                                                            <button class="button button-primary">Save changes</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--Vertically Centered End-->
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--Basic Example End-->
+
+                                                    <?php
+
+                                                    }
+
+                                                    ?>
+
+
+
+
+
+
+
+                                                </div>
+
                                             </div>
                                         </li>
 
@@ -287,13 +389,13 @@ require_once "./connection.php";
 
 
                                                     ?> <option value="<?php echo ($cdata["city_id"]) ?>"><?php echo ($cdata["name"]) ?></option><?php
-                                                                                            $crs1 = Database::search("SELECT * FROM `city` ");
+                                                                                                                                                $crs1 = Database::search("SELECT * FROM `city` ");
 
-                                                                                            while ($cdata1 = $crs1->fetch_assoc()) {
-                                                                                            ?> <option value="<?php echo ($cdata1["city_id"]) ?>"><?php echo ($cdata1["name"]) ?></option><?php
-                                                                                                                                                }
+                                                                                                                                                while ($cdata1 = $crs1->fetch_assoc()) {
+                                                                                                                                                ?> <option value="<?php echo ($cdata1["city_id"]) ?>"><?php echo ($cdata1["name"]) ?></option><?php
+                                                                                                                                                                                                                                            }
 
-                                                                                                                                                    ?>
+                                                                                                                                                                                                                                                ?>
 
 
                                                 </select></div>

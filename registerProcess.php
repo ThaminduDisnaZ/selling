@@ -32,7 +32,7 @@ if (empty($fname)) {
 }elseif (empty($password)) {
     echo("Please Enter Your Password");
 }elseif (strlen($password) < 5 || strlen($password) > 45) {
-    echo("Your Mobile Number must contain 5 - 45 Characters");
+    echo("Your Password must contain 5 - 45 Characters");
 }else{
 
     $rs = Database::search("SELECT * FROM `user` WHERE `email` = '".$email."' OR `mobile` = '".$mobile."' ");

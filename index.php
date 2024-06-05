@@ -357,7 +357,7 @@
                                         $product_data = $product_rs->fetch_assoc();
                                         $image_rs = Database::search("SELECT*FROM `images`WHERE `product_id`='" . $product_data["product_id"] . "'");
                                         $image_data = $image_rs->fetch_assoc();
-
+$pid = $product_data["product_id"];
                                     ?>
 
                                         <div class="product__item white-bg">
@@ -368,7 +368,7 @@
                                                 </a>
                                                 <div class="product__action p-absolute">
                                                     <ul>
-                                                        <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
+                                                        <li><a onclick="addwatchlist(<?php echo ($pid)?>);" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
                                                         <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-search"></i></a></li>
 
                                                         </li>
@@ -533,7 +533,7 @@
                                             </a>
                                             <div class="product__action p-absolute">
                                                 <ul>
-                                                    <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
+                                                    <li><a onclick="addwatchlist();" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
                                                     </li>
                                                     <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-search"></i></a></li>
 

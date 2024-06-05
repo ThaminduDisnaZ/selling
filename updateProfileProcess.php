@@ -21,10 +21,10 @@ if (isset($_SESSION["u"])) {
 
 
     if (isset($_FILES["img"])) {
-$img = $_FILES["img"];
+        $img = $_FILES["img"];
 
 
-        $allowed_image_extentions = array("image/jpg","image/jpeg","image/png","image/svg+xml");
+        $allowed_image_extentions = array("image/jpg", "image/jpeg", "image/png", "image/svg+xml");
         $file_ex = $img["type"];
 
 
@@ -65,6 +65,36 @@ $img = $_FILES["img"];
                 Database::iud("INSERT INTO`user_img`  (`path`,`user_id`)VALUES
 ('" . $file_name . "','" . $uid . "')");
             }
+        }
+    }
+
+
+    $urs = Database::search("SELECT * FROM `user` WHERE `user_id` = '" . $uid . "' ");
+    $udata = $urs->fetch_assoc();
+
+    $vpw = $cpw;
+
+
+
+    if ($npw != "" || $cpw != "") {
+        if ($udata["password"] == $opw) {
+            if ($vpw == $udata["password"]) {
+                echo ("You are Enterd old password... Please Enter another Password");
+            } else {
+                if ($npw == $cpw) {
+
+                    if (strlen($npw) > 4) {
+                        Database::iud("UPDATE`user` SET `password`='" . $npw . "'WHERE
+                    `user_id`='" . $uid . "'");
+                    } else {
+                        echo ("Your Password must contain 5 - 45 Characters");
+                    }
+                } else {
+                    echo ("Don't match password");
+                }
+            }
+        } else {
+            echo ("Please Enter Correct old Password");
         }
     }
 

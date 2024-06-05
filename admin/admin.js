@@ -825,3 +825,46 @@ function userd(id){
 
 
 }
+
+
+
+function delstatus(oid){
+ 
+
+    var s1 = document.getElementById("ds1").checked;
+    var s2 = document.getElementById("ds2").checked;
+    var s3 = document.getElementById("ds3").checked;
+    var s4 = document.getElementById("ds4").checked;
+    var s5 = document.getElementById("ds5").checked;
+
+
+      var f = new FormData();
+    
+      f.append("oid",oid);
+      f.append("s1",s1);
+      f.append("s2",s2);
+      f.append("s3",s3);
+      f.append("s4",s4);
+      f.append("s5",s5);
+
+
+      if (s1 == "true") {
+        document.getElementById("ds11").className = "text-danger";
+      }
+    
+      var request = new XMLHttpRequest();
+    
+      request.onreadystatechange = function(){
+        if (request.readyState == 4 && request.status == 200) {
+          var response = request.responseText;
+          alert(response);
+        }
+      }
+    
+      request.open("POST","deliveryStatusProcess.php",true);
+      request.send(f);
+    
+    
+    
+    
+    }
