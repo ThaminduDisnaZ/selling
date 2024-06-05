@@ -16,32 +16,19 @@ if(isset($_SESSION["u"])){
 
       echo($pid);
 
-        $cart_rs = Database::search("SELECT*FROM `cart`WHERE `product_id`='".$pid."'AND `user_id`='".$email."'");
-        $cart_num =$cart_rs->num_rows;
+        $watchlist_rs = Database::search("SELECT*FROM `watchlist`WHERE `product_id`='".$pid."'AND `user_id`='".$uid."'");
+        $list_num =$watchlist_rs->num_rows;
 
         $product_rs = Database::search("SELECT*FROM `product` WHERE`product_id`='".$pid."'");
         $product_data = $product_rs->fetch_assoc();
         $product_qty = $product_data["qty"];
 
 
-        if($cart_num ==1){
+        if( $list_num > 1){
 
-            $cart_data = $cart_rs->fetch_assoc();
-            $current_qty =$cart_data["qty"];
-            $new_qty = (int)$current_qty+1;
-
-
-            if($product_qty>=$new_qty){
-
-               Database::iud("UPDATE `cart`SET`qty`='".$qty + $new_qty."'WHERE `product_id`='".$pid."' AND `user_id`='".$email."'");
-               echo ("Product added successfully"); 
-            }else if($product_qty < $qty){
-                echo("Sorry..! Please Select 0 - ".$product_qty." Quantity" );
-            }else{
-                echo("iq");
-            }
+          echo("already added to watchlist");
         }else{
-             Database::iud("INSERT INTO `cart`(`product_id`,`user_id`,`qty`)VALUES ('".$pid."','".$email."','".$qty."')");
+             Database::iud("INSERT INTO `watchlist`(`product_id`,`user_id`)VALUES ('".$pid."','".$uid."')");
              echo ("Product added successfully"); 
         }
 

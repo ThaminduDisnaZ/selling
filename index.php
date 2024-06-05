@@ -368,7 +368,7 @@ $pid = $product_data["product_id"];
                                                 </a>
                                                 <div class="product__action p-absolute">
                                                     <ul>
-                                                        <li><a onclick="addwatchlist();" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
+                                                        <li><a onclick="addwatchlist(<?php echo ($pid)?>);" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
                                                         <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-search"></i></a></li>
 
                                                         </li>
