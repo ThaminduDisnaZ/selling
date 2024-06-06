@@ -286,7 +286,39 @@
             </div>
           </section>
           <!--end shop cart-->
+          <?php
 
+} else {
+ 
+?>
+
+<section class="error__area pt-60 pb-100">
+            <div class="container">
+                <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+                    <div class="error__content text-center">
+                        <div class="error__number">
+                            <h2>Please Login First</h2>
+                        </div>
+                        <span>Please Login First and add to cart products</span>
+                        
+                        
+                        <div class="error__search">
+                            <form action="#">
+                                <input type="text" placeholder="Enter Your Text...">
+                                <a href="login.php" class="t-y-btn t-y-btn-grey">Login Your Account</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <?php
+
+
+}
+
+?>
 
         </div>
         <!-- end page content-->
@@ -366,13 +398,7 @@
       <!--start overlay-->
       <div class="overlay nav-toggle-icon"></div>
       <!--end overlay-->
-    <?php
 
-    } else {
-      header("Location:error.html");
-    }
-
-    ?>
   </div>
   <!--end wrapper-->
 

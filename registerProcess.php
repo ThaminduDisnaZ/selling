@@ -40,6 +40,7 @@ if (empty($fname)) {
     
     if ($num > 0) {
         echo("Your Email or Mobile Number Already Exists");
+        
     } else {
         Database::iud("INSERT INTO `user` (`fname`,`lname`,`email`,`mobile`,`password`,`status_id`,`otp`,`uev_id`) 
         VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."','".$uid."','2') ");

@@ -69,6 +69,23 @@ if (isset($_SESSION["u"])) {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     $urs = Database::search("SELECT * FROM `user` WHERE `user_id` = '" . $uid . "' ");
     $udata = $urs->fetch_assoc();
 
@@ -86,6 +103,10 @@ if (isset($_SESSION["u"])) {
                     if (strlen($npw) > 4) {
                         Database::iud("UPDATE`user` SET `password`='" . $npw . "'WHERE
                     `user_id`='" . $uid . "'");
+
+              
+       echo ("Your Password is Changed");  
+
                     } else {
                         echo ("Your Password must contain 5 - 45 Characters");
                     }
@@ -96,32 +117,34 @@ if (isset($_SESSION["u"])) {
         } else {
             echo ("Please Enter Correct old Password");
         }
-    }
-
-
-
-
+    }else {
+        
+      
     Database::iud("UPDATE `user` SET`fname`='" . $fname . "',`lname`='" . $lname . "',`mobile`='" . $mobile . "',`no`='" . $no . "',`street`='" . $street . "'
- WHERE`user_id`='" . $uid . "'");
+    WHERE `user_id`='" . $uid . "'");
+   
+   
+       $cityrs = Database::search("SELECT*FROM `city` WHERE `city_id`='" . $uid . "'");
+       $citynum = $cityrs->num_rows;
+   
+   
+       if ($city != "0") {
+   
+   
+           Database::iud("UPDATE`user`SET`city_id`='" . $city . "' WHERE `user_id`='" . $uid . "'");
+       } else {
+           Database::iud("INSERT INTO `user` (`city_id`) VALUES ('" . $city . "') WHERE `user_id`='" . $uid . "'");
+       }
+   
+   
+       echo ("success");  
 
 
-    $cityrs = Database::search("SELECT*FROM `city`WHERE
- `city_id`='" . $_SESSION["u"]["city_id"] . "'");
-    $citynum = $cityrs->num_rows;
-
-
-    if ($citynum == 1) {
-
-
-        Database::iud("UPDATE`user`SET`city_id`='" . $city . "' WHERE `user_id`='" . $uid . "'");
-    } else {
-        Database::iud("INSERT INTO `user`
-    (`city_id`)VALUES
-    ('" . $city . "')WHERE `user_id`='" . $uid . "'");
     }
 
 
-    echo ("success");
+
+
 } else {
     echo ("Please login first");
 }

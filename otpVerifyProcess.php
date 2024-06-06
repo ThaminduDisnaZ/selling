@@ -1,5 +1,4 @@
 <?php
-echo("sdsds");
 require "./connection.php";
 $uid = uniqid();
 
@@ -25,6 +24,9 @@ if ($otp == $otp_data["otp"]) {
     Database::iud("DELETE FROM `user` WHERE `email` = '".$e."'");
    Database::iud("UPDATE `user` SET `otp` = '".$uid."' WHERE `email` = '".$e."'");
    Database::iud("UPDATE `user` SET `uev_id` = '2' WHERE `email` = '".$e."'");
+
+   echo("Invalid OTP ENTER NEW OTP");
+
 
    $email = $e;
    $subject = "OTP Verify";

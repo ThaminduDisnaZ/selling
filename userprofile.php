@@ -204,7 +204,7 @@ require_once "./connection.php";
                                                 <div class="content">
 
                                                     <?php
-                                                    if ($udata["no"] = null || $udata["street"] == null) {
+                                                    if ($udata["no"] == null || $udata["street"] == null) {
                                                     ?><p><b>NO ADDRESS UPDATED. PLEASE UPDATE</b></p><?php
                                                     } else {
                                                     ?>
@@ -405,8 +405,22 @@ require_once "./connection.php";
 
                                                     <?php
 
+                                                    if ($cdata["city_id"] == NULL) {
+                                                       ?><option value="0">Selet Your  City</option><?php
+                                                    }else{
 
-                                                    ?> <option value="<?php echo ($cdata["city_id"]) ?>"><?php echo ($cdata["name"]) ?></option><?php
+                                                    ?> 
+                                                    
+
+                                                    
+                                                    <option value="<?php echo ($cdata["city_id"]) ?>"><?php echo ($cdata["name"]) ?></option>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    <?php
+
+                                                    }
                                                                                                                                                 $crs1 = Database::search("SELECT * FROM `city` ");
 
                                                                                                                                                 while ($cdata1 = $crs1->fetch_assoc()) {

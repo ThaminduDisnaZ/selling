@@ -6,10 +6,10 @@
 
 <!-- header area start -->
 <header>
-    <div class="header__area">
+    <div class="header__area mt-50">
         <div class="header__top d-none d-sm-block">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center bg-light fixed-top">
                     <div class="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
                         <div class="header__welcome">
                             <span>Welcome to Net Pixel Store</span>

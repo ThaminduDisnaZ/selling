@@ -108,7 +108,28 @@ if (isset($_COOKIE["password"])) {
                   </div>
                 </div>
                 <div class="col-12 col-lg-6 text-end">
-                  <a href="authentication-reset-password-simple.html">Forgot Password?</a>
+                  <a onclick="forgotpw();"  data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#exampleVerticallycenteredModal">Forgot Password?</a>
+
+                  <div class="modal fade" id="exampleVerticallycenteredModal" tabindex="-1" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Frogot Password</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                        
+                  <input type="text" class="form-control" id="pw" placeholder="Enter Your Email" id="fpem">
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                 </div>
                 <div class="col-12 col-lg-12">
                   <div class="d-grid">

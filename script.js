@@ -1,4 +1,10 @@
 function signup() {
+
+
+
+
+
+
   var fname = document.getElementById("fname");
   var lname = document.getElementById("lname");
   var email = document.getElementById("email");
@@ -12,18 +18,51 @@ function signup() {
   f.append("m", mobile.value);
   f.append("p", password.value);
 
+
+
+
+  let timerInterval;
+  Swal.fire({
+    title: "Please Wait",
+    html: "",
+    timer: 5000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const timer = Swal.getPopup().querySelector("b");
+      timerInterval = setInterval(() => {
+        timer.textContent = `${Swal.getTimerLeft()}`;
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log("I was closed by the timer");
+    }
+  });
+
+
+
   var request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if ((request.readyState == 4) & (request.status == 200)) {
       var response = request.responseText;
 
+
+
+
       if (response == "Success") {
+
+
         swal({
           title: "Check Your Email",
           text: "",
           timer: 3000,
         }).then(
-          function () {},
+          function () { },
           // handling the promise rejection
           function (dismiss) {
             if (dismiss === "timer") {
@@ -31,10 +70,42 @@ function signup() {
             }
           }
         );
+
+
+
+
+
         setTimeout(function () {
           swal("Type OTP Code here:", {
             content: "input",
           }).then((value) => {
+
+
+
+            let timerInterval;
+            Swal.fire({
+              title: "Please Wait",
+              html: "",
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                  timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+              },
+              willClose: () => {
+                clearInterval(timerInterval);
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log("I was closed by the timer");
+              }
+            });
+
+
             var fname = document.getElementById("fname");
             var email = document.getElementById("email");
             var f = new FormData();
@@ -48,15 +119,53 @@ function signup() {
               if (request2.readyState == 4 && request2.status == 200) {
                 response2 = request2.responseText;
 
+
+
                 if (response2 == "Success") {
                   swal("OTP ", "Your Email Is Veryfied Successfull", "success");
                   window.location.assign("login.php");
-                } else if (response2 != "Success") {
-                  swal(
-                    "OTP ",
-                    "Your Email has been Very Failed : " + response2,
-                    "error"
-                  );
+                } else {
+                  // swal(
+                  //   "OTP ",
+                  //   "Your Email has been Very Failed : " + response2,
+                  //   "error"
+
+                  // );
+
+
+                  setTimeout(function () {
+                    swal("Re-Enter OTP Code here:", {
+                      content: "input",
+                    }).then((value) => {
+
+                      var f = new FormData();
+                      f.append("e", email.value);
+                      f.append("f", fname.value);
+                      f.append("otp", value);
+
+                      var request2 = new XMLHttpRequest();
+
+                      request2.onreadystatechange = function () {
+                        if (request2.readyState == 4 && request2.status == 200) {
+                          response2 = request2.responseText;
+
+                          if (response2 == "Success") {
+                            swal("OTP ", "Your Email Is Veryfied Successfull", "success");
+                            window.location.assign("login.php");
+                          }
+
+                        }
+                      };
+
+                      request2.open("POST", "otpVerifyProcess.php", true);
+                      request2.send(f);
+                    });
+                  }, 3000);
+
+
+
+
+
                 }
               }
             };
@@ -65,6 +174,11 @@ function signup() {
             request2.send(f);
           });
         }, 3000);
+
+
+
+
+
       } else {
         document.getElementById("msg1").innerHTML = response;
         document.getElementById("msgdiv1").className =
@@ -146,8 +260,15 @@ function addToCart(id) {
         swal("Add Cart", "", "success");
       } else if (t == "Something Went Wrong") {
         swal("Add Cart Error", t, "error");
+
       } else if (t == "Product added successfully") {
         swal("Add Cart", t, "success");
+setTimeout(
+
+window.location.reload()
+
+,3000);
+        window.location.reload();
       } else if (t == "Please Sign In or Register.") {
         swal("Add Cart Failed", t, "error");
       } else {
@@ -182,6 +303,8 @@ function signout() {
 }
 
 function basicsearch(x) {
+
+
   document.getElementById("banners").className = "d-none";
   document.getElementById("banners2").className = "d-none";
   document.getElementById("banners3").className = "d-none";
@@ -420,25 +543,30 @@ function updateProfile() {
   f.append("no", no.value);
   f.append("street", street.value);
 
-  if (img.files.length == 0) {
-    var comf = confirm(
-      "Are you sure You don't wont to update Profile Image...?"
-    );
+  if (img.files.length != 0) {
+    f.append("img", img.files[0]);
 
-    if (comf) {
-      alert("You are not Select Image");
-    } 
-  }else {
-   f.append("img", img.files[0]);
- }
+
+  }
 
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function () {
     if (request.readyState == 4 && request.status == 200) {
       var response = request.responseText;
+      if (response == "success") {
+        swal("Profile Update", "Your Profile is Update Successfull", "success");
+      } else if (response == "Your Password is Changed") {
 
-      alert(response);
+        swal("Password Update", "Your Password is Update Successfull", "success");
+
+      } else {
+
+        swal("Profile Update Error", response, "error");
+
+      }
+
+
     }
   };
 
@@ -456,7 +584,7 @@ function addwatchlist(id) {
     if (r.readyState == 4) {
       var t = r.responseText;
 
-   alert(t);
+      alert(t);
     }
   };
 
