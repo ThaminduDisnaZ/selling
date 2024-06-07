@@ -943,3 +943,60 @@ function disStatusChange(id) {
    request.send(f);
     
 }
+
+function changeBestsellStatus(id) {
+
+    var f = new FormData();
+
+    f.append("pid",id);
+
+    var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function(){
+
+            if (request.readyState == 4 && request.status == 200) {
+                var response = request.responseText;
+
+              if (response == "ok") {
+                
+                swal("Action", "Change Best Sell Status Successfull", "success");
+                window.location.reload();
+
+              }
+
+            }
+        }
+
+    request.open("POST","bestsellStatusChangeProcess.php",true);
+    request.send(f);
+    
+}
+
+
+function changeFlashsellStatus(id) {
+
+    var f = new FormData();
+
+    f.append("pid",id);
+
+    var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function(){
+
+            if (request.readyState == 4 && request.status == 200) {
+                var response = request.responseText;
+
+              if (response == "ok") {
+                
+                swal("Action", "Change Flash Sell Status Successfull", "success");
+                window.location.reload();
+
+              }
+
+            }
+        }
+
+    request.open("POST","flashsellStatusChangeProcess.php",true);
+    request.send(f);
+    
+}

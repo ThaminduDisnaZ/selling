@@ -14,7 +14,7 @@ if(isset($_SESSION["u"])){
         $uid = $_SESSION["u"]["user_id"];
         $pid = $_GET["id"];
 
-      echo($pid);
+    
 
         $watchlist_rs = Database::search("SELECT*FROM `watchlist`WHERE `product_id`='".$pid."'AND `user_id`='".$uid."'");
         $list_num =$watchlist_rs->num_rows;
@@ -24,12 +24,12 @@ if(isset($_SESSION["u"])){
         $product_qty = $product_data["qty"];
 
 
-        if( $list_num > 1){
+        if( $list_num >= 1){
 
           echo("already added to watchlist");
         }else{
              Database::iud("INSERT INTO `watchlist`(`product_id`,`user_id`)VALUES ('".$pid."','".$uid."')");
-             echo ("Product added successfully"); 
+             echo ("success"); 
         }
 
     }else{

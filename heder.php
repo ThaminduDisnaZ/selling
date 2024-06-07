@@ -19,7 +19,7 @@
                         <div class="header__action d-flex justify-content-center justify-content-md-end">
                             <ul>
                                 <li><a href="userprofile.php">My Account</a></li>
-                                <li><a href="#">My Wishlist</a></li>
+                                <li><a href="./watchlist.php">My Wishlist</a></li>
                                 <li><a href="#">Compare</a></li>
 
                                 <?php if (isset($_SESSION["u"])) {
@@ -265,94 +265,7 @@
                 </div>
             </div>
         </div>
-        <div class="header__bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-6 col-6">
-                        <div class="header__bottom-left d-flex d-xl-block align-items-center">
-                            <div class="side-menu d-xl-none mr-20">
-                                <button type="button" class="side-menu-btn offcanvas-toggle-btn"><i
-                                        class="fas fa-bars"></i></button>
-                            </div>
-                            <div class="main-menu d-none d-md-block">
-                                <nav>
-                                    <ul>
-                                        <li>
-                                            <a href="index.php">Home <i class="far fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="index.php">Home Style 1</a></li>
-                                                <li><a href="index-2.html">Home Style 2</a></li>
-                                                <li><a href="index-3.html">Home Style 3</a></li>
-                                                <li><a href="index-4.html">Home Style 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="product.html">Features <i class="far fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="product.html">Product Type</a></li>
-                                                <li><a href="product.html">Product Features <i
-                                                            class="far fa-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="product-details.html">Simple Product</a></li>
-                                                        <li><a href="product-details-config.html">Configurable
-                                                                Product</a></li>
-                                                        <li><a href="product-details-group.html">Group Product</a></li>
-                                                        <li><a href="product-details-download.html">Downloadable
-                                                                Product</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="product.html">Shop By Brand</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="blog.html">Blog <i class="far fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-detaills.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">about us</a></li>
-                                        <li><a href="contact.html">contact</a></li>
-                                        <li>
-                                            <a href="about.html">pages <i class="far fa-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="cart.php">Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="error.html">404 Error</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3  col-sm-6  col-6 d-md-none d-lg-block">
-                        <div class="header__bottom-right d-flex justify-content-end">
-                            <div class="header__currency">
-                                <select>
-                                    <option>USD</option>
-                                    <option>USD</option>
-                                    <option>USD</option>
-                                    <option>USD</option>
-                                    <option>USD</option>
-                                </select>
-                            </div>
-                            <div class="header__lang d-md-none d-lg-block">
-                                <select>
-                                    <option>English</option>
-                                    <option>Bangla</option>
-                                    <option>Arabic</option>
-                                    <option>Hindi</option>
-                                    <option>Urdu</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </header>
 <!-- header area end -->

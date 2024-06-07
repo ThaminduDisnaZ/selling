@@ -584,10 +584,17 @@ function addwatchlist(id) {
   var r = new XMLHttpRequest();
 
   r.onreadystatechange = function () {
-    if (r.readyState == 4) {
+    if (r.readyState == 4 && r.status == 200) {
       var t = r.responseText;
 
-      alert(t);
+      if (t != "success") {
+   
+        swal("Add To Watchlist Fali..!", t, "error");
+      } else {
+        swal("Add To Watchlist", "Product Is Add to Watchlist Successfull", "success");
+        
+      }
+
     }
   };
 
@@ -729,7 +736,7 @@ function changepw() {
 
     var f = new FormData();
 
-    f.append("npw", npw); 
+    f.append("npw", npw);
     f.append("email", pw.value);
 
     var request = new XMLHttpRequest();
@@ -760,4 +767,31 @@ function changepw() {
     swal("Set New Password Fail", "Password is does not match..", "error");
   }
 
+}
+
+
+
+function deleteFromWatchlist(id) {
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if (r.readyState == 4) {
+      var t = r.responseText;
+ 
+      if (t == "success") {
+        swal(
+          "Remove From Cart",
+          "Product removed from cart Successfull",
+          "success"
+        );
+        setInterval(1009);
+        window.location.reload();
+      } else {
+        window.location.reload();
+      }
+    }
+  };
+
+  r.open("GET", "deleteFromWatchlistProcess.php?id=" + id, true);
+  r.send();
 }
