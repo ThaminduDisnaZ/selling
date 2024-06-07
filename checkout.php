@@ -55,7 +55,7 @@ if (isset($_SESSION["u"])) {
     $checkout_session = \Stripe\Checkout\Session::create([
         "payment_method_types" => ["card"], 
         "mode" => "payment",
-        "success_url" => "http://localhost/selling%20v1.5/selling/paymentSuccess.php",
+        "success_url" => "http://localhost/selling/paymentSuccess.php",
         "cancel_url" => "http://localhost/index.php",
         "locale" => "auto",
         "line_items" => $line_items

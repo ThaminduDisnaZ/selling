@@ -210,14 +210,14 @@
                                             <div class="cart__item d-flex justify-content-between align-items-center">
                                                 <div class="cart__inner d-flex">
                                                     <div class="cart__thumb">
-                                                        <a href="product-details.html">
+                                                        <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>">
                                                             <img src="admin/<?php echo $image_data[
                                                                  "code"
                                                              ]; ?>" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="cart__details">
-                                                        <h6><a href="product-details.html">
+                                                        <h6><a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>">
                                                                 <?php echo $product_data[
                                                                      "name"
                                                                  ]; ?> </a></h6>
@@ -231,6 +231,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="cart__del">
+
+                                                <??>
+
                                                     <button onclick="deleteFromCart(<?php echo ($cart_data["id"]) ?>) ">
                                                         <i class="fal fa-trash-alt"></i></button>
                                                 </div>
@@ -249,7 +252,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <a href="checkout.html" class="t-y-btn w-100 mb-10">Proceed to checkout</a>
+                                            <a href="cart.php" class="t-y-btn w-100 mb-10">Proceed to checkout</a>
                                             <a href="cart.php" class="t-y-btn t-y-btn-border w-100 mb-10">view add edit
                                                 cart</a>
                                         </li>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -104,26 +103,26 @@
 
                       if ($cart_num == 0) {
                       ?>
-                       <section class="error__area pt-60 pb-100">
-                <div class="container">
-                    <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
-                        <div class="error__content text-center">
-                            <div class="error__number">
-                                <h1></h1>
-                            </div>
-                            <span>Not Item in Cart</span>
-                            <h2>Not Item in Cart</h2>
-                            
-                            <div class="error__search">
-                                <form action="#">
+                        <section class="error__area pt-60 pb-100">
+                          <div class="container">
+                            <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+                              <div class="error__content text-center">
+                                <div class="error__number">
+                                  <h1></h1>
+                                </div>
+                                <span>Not Item in Cart</span>
+                                <h2>Not Item in Cart</h2>
+
+                                <div class="error__search">
+                                  <form action="#">
                                     <input type="text" placeholder="Enter Your Text...">
                                     <button type="submit" class="t-y-btn t-y-btn-grey">Search</button>
-                                </form>
+                                  </form>
+                                </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                          </div>
+                        </section>
                       <?php
                       } else {
                       ?>
@@ -239,12 +238,17 @@
                                     ?><p><?php echo ("Address Not Found"); ?></p><?php
 
                                                                                 } else {
-                                                                                  ?><p><?php echo ($udata["no"]); ?>,</p><?php
-                                                                                                                      ?><p><?php echo ($udata["street"]); ?>,</p><?php
-                                                                                                                    ?><p><?php echo ($citydata["name"]); ?>,</p><?php
-                                                                                                                      }
+                                                                                  ?><p><?php echo ($udata["no"]); ?>,
+                                      </p>
+                                      <?php
+                                      ?><p>
+                                        <?php echo ($udata["street"]); ?>,</p><?php
+                                                                              ?>
+                                      <p><?php echo ($citydata["name"]); ?>,</p>
+                                    <?php
+                                                                                }
 
-                                                                                                                        ?>
+                                    ?>
 
                                   </div>
 

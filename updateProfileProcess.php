@@ -28,7 +28,7 @@ if (isset($_SESSION["u"])) {
         $file_ex = $img["type"];
 
 
-        echo ($file_ex);
+   
 
         if (!in_array($file_ex, $allowed_image_extentions)) {
             echo ("please select a valid image");

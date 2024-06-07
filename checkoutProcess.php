@@ -25,7 +25,7 @@ if (isset($_SESSION["u"])) {
 
     if ($udata["uev_id"] != 1) {
         echo ("uev");
-    } else if ($udata["city_id"] == "" || $udata["street"] == "") {
+    } else if ($udata["city_id"] == "" || $udata["street"] == "" || $udata["no"] == "") {
         echo ("ua");
     } else {
 
@@ -66,23 +66,13 @@ if (isset($_SESSION["u"])) {
                 $codeid = $ddata["discode_id"];
                 Database::iud("INSERT INTO `orders` (`user_id`,`date`,`payment_status_id`, `product_id`,`total`,`discode_id`) VALUES 
     ('" . $id . "','" . $date . "','2' ,'" . $pid . "','" . $total . "' ,'" . $codeid . "' ) ");
-            } if($dnr == 0) {
-
-                Database::iud("INSERT INTO `orders` (`user_id`,`date`,`payment_status_id`, `product_id`,`total`) VALUES 
-    ('" . $id . "','" . $date . "','2' ,'" . $pid . "','" . $total . "'  ) ");
             }
-
+          
         }
 
-       
-        echo("success");
 
-        
+        echo ("success");
     }
-
-
-
-
 } else {
     echo ("sww");
 }

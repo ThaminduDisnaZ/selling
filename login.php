@@ -14,7 +14,7 @@
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 
   <!-- CSS Files -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/icons.css" rel="stylesheet">
@@ -108,7 +108,7 @@ if (isset($_COOKIE["password"])) {
                   </div>
                 </div>
                 <div class="col-12 col-lg-6 text-end">
-                  <a onclick="forgotpw();"  data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#exampleVerticallycenteredModal">Forgot Password?</a>
+                  <a  data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#exampleVerticallycenteredModal">Forgot Password?</a>
 
                   <div class="modal fade" id="exampleVerticallycenteredModal" tabindex="-1" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
@@ -119,12 +119,27 @@ if (isset($_COOKIE["password"])) {
                           </div>
                           <div class="modal-body">
                         
-                  <input type="text" class="form-control" id="pw" placeholder="Enter Your Email" id="fpem">
+                  <input type="text" class="form-control m-100" id="fpw" placeholder="Enter Your Email" id="fpem">
+                 <br>
+                  <input type="text" class="form-control m-100 d-none" id="otp" placeholder="Enter Your OTP" id="otp">
+
+
+                  <div id="npwdiv">
+                   
+                  </div>
 
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" id="seb" class="btn btn-primary d-block" onclick="frogotpw();">Send Email</button>
+                            <button type="button"  id="otpb" class="btn btn-primary d-none" onclick="otpconfirm();">Confirm OTP</button>
+
+
+
+
+                            <button type="button"  id="cpb" class="btn btn-primary d-none" onclick="changepw();">Change Password</button>
+
+
                           </div>
                         </div>
                       </div>
@@ -196,8 +211,8 @@ if (isset($_COOKIE["password"])) {
     </footer>
   </div>
   <!--end wrapper-->
-
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

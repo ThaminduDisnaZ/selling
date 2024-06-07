@@ -236,86 +236,50 @@ require_once "./connection.php";
 
                                                     <?php
                                                     $ors = Database::search("SELECT * FROM `orders` WHERE `user_id` = '" . $uid . "' ");
+                                                    $onr = $ors->num_rows;
+if ($onr >= 1) {
+    while ($odata = $ors->fetch_assoc()) {
+
+
+        $product_data1 = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $odata["product_id"] . "' ");
+        $prs = $product_data1->fetch_assoc();
+
+        $product_img = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $prs["product_id"] . "' ");
+        $pimg = $product_img->fetch_assoc();
 
 
 
-                                                    while ($odata = $ors->fetch_assoc()) {
+    ?>
 
+        <!--Basic Example Start-->
+        <div class="col-lg-6 col-12 mb-30">
+            <div class="box">
 
-                                                        $product_data1 = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $odata["product_id"] . "' ");
-                                                        $prs = $product_data1->fetch_assoc();
+                <div class="box-body">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <img width="45px" src="admin/<?php echo $pimg["code"] ?>" alt="...">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mt-0"><?php echo $prs["stitle"] ?></h6>
+                           
 
-                                                        $product_img = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $prs["product_id"] . "' ");
-                                                        $pimg = $product_img->fetch_assoc();
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Basic Example End-->
 
-                                                        $drs = Database::search(" SELECT * FROM `delivery` WHERE `order_id` = '" . $ors["order_id"] . "' ");
-                                                        $ders = $drs->fetch_assoc();
-                                                        $drnum = $drs->num_rows;
+    <?php
 
-                                                    ?>
+    }
+}else{
 
-                                                        <!--Basic Example Start-->
-                                                        <div class="col-lg-6 col-12 mb-30">
-                                                            <div class="box">
+    echo("Not Orders");
+}
 
-                                                                <div class="box-body">
-                                                                    <div class="d-flex">
-                                                                        <div class="flex-shrink-0">
-                                                                            <img width="45px" src="admin/<?php echo $pimg["code"] ?>" alt="...">
-                                                                        </div>
-                                                                        <div class="flex-grow-1 ms-3">
-                                                                            <h6 class="mt-0"><?php echo $prs["stitle"] ?></h6>
-                                                                            <!--Vertically Centered Start-->
-
-
-
-                                                                            <button class="button button-warning " data-bs-toggle="modal" data-bs-target="#exampleModal3">View Delivery Status</button>
-                                                                            <!-- Modal -->
-                                                                            <div class="modal fade" id="exampleModal3">
-                                                                                <div class="modal-dialog modal-dialog-centered">
-                                                                                    <div class="modal-content">
-                                                                                        <div class="modal-header">
-                                                                                            <h5 class="modal-title">Delivery Status</h5>
-                                                                                            <button class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                                                                                        </div>
-                                                                                        <div class="modal-body">
-                                                                                            <?php
-
-                                                                                            if ($ders["delivery_status_id"] == 1) {
-                                                                                            ?> <h2 class="blink">Packing Your Order</h2> <?php
-                                                                                                                                        }
-
-
-                                                                                                                                            ?>
-
-
-
-                                                                                            <p class="blink">Place Your Order</p>
-                                                                                            <p class="blink">Ready to Deliver Your Order</p>
-                                                                                            <p class="blink">Delivering Your Order</p>
-                                                                                            <p class="blink">Delivered Your Order</p>
-                                                                                        </div>
-                                                                                        <div class="modal-footer">
-                                                                                            <button class="button button-danger" data-bs-dismiss="modal">Close</button>
-                                                                                            <button class="button button-primary">Save changes</button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--Vertically Centered End-->
-
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--Basic Example End-->
-
-                                                    <?php
-
-                                                    }
+                                                 
 
                                                     ?>
 

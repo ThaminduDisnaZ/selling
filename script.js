@@ -263,11 +263,11 @@ function addToCart(id) {
 
       } else if (t == "Product added successfully") {
         swal("Add Cart", t, "success");
-setTimeout(
+        setTimeout(
 
-window.location.reload()
+          window.location.reload()
 
-,3000);
+          , 3000);
         window.location.reload();
       } else if (t == "Please Sign In or Register.") {
         swal("Add Cart Failed", t, "error");
@@ -407,6 +407,8 @@ function discode() {
 }
 
 function checkout() {
+
+
   var total = document.getElementById("oto");
   var code = document.getElementById("discode");
 
@@ -591,4 +593,170 @@ function addwatchlist(id) {
   r.open("POST", "addToWatchlistProcess.php?id=" + id, true);
 
   r.send();
+}
+
+
+
+function frogotpw() {
+
+  var pw = document.getElementById("fpw");
+
+  var f = new FormData();
+
+  f.append("pw", pw.value);
+
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if (request.readyState == 4 && request.status == 200) {
+      var response = request.responseText;
+
+
+      if (response == "ok") {
+        swal("Email Send", "Check Your Inbox", "success");
+
+        otp.className = "form-control m-100 d-block";
+        document.getElementById("otpb").className = "btn btn-primary d-block ";
+        document.getElementById("seb").className = "btn btn-primary d-none";
+
+
+        var f2 = new FormData();
+
+        f2.append("pw", pw.value);
+
+
+        var request2 = new XMLHttpRequest();
+
+        request2.onreadystatechange = function () {
+
+
+        }
+
+
+        request2.open("POST", "otpConfirmProcess.php", true);
+        request2.send(f);
+
+
+      } else {
+        swal("Email Send", response, "error");
+      }
+
+
+
+    }
+  }
+
+  request.open("POST", "checkEmailProcess.php", true);
+  request.send(f);
+
+
+
+
+
+}
+function otpconfirm() {
+
+
+
+  var pw = document.getElementById("fpw");
+  var otp = document.getElementById("otp");
+
+  var f3 = new FormData();
+
+  f3.append("otp", otp.value);
+  f3.append("email", pw.value);
+
+  request3 = new XMLHttpRequest();
+
+  request3.onreadystatechange = function () {
+
+    if (request3.readyState == 4 && request3.status == 200) {
+      response3 = request3.responseText;
+
+      if (response3 == "ok") {
+
+        otp.className = "form-control m-100 d-block";
+        document.getElementById("otpb").className = "btn btn-primary d-none ";
+        document.getElementById("seb").className = "btn btn-primary d-none";
+        document.getElementById("cpb").className = "btn btn-primary d-block";
+
+
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+
+            var response = request.responseText;
+
+            document.getElementById("npwdiv").innerHTML = response;
+
+          }
+        }
+        request.open("POST", "confirmPwDiv.php", true);
+        request.send(f3);
+
+      } else {
+
+        swal("Email Send", response3, "error");
+
+      }
+
+    }
+
+  }
+
+  request3.open("POST", "confirmOtpProcess.php", true);
+  request3.send(f3);
+
+
+
+
+}
+
+
+function changepw() {
+  var pw = document.getElementById("fpw");
+  var npw = document.getElementById("npw").value;
+  var cnpw = document.getElementById("cnpw").value;
+
+
+
+  if (npw.length < 5) {
+    swal("Set New Password Fail", "Please enter your password more than 5 characters length", "error");
+
+  } else if (npw == cnpw) {
+
+
+    var f = new FormData();
+
+    f.append("npw", npw); 
+    f.append("email", pw.value);
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+
+      if (request.readyState == 4 && request.status == 200) {
+        var response = request.responseText;
+
+        if (response == "Success") {
+          swal("Password Change Status", "Password is Changed Successfully", "success");
+        } else {
+          swal("Set New Password Fail", response, "error");
+        }
+
+      }
+
+    }
+
+    request.open("POST", "updateUserPassword.php", true);
+    request.send(f);
+
+
+
+
+  } else {
+
+    swal("Set New Password Fail", "Password is does not match..", "error");
+  }
+
 }
