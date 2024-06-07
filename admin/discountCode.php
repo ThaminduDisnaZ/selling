@@ -113,6 +113,88 @@ require "sideheader.php";
 
 
 
+ <!--Manage Product List Start-->
+ <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-vertical-middle">
+                            <thead>
+                                <tr>
+                                    <th>Discount Code ID</th>                                   
+                                    <th>Code</th>
+                                    <th>Presentage</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <?php
+
+$dis_rs = Database::search("SELECT * FROM `discode`");
+
+
+while  ($dis = $dis_rs->fetch_assoc()) {
+    $did = $dis["discode_id"];
+
+
+?>
+                                <tr>
+                                    <td><?php echo($dis["discode_id"]); ?></td>
+                                    <td><?php echo($dis["code"]); ?></td>
+                                    <td><?php echo($dis["dis"]); ?>%</td>
+                                    
+
+
+<?php
+
+
+if ($dis["discode_status_id"] == 1) {
+    ?>  <td><span class="badge badge-success">Active</span></td> <?php
+} else {
+   ?>   <td><span class="badge badge-danger">Inactive</span></td>  <?php 
+}
+
+
+?>
+                                   
+
+
+
+                                    <td>
+                                        <div class="">
+                                            <button class="button button-xs button-primary" onclick="disStatusChange(<?php echo $did ?>);">Change Status</button>
+                                        
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php
+}
+
+?>
+
+
+                             
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--Manage Product List End-->
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
 
             </div><!-- Add or Edit Product End -->

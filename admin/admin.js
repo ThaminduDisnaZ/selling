@@ -896,7 +896,7 @@ if (code == "") {
     
             var response = request.responseText;
     
-            alert(response);
+            swal("Add Discount Code", response, "success");
             
         }
     }
@@ -913,4 +913,33 @@ if (code == "") {
 
 
 
+}
+
+
+function disStatusChange(id) {
+
+    var f = new FormData();
+
+    f.append("id",id);
+
+   var request = new XMLHttpRequest();
+
+   request.onreadystatechange = function () {
+    
+    if (request.readyState == 4 && request.status == 200) {
+        
+        var response = request.responseText;
+
+        if (response == "ok") {
+            swal("Action", "Change Discount Status Successfull", "success");
+            window.location.reload();
+        }
+
+    }
+
+   }
+
+   request.open("POST","discountStatusChangeProcess.php",true);
+   request.send(f);
+    
 }
