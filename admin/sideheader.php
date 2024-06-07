@@ -20,16 +20,14 @@ if (isset($_SESSION["a"])) {
                   <li><a href="index.php"><i class="ti-home"></i><span>Dashboard</span></a></li>
                   <li><a href="addDetails.php"><i class="ti-plus"></i><span>Add Details</span></a></li>
                   <li><a href="addProduct.php"><i class="ti-shopping-cart"></i> <span>Add Product</span></a></li>
-                  <li><a href="editProduct.php"><i class="ti-pencil"></i><span>Edit Product</span></a></li>
-                  <li><a href="invoiceList.php"><i class="ti-book"></i><span>Invoice List</span></a></li>
-                  <li><a href="invoiceDetails.php"><i class="ti-bookmark"></i><span>Invoice Details</span></a></li>
-                  <li><a href="orderList.php"><i class="ti-bag"></i><span>Order List</span></a></li>
-                  <li><a href="odrderDetails.php"><i class="ti-menu"></i><span>Order Details</span></a></li>
+         
+                  <li><a href="odrderDetails.php"><i class="ti-book"></i><span>Invoice List</span></a></li>
+                        <li><a href="odrderDetails.php"><i class="ti-menu"></i><span>Order Details</span></a></li>
                   <li><a href="manageProduct.php"><i class="ti-desktop"></i><span>Manage Product</span></a></li>
                   <li><a href="bannercustom.php"><i class="ti-desktop"></i><span>Banner Customizer</span></a></li>
                   <li><a href="userManage.php"><i class="ti-user"></i><span>User Manager</span></a></li>
 
-
+                  <li><a href="discountCode.php"><i class="ti-pin"></i><span>Discount Code</span></a></li>
 
 
                   

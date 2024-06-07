@@ -423,6 +423,7 @@ function checkout() {
       var response = request.responseText;
 
       if (response == "success") {
+        swal("Please Wait", "Processing", "warning");
         window.location.href = "checkout.php";
       } else if (response == "uev") {
         swal("Checkout Error", "Please Verify Your Email", "error");

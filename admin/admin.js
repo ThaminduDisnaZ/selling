@@ -793,32 +793,32 @@ function updateBanner() {
 
 }
 
-function userd(id){
-   
+function userd(id) {
+
     var f = new FormData();
 
-    f.append("id",id);
+    f.append("id", id);
 
 
     request = new XMLHttpRequest();
 
-    request.onreadystatechange = function(){
+    request.onreadystatechange = function () {
 
-        if(request.readyState == 4 && request.status == 200 ){
+        if (request.readyState == 4 && request.status == 200) {
 
-           var response = request.responseText;
+            var response = request.responseText;
 
-        //    window.location.assign("userDetails.php");
-           alert(response);
+            //    window.location.assign("userDetails.php");
+            alert(response);
 
-           window.location.assign("userDetails.php");
+            window.location.assign("userDetails.php");
 
         }
 
     }
 
 
-    request.open("POST","userDetails.php",true);
+    request.open("POST", "userDetails.php", true);
     request.send(f);
 
 
@@ -828,8 +828,8 @@ function userd(id){
 
 
 
-function delstatus(oid){
- 
+function delstatus(oid) {
+
 
     var s1 = document.getElementById("ds1").checked;
     var s2 = document.getElementById("ds2").checked;
@@ -838,33 +838,79 @@ function delstatus(oid){
     var s5 = document.getElementById("ds5").checked;
 
 
-      var f = new FormData();
-    
-      f.append("oid",oid);
-      f.append("s1",s1);
-      f.append("s2",s2);
-      f.append("s3",s3);
-      f.append("s4",s4);
-      f.append("s5",s5);
+    var f = new FormData();
+
+    f.append("oid", oid);
+    f.append("s1", s1);
+    f.append("s2", s2);
+    f.append("s3", s3);
+    f.append("s4", s4);
+    f.append("s5", s5);
 
 
-      if (s1 == "true") {
+    if (s1 == "true") {
         document.getElementById("ds11").className = "text-danger";
-      }
-    
-      var request = new XMLHttpRequest();
-    
-      request.onreadystatechange = function(){
-        if (request.readyState == 4 && request.status == 200) {
-          var response = request.responseText;
-          alert(response);
-        }
-      }
-    
-      request.open("POST","deliveryStatusProcess.php",true);
-      request.send(f);
-    
-    
-    
-    
     }
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
+            alert(response);
+        }
+    }
+
+    request.open("POST", "deliveryStatusProcess.php", true);
+    request.send(f);
+
+
+
+
+}
+
+
+function addDisCode() {
+
+    var code = document.getElementById("dcode").value;
+    var num = document.getElementById("dnum").value;
+
+if (code == "") {
+    swal("Add Discount Code Error", "Empty Discount Code" , "warning");
+}else if (num == "") {
+    swal("Add Discount Code Error", "Empty Discount Presentage" , "warning");
+}else if (num > 100) {
+    swal("Add Discount Code Error", "Please enter discount code is less than 100%" , "warning");
+}else{
+
+
+    var f = new FormData();
+
+    f.append("code",code);
+    f.append("num",num);
+    
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function (){
+        if (request.readyState == 4 && request.status == 200) {
+    
+            var response = request.responseText;
+    
+            alert(response);
+            
+        }
+    }
+    
+    request.open("POST","disCodeProcess.php",true);
+    request.send(f);
+    
+    
+
+}
+
+
+
+
+
+
+}

@@ -19,7 +19,16 @@ if ($rs) {
             <td><?php echo  $ud["fname"] ?> <?php echo  $ud["lname"] ?></td>
            
             <td>Rs.<?php echo $pd["dprice"] ?>.00</td>
-            <td><span class="badge badge-success">Paid</span></td>
+
+            <?php
+            if ($d["payment_status_id"] == 1) {
+               ?> <td><span class="badge badge-success">Paid</span></td><?php
+            } else {
+                ?> <td><span class="badge badge-danger">Not Pay</span></td><?php
+            }
+            
+            ?>
+           
         </tr>
         <?php
     }
