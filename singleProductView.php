@@ -9,23 +9,11 @@ if (isset($_GET["id"])  ) {
     $pid = $_GET["id"];
 
 
-
-    $product_rs = Database::search("SELECT product.name, product.stitle, product.qty, product.price,
-    product.discount,product.dprice, product.discription, product.date, product.delivery_fee,
-    product.display_id, product.brand_id, product.cpu_id, product.ram_id, product.gpu_id, product.storage_id,
-    product.produt_status_id, product.model_id, product.category_id, product.size_id, product.warranty_id,
-    model.model AS model, brand.brand AS brand FROM `product`
-    LEFT JOIN model ON product.model_id = model.model
-    LEFT JOIN brand ON product.brand_id = brand.brand
-    WHERE product.product_id='" . $pid . "'");
+    $product_rsz = Database::search("SELECT * FROM `product` WHERE product_id='" . $pid . "'");
 
 
-    $product_num = $product_rs->num_rows;
-
-    if ($product_num == 1) {
-
-        $product_data = $product_rs->fetch_assoc();
-        // echo ($product_data["title"]);
+        $product_dataz = $product_rsz->fetch_assoc();
+        
    
 
 
@@ -39,7 +27,7 @@ if (isset($_GET["id"])  ) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php echo $product_data["name"]; ?> | Net Pixel</title>
+    <title><?php echo $product_dataz["name"]; ?> | Net Pixel</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,21 +59,21 @@ if (isset($_GET["id"])  ) {
     <!-- Add your site or application content here -->
 
     <!-- preloader area start -->
-    <!-- <div id="loading">
+   <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
                     <div id="object"></div>
                 </div>
             </div>
-        </div> -->
+        </div>
     <!-- preloader area end -->
 
     <!-- back to top start -->
-    <!-- <div class="progress-wrap">
+    <div class="progress-wrap">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
-        </div> -->
+        </div>
     <!-- back to top end -->
 
     <?php
@@ -127,6 +115,7 @@ if (isset($_GET["id"])  ) {
 
     <main>
 
+    <?php echo $product_dataz["name"]; ?> 
         <!-- breadcrumb area start -->
         <section class="breadcrumb__area box-plr-75">
             <div class="container-fluid">
@@ -137,7 +126,7 @@ if (isset($_GET["id"])  ) {
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Product Details ->
-                                        <?php echo $product_data["name"]; ?></li>
+                                        <?php echo $product_dataz["name"]; ?></li>
                                 </ol>
                             </nav>
                         </div>
@@ -325,7 +314,7 @@ for ($x = 0; $x < $image_num; $x++) {
                         <div class="product__details-wrapper">
                             <div class="product__details">
                                 <h3 class="product__details-title">
-                                    <a href="product-details.html"><?php echo($product_data["name"]); ?></a>
+                                    <a href="product-details.html"><?php echo($product_dataz["name"]); ?></a>
                                 </h3>
                                 <div class="product__review d-sm-flex">
                                     <!-- <div class="rating rating__shop mb-15 mr-35">
@@ -345,13 +334,13 @@ for ($x = 0; $x < $image_num; $x++) {
                                 <div class="product__price">
 
                                 <?php
-                                if ($product_data["discount"] > 0) {
+                                if ($product_dataz["discount"] > 0) {
                                     ?>
-                                     <span class="new">Rs.<?php echo ($product_data["dprice"])  ?>.00</span>
-                                    <span class="old">Rs.<?php echo ($product_data["price"])  ?>.00</span>
+                                     <span class="new">Rs.<?php echo ($product_dataz["dprice"])  ?>.00</span>
+                                    <span class="old">Rs.<?php echo ($product_dataz["price"])  ?>.00</span>
                                     <?php
                                 } else {
-                                  ?> <span class="new">Rs.<?php echo ($product_data["price"])  ?>.00</span><?php
+                                  ?> <span class="new">Rs.<?php echo ($product_dataz["price"])  ?>.00</span><?php
                                 }
                                 
                                 ?>
@@ -364,7 +353,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
                                     <?php 
                                     
-                                    if ($product_data["qty"] > 0 ) {
+                                    if ($product_dataz["qty"] > 0 ) {
                                        ?> <span class="text-success">In Stock</span> <?php
                                     } else {
                                         ?> <span class="text-danger">Out Of Stock</span> <?php
@@ -378,7 +367,7 @@ for ($x = 0; $x < $image_num; $x++) {
                                 </div>
                                 <div class="product__stock sku mb-30">
                                     <span>SKU:</span>
-                                    <span><a href="#"><?php echo($product_data["stitle"]); ?></a></span>
+                                    <span><a href="#"><?php echo($product_dataz["stitle"]); ?></a></span>
                                 </div>
                                 <div class="product__details-des mb-30">
 
@@ -391,8 +380,8 @@ for ($x = 0; $x < $image_num; $x++) {
                                         
                                         <?php 
                                         
-                                        if ($product_data["qty"] > 0) {
-                                            ?> <span>Hurry Up!</span> Only <?php echo($product_data["qty"]); ?> products
+                                        if ($product_dataz["qty"] > 0) {
+                                            ?> <span>Hurry Up!</span> Only <?php echo($product_dataz["qty"]); ?> products
                                             left in stock.</h3><?php
                                         } else {
                                            ?>  <span>How Sad</span> This Laptop is Sold out</h3><?php
@@ -445,7 +434,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
   <?php
   
-  $brsss = Database::search(" SELECT * FROM `brand` WHERE `brand_id` = '".$product_data["brand_id"]."' ");
+  $brsss = Database::search(" SELECT * FROM `brand` WHERE `brand_id` = '".$product_dataz["brand_id"]."' ");
   $bfass = $brsss->fetch_assoc();
   
   ?>
@@ -458,7 +447,7 @@ for ($x = 0; $x < $image_num; $x++) {
     </tr>
     <?php
   
-  $model = Database::search(" SELECT * FROM `model` WHERE `model_id` = '".$product_data["model_id"]."' ");
+  $model = Database::search(" SELECT * FROM `model` WHERE `model_id` = '".$product_dataz["model_id"]."' ");
   $modeld = $model->fetch_assoc();
   
   ?>
@@ -470,7 +459,7 @@ for ($x = 0; $x < $image_num; $x++) {
     </tr>
     <?php
   
-  $categoryz = Database::search(" SELECT * FROM `category` WHERE `category_id` = '".$product_data["category_id"]."' ");
+  $categoryz = Database::search(" SELECT * FROM `category` WHERE `category_id` = '".$product_dataz["category_id"]."' ");
   $categoryd = $categoryz->fetch_assoc();
   
   ?>
@@ -482,7 +471,7 @@ for ($x = 0; $x < $image_num; $x++) {
     </tr>
     <?php
   
-  $cpuz = Database::search(" SELECT * FROM `cpu` WHERE `cpu_id` = '".$product_data["cpu_id"]."' ");
+  $cpuz = Database::search(" SELECT * FROM `cpu` WHERE `cpu_id` = '".$product_dataz["cpu_id"]."' ");
   $cpud = $cpuz->fetch_assoc();
   
   ?>
@@ -495,7 +484,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $displayz = Database::search(" SELECT * FROM `display` WHERE `display_id` = '".$product_data["display_id"]."' ");
+  $displayz = Database::search(" SELECT * FROM `display` WHERE `display_id` = '".$product_dataz["display_id"]."' ");
   $displayd = $displayz->fetch_assoc();
   
   ?>
@@ -508,7 +497,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $gpuz = Database::search(" SELECT * FROM `gpu` WHERE `gpu_id` = '".$product_data["gpu_id"]."' ");
+  $gpuz = Database::search(" SELECT * FROM `gpu` WHERE `gpu_id` = '".$product_dataz["gpu_id"]."' ");
   $gpud = $gpuz->fetch_assoc();
   
   ?>
@@ -521,7 +510,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $ramz = Database::search(" SELECT * FROM `ram` WHERE `ram_id` = '".$product_data["ram_id"]."' ");
+  $ramz = Database::search(" SELECT * FROM `ram` WHERE `ram_id` = '".$product_dataz["ram_id"]."' ");
   $ramd = $ramz->fetch_assoc();
   
   ?>
@@ -534,7 +523,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $sizez = Database::search(" SELECT * FROM `size` WHERE `size_id` = '".$product_data["size_id"]."' ");
+  $sizez = Database::search(" SELECT * FROM `size` WHERE `size_id` = '".$product_dataz["size_id"]."' ");
   $sized = $sizez->fetch_assoc();
   
   ?>
@@ -547,7 +536,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $storagez = Database::search(" SELECT * FROM `storage` WHERE `storage_id` = '".$product_data["storage_id"]."' ");
+  $storagez = Database::search(" SELECT * FROM `storage` WHERE `storage_id` = '".$product_dataz["storage_id"]."' ");
   $storaged = $storagez->fetch_assoc();
   
   ?>
@@ -560,7 +549,7 @@ for ($x = 0; $x < $image_num; $x++) {
 
     <?php
   
-  $warrantyz = Database::search(" SELECT * FROM `warranty` WHERE `warranty_id` = '".$product_data["warranty_id"]."' ");
+  $warrantyz = Database::search(" SELECT * FROM `warranty` WHERE `warranty_id` = '".$product_dataz["warranty_id"]."' ");
   $warrantyd = $warrantyz->fetch_assoc();
   
   ?>
@@ -598,7 +587,7 @@ for ($x = 0; $x < $image_num; $x++) {
                                     <div class="product__details-des-wrapper">
                                         <div class="product__details-des mb-20">
                                             
-                                        <?php echo ($product_data["discription"]) ?>
+                                        <?php echo ($product_dataz["discription"]) ?>
 
 
                                     </div>
@@ -636,18 +625,18 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
  $product_num = $product_rs->num_rows;
 
  for($z=0;$z<$product_num;$z++){
-  $product_data=$product_rs->fetch_assoc();
+  $product_dataz=$product_rs->fetch_assoc();
 
   
 
-   $image_rs= Database::search("SELECT*FROM `images`WHERE `product_id`='".$product_data["product_id"]."'");
+   $image_rs= Database::search("SELECT*FROM `images`WHERE `product_id`='".$product_dataz["product_id"]."'");
    $image_data=$image_rs->fetch_assoc();
 
   ?>
 
                                     <div class="product__item white-bg">
                                         <div class="product__thumb p-relative">
-                                            <a href="<?php echo "singleProductView.php?id=" . $product_data["product_id"]; ?>"
+                                            <a href="<?php echo "singleProductView.php?id=" . $product_dataz["product_id"]; ?>"
                                                 class="w-img">
                                                 <img src="admin/<?php echo $image_data["code"];?>" alt="product">
 
@@ -665,20 +654,20 @@ $product_rs=Database::search("SELECT*FROM `product`WHERE
                                             </div>
                                         </div>
                                         <div class="product__content text-center">
-                                            <span class="price"><?php echo $product_data["name"];?>
+                                            <span class="price"><?php echo $product_dataz["name"];?>
                                                 <h6 class="product-name">
                                                     <a class="product-item-link"
-                                                        href="product-details.html">#<?php echo $product_data["stitle"];?></a>
+                                                        href="product-details.html">#<?php echo $product_dataz["stitle"];?></a>
                                                 </h6>
 
                                               
 
                                                 <?php
 
-if ($product_data["qty"] > 0) {
+if ($product_dataz["qty"] > 0) {
     ?>
 
-                                                <p class="text-success"><?php echo $product_data["qty"] ?> In Stock</p>
+                                                <p class="text-success"><?php echo $product_dataz["qty"] ?> In Stock</p>
 
                                                 <?php
 } else {
@@ -693,18 +682,18 @@ if ($product_data["qty"] > 0) {
 
 
                                                 <?php
-                                            if ($product_data["discount"] > 0) {
+                                            if ($product_dataz["discount"] > 0) {
                                                 ?>
                                                 <p>
                                                     <span class="price ">Rs.<s>
-                                                            <?php echo $product_data["price"];?>.00</s></span>
+                                                            <?php echo $product_dataz["price"];?>.00</s></span>
                                                 </p>
-                                                <span class="price">Rs.<?php echo $product_data["dprice"];?>.00</span>
+                                                <span class="price">Rs.<?php echo $product_dataz["dprice"];?>.00</span>
                                                 <?php
                                             }else {
                                                 ?>
                                                 <br>
-                                                <span class="price">Rs.<?php echo $product_data["price"];?>.00</span>
+                                                <span class="price">Rs.<?php echo $product_dataz["price"];?>.00</span>
 
                                                 <?php
                                             }
@@ -713,7 +702,7 @@ if ($product_data["qty"] > 0) {
                                         </div>
                                         <div class="product__add-btn">
                                             <button type="button"
-                                                onclick="addToCart(<?php echo $product_data['product_id']; ?>);">Add to
+                                                onclick="addToCart(<?php echo $product_dataz['product_id']; ?>);">Add to
                                                 Cart</button>
                                         </div>
                                     </div>
@@ -934,9 +923,7 @@ if ($product_data["qty"] > 0) {
 
 
 <?php
- } else {
-    header("location:./error.html");
-}
+
 
 } else {
     header("location:./error.html");

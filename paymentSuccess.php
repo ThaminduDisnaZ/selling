@@ -5,8 +5,8 @@
 session_start();
 require "./connection.php";
 
-if (isset($_SESSION["u"])) {
-    $id = $_SESSION["u"]["user_id"];
+if (isset($_SESSION["checkout"])) {
+    $id = $_SESSION["checkout"]["user_id"];
     Database::iud("UPDATE orders SET payment_status_id = '1' WHERE  `user_id`='" . $id . "' ");
 ?>
 
@@ -219,6 +219,21 @@ body {
          $unit_amount = isset($order_data["total"]) ? $order_data["total"] : 0;
          
          $unit_amount =   $unit_amount * 10;
+
+
+
+
+        $pqty = $product_data["qty"];
+        $nqty = $pqty - 1;
+
+        Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$cart_data["product_id"] . "' ");
+
+
+
+
+
+
+
        ?>
         <div class="order-details">
           <div class="order-number-label">Payment id</div>
@@ -235,5 +250,18 @@ body {
 
 <?php
 
+
+
+
+
+    $_SESSION["checkout"] = null;
+
+
+
+
+
+
+}else{
+  header("Location: ./error.html");
 }
 ?>

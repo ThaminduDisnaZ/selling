@@ -64,9 +64,14 @@ if (isset($_SESSION["u"])) {
         "locale" => "auto",
         "line_items" => $line_items
     ]);
+
+
+    session_start();
+    $_SESSION["checkout"] = $udata;
+
     echo("success");
     $subject = "Your Item is Placed";
-    $body = '<h1>Hello..! '.$udata["fname"].' ,</h1><p>An item has been placed in your shop, Net Pixel LK. Your Total Price Is Rs.'.$total_price.'.00 Please check your dashboard for more details.</p>';
+    $body = '<center><h1>Hello..! '.$udata["fname"].' ,</h1><p>An item has been placed in Net Pixel LK . Your Total Price Is Rs.'.$product1_data["total"].'.00 Please check your dashboard for more details.</p></center>';
     $email = $udata["email"];
     require  "./admin/mailler.php";
    
