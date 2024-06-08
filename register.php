@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <!-- loader-->
     <link href="assets/css/pace.min.css" rel="stylesheet" />
     <script src="assets/js/pace.min.js"></script>
@@ -20,7 +20,7 @@
     <link href="assets/css/icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Fobia - Bootstrap5 Admin Template</title>
+    <title>Register | Net Plixel</title>
 </head>
 
 <body>
@@ -37,26 +37,18 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">Team</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">Products</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:;">Contact</a>
-                            </li>
-                        </ul>
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">About Us</a>
+              </li>
+       
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">Contact</a>
+              </li>
+            </ul>
                         <form class="d-flex">
                             <a href="javascript:;" class="btn btn-sm btn-primary px-4 radius-30">Buy Now</a>
                         </form>
@@ -195,7 +187,7 @@
                     </a>
                 </div>
                 <div class="text-center">
-                    <p class="my-4">Copyright © 2021 UI Admin by Codervent.</p>
+                    <p class="my-4">Copyright © 2024 Net Pixel LK.</p>
                 </div>
             </div>
         </footer>

@@ -33,12 +33,16 @@ if (isset($_SESSION["u"])) {
 
 
 
-    $product1_rs = Database::search("SELECT * FROM `orders` WHERE `user_id` = '" . $id. "' AND  `product_id` = '".  $odata["product_id"]."' ORDER BY `total` ASC LIMIT 1 ");
+    $product1_rs = Database::search("SELECT * FROM `orders` WHERE `user_id` = '" . $id. "' AND  `product_id` = '".  $odata["product_id"]."'");
 
     $product1_data = $product1_rs->fetch_assoc();
     
 
     $total_price = $product1_data["total"] * 100;
+
+
+
+
   
     $line_items[] = [
         "quantity" => 1,

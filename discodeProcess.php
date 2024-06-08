@@ -19,8 +19,8 @@ if ($code == "") {
 
 } else if ($code == $discode["code"]) {
    
-    $ftotal = $total * $discode["dis"] / 100;
-
+    $stotal = $total * $discode["dis"] / 100;
+$ftotal = $total - $stotal;
     echo($ftotal);
     
 }else{

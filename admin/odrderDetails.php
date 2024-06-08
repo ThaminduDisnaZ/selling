@@ -90,8 +90,8 @@ if (isset($_SESSION["a"])) {
                                         <th>Order ID</th>
                                         <th>Photo</th>
                                         <th>Product Name</th>
-                                        <th>User</th>
                                         <th>Price</th>
+                                        <th>User</th>
                                         <th>Date</th>
                                     </tr>
                                 </thead>
@@ -118,7 +118,7 @@ if (isset($_SESSION["a"])) {
                                             <td><?php echo ($oda["order_id"]) ?></td>
                                             <td><img width="55px" src="<?php echo ($opimgdata["code"]) ?>" alt="" class="product-image rounded-circle"></td>
                                             <td><a href="invoiceDetails.php?id=<?php echo $oda["order_id"]?> "><?php echo ($opda["stitle"]) ?></a></td>
-                                            <td><?php echo ($oda["total"]) ?></td>
+                                            <td>Rs.<?php echo ($oda["total"]) ?>.00</td>
                                             <td><?php echo ($udata["fname"]) ?></td>
 
                                             <td><?php echo ($oda["date"]) ?></td>

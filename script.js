@@ -431,6 +431,8 @@ function checkout() {
         swal("Checkout Error", "Please Update Your Address", "error");
       } else if (response == "ssw") {
         swal("Checkout Error", "Something Went Wrong", "error");
+      }else{
+        swal("Please Wait", response, "warning");
       }
     }
   };
@@ -589,7 +591,7 @@ function addwatchlist(id) {
 
       if (t != "success") {
    
-        swal("Add To Watchlist Fali..!", t, "error");
+        swal("Add To Watchlist Failed..!", t, "error");
       } else {
         swal("Add To Watchlist", "Product Is Add to Watchlist Successfull", "success");
         

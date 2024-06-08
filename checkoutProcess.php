@@ -66,6 +66,9 @@ if (isset($_SESSION["u"])) {
                 $codeid = $ddata["discode_id"];
                 Database::iud("INSERT INTO `orders` (`user_id`,`date`,`payment_status_id`, `product_id`,`total`,`discode_id`) VALUES 
     ('" . $id . "','" . $date . "','2' ,'" . $pid . "','" . $total . "' ,'" . $codeid . "' ) ");
+            }else {
+                Database::iud("INSERT INTO `orders` (`user_id`,`date`,`payment_status_id`, `product_id`,`total`,`discode_id`) VALUES 
+    ('" . $id . "','" . $date . "','2' ,'" . $pid . "','" . $total . "' ,'1' ) ");
             }
           
         }
