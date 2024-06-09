@@ -20,7 +20,7 @@
                             <ul>
                                 <li><a href="userprofile.php">My Account</a></li>
                                 <li><a href="./watchlist.php">My Wishlist</a></li>
-                                <li><a href="#">Compare</a></li>
+                                <li><a href="./cart.php">My Cart</a></li>
 
                                 <?php if (isset($_SESSION["u"])) {
 
@@ -247,7 +247,7 @@
 
                                         <li>
                                             <div class="cart__sub d-flex justify-content-between align-items-center">
-                                                <h6>Car Subtotal</h6>
+                                                <h6>Cart Subtotal</h6>
                                                 <span class="cart__sub-total">Rs.<?php echo $total; ?>.00</span>
                                             </div>
                                         </li>

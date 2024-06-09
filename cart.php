@@ -53,7 +53,24 @@
 
 <body>
 
+  <!-- preloader area start -->
+  <div id="loading">
+    <div id="loading-center">
+      <div id="loading-center-absolute">
+        <div id="object"></div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader area end -->
 
+
+  <!-- back to top start -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <!-- back to top end -->
   <!--start wrapper-->
   <div class="wrapper"> <?php
                         require "heder.php";
@@ -240,10 +257,10 @@
                                                                                 } else {
                                                                                   ?><p><?php echo ($udata["no"]); ?></p><?php
                                                                                                                         ?><p><?php echo ($udata["street"]); ?>,</p><?php
-                                                                                                                                                                      ?><p><?php echo ($citydata["name"]); ?>,</p><?php
-                                                                                                                                                                                                            }
+                                                                                                                                                                    ?><p><?php echo ($citydata["name"]); ?>,</p><?php
+                                                                                                                                                                                                                }
 
-                                                                                                                                                                                                              ?>
+                                                                                                                                                                                                                  ?>
 
                                   </div>
 
@@ -285,13 +302,21 @@
 
             </div>
           </section>
+          <div class="container">
+
+
+          <div class="row justify-content-center">
+          <button class="btn col-8 col-lg-3 btn-warning fixed-bottom text-center" type="button" onclick="downloadPDF('Net Pixel LK | <?php echo ($udata["fname"]); ?>') | UID-<?php echo ($udata["user_id"]); ?> ">Download Your Quatation</button>
+          </div>
+          </div>
+          
           <!--end shop cart-->
         <?php
 
       } else {
 
         ?>
-
+ 
           <section class="error__area pt-60 pb-100">
             <div class="container">
               <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
@@ -312,7 +337,7 @@
               </div>
             </div>
           </section>
-
+         
         <?php
 
 
@@ -320,84 +345,286 @@
 
         ?>
 
-        </div>
-        <!-- end page content-->
-      </div>
 
 
-
-      <!--Start Back To Top Button-->
-      <a href="javaScript:;" class="back-to-top">
-        <ion-icon name="arrow-up-outline"></ion-icon>
-      </a>
-      <!--End Back To Top Button-->
-
-      <!--start switcher-->
-      <div class="switcher-body">
-        <button class="btn btn-primary btn-switcher shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-          <ion-icon name="color-palette-sharp" class="me-0"></ion-icon>
-        </button>
-        <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling">
-          <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+       <div class="d-none">    
+      <div id="myBillingArea" class="col-12 col-lg-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center text-150">
+               <img width="350px" src="./assets/img/2.png" alt="">
+              </div>
+            </div>
           </div>
-          <div class="offcanvas-body">
-            <h6 class="mb-0">Theme Variation</h6>
-            <hr>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1" checked>
-              <label class="form-check-label" for="LightTheme">Light</label>
+          <!-- .row -->
+
+          <hr class="row brc-default-l1 mx-n1 mb-4" />
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div>
+                <span class="text-sm text-grey-m2 align-middle">To:</span>
+                <span class="text-600 text-110 text-blue align-middle"><?php echo ($udata["fname"]) ?>
+                  <?php echo ($udata["lname"]) ?></span>
+              </div>
+              <div class="text-grey-m2">
+
+              </div>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2">
-              <label class="form-check-label" for="DarkTheme">Dark</label>
+            <!-- /.col -->
+
+            <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
+              <hr class="d-sm-none" />
+
+
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDark" value="option3">
-              <label class="form-check-label" for="SemiDark">Semi Dark</label>
+            <!-- /.col -->
+          </div>
+
+          <div class="mt-4">
+            <div class="row text-600 text-white bgc-default-tp1 py-25">
+              <div class="d-none d-sm-block col-1">#</div>
+              <div class="col-9 col-sm-5">Description</div>
+              <div class="d-none d-sm-block col-4 col-sm-2">Qty</div>
+              <div class="d-none d-sm-block col-sm-2">Unit Price</div>
+              <div class="col-2">Amount</div>
             </div>
-            <hr />
-            <h6 class="mb-0">Header Colors</h6>
-            <hr />
-            <div class="header-colors-indigators">
-              <div class="row row-cols-auto g-3">
-                <div class="col">
-                  <div class="indigator headercolor1" id="headercolor1"></div>
+
+            <div class="text-95 text-secondary-d3">
+
+              <?php
+              $cart_rs2 = Database::search("SELECT * FROM `cart` WHERE `user_id`='" . $id . "' ");
+              $cart_num2 = $cart_rs2->num_rows;
+
+              $order_total2 = 0;
+              for ($x = 0; $x < $cart_num2; $x++) {
+
+                $cart_data2 = $cart_rs2->fetch_assoc();
+
+
+
+
+
+                $product_rs2 = Database::search("SELECT * FROM `product` WHERE `product_id`='" . $cart_data2["product_id"] . "'");
+
+                $product_data2 = $product_rs2->fetch_assoc();
+
+                $total2 =  ($product_data2["dprice"] * $cart_data2["qty"]);
+                $order_total2 = $total2 +     $order_total2;
+
+
+              ?>
+
+
+
+
+                <div class="row mb-2 mb-sm-0 py-25">
+                  <div class="d-none d-sm-block col-1"><?php echo ($x + 1) ?></div>
+                  <div class="col-9 col-sm-5"><?php echo ($product_data2["stitle"]) ?></div>
+                  <div class="d-none d-sm-block col-2"> <?php echo ($cart_data2["qty"]) ?></div>
+                  <div class="d-none d-sm-block col-2 text-95">Rs.<?php echo ($product_data2["dprice"]) ?>.00</div>
+                  <div class="col-2 text-secondary-d2">Rs.<?php echo ($total2) ?>.00</div>
                 </div>
-                <div class="col">
-                  <div class="indigator headercolor2" id="headercolor2"></div>
+
+
+
+              <?php
+              }
+              ?>
+
+
+            </div>
+
+            <div class="row border-b-2 brc-default-l2"></div>
+
+            <div class="row mt-3">
+
+
+              <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
+                <div class="row my-2">
+                  <div class="col-7 text-right">
+                    SubTotal
+                  </div>
+                  <div class="col-5">
+                    <span class="text-120 text-secondary-d1">Rs.<?php echo ($order_total2) ?>.00</span>
+                  </div>
                 </div>
-                <div class="col">
-                  <div class="indigator headercolor3" id="headercolor3"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor4" id="headercolor4"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor5" id="headercolor5"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor6" id="headercolor6"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor7" id="headercolor7"></div>
-                </div>
-                <div class="col">
-                  <div class="indigator headercolor8" id="headercolor8"></div>
+
+
+                <div class="row my-2 align-items-center bgc-primary-l3 p-2">
+                  <div class="col-7 text-right">
+                    Total Amount
+                  </div>
+                  <div class="col-5">
+                    <span class="text-150 text-success-d3 opacity-2">Rs.<?php echo ($order_total2) ?>.00</span>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <hr />
+
+            <div>
+              <span class="text-secondary-d1 text-105">Thank you for visiting <span class="text-warning">Net Pixel LK</span></span>
+
+            </div>
           </div>
+          </div>
+
+        </div>
         </div>
       </div>
-      <!--end switcher-->
+  </div>
 
 
-      <!--start overlay-->
-      <div class="overlay nav-toggle-icon"></div>
-      <!--end overlay-->
+
+
+
+
+
+  </div>
+  <!-- end page content-->
+  </div>
+
+  <style>
+    .text-secondary-d1 {
+      color: #728299 !important;
+    }
+
+    .page-header {
+      margin: 0 0 1rem;
+      padding-bottom: 1rem;
+      padding-top: .5rem;
+      border-bottom: 1px dotted #e2e2e2;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .page-title {
+      padding: 0;
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 300;
+    }
+
+    .brc-default-l1 {
+      border-color: #dce9f0 !important;
+    }
+
+    .ml-n1,
+    .mx-n1 {
+      margin-left: -.25rem !important;
+    }
+
+    .mr-n1,
+    .mx-n1 {
+      margin-right: -.25rem !important;
+    }
+
+    .mb-4,
+    .my-4 {
+      margin-bottom: 1.5rem !important;
+    }
+
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .text-grey-m2 {
+      color: #888a8d !important;
+    }
+
+    .text-success-m2 {
+      color: #86bd68 !important;
+    }
+
+    .font-bolder,
+    .text-600 {
+      font-weight: 600 !important;
+    }
+
+    .text-110 {
+      font-size: 110% !important;
+    }
+
+    .text-blue {
+      color: #478fcc !important;
+    }
+
+    .pb-25,
+    .py-25 {
+      padding-bottom: .75rem !important;
+    }
+
+    .pt-25,
+    .py-25 {
+      padding-top: .75rem !important;
+    }
+
+    .bgc-default-tp1 {
+      background-color: rgba(121, 169, 197, .92) !important;
+    }
+
+    .bgc-default-l4,
+    .bgc-h-default-l4:hover {
+      background-color: #f3f8fa !important;
+    }
+
+    .page-header .page-tools {
+      -ms-flex-item-align: end;
+      align-self: flex-end;
+    }
+
+    .btn-light {
+      color: #757984;
+      background-color: #f5f6f9;
+      border-color: #dddfe4;
+    }
+
+    .w-2 {
+      width: 1rem;
+    }
+
+    .text-120 {
+      font-size: 120% !important;
+    }
+
+    .text-primary-m1 {
+      color: #4087d4 !important;
+    }
+
+    .text-danger-m1 {
+      color: #dd4949 !important;
+    }
+
+    .text-blue-m2 {
+      color: #68a3d5 !important;
+    }
+
+    .text-150 {
+      font-size: 150% !important;
+    }
+
+    .text-60 {
+      font-size: 60% !important;
+    }
+
+    .text-grey-m1 {
+      color: #7b7d81 !important;
+    }
+
+    .align-bottom {
+      vertical-align: bottom !important;
+    }
+  </style>
+
 
   </div>
   <!--end wrapper-->
@@ -407,6 +634,8 @@
 
 
   <!-- JS Files-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
@@ -436,6 +665,26 @@
   <script src="script.js"></script>
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+    var docPDF = new jsPDF();
+
+    function downloadPDF(invoiceNo) {
+
+      var elementHTML = document.querySelector("#myBillingArea");
+      docPDF.html(elementHTML, {
+        callback: function(docPDF) {
+          docPDF.save(invoiceNo + '.pdf');
+        },
+        x: 15,
+        y: 15,
+        width: 170,
+        windowWidth: 650
+      });
+    }
+  </script>
+
 </body>
+
 
 </html>
