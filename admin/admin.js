@@ -4,10 +4,12 @@ function adminLogin() {
 
     var aun = document.getElementById("aun");
     var apw = document.getElementById("apw");
+    var otp = document.getElementById("otp");
 
     var f = new FormData();
     f.append("u", aun.value);
     f.append("p", apw.value);
+    f.append("otp", otp.value);
 
     var request = new XMLHttpRequest();
 

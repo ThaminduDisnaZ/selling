@@ -192,7 +192,15 @@ $oid = $order_data["order_id"];
                                     ?>
                                     
                                    
-                                    
+                                    <thead class="bg-warning">
+                                    <tr class="tr">
+                                        <th>#</th>
+                                        <th class="pl0 text-start"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">Total :-</th>
+                                        <th class="text-end"><b>Rs.<?php echo($order_total2) ?>.00</b></th>
+                                    </tr>
+                                    </thead>
 
                                     </tbody>
                                 </table>

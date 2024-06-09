@@ -76,6 +76,7 @@
                                     <div class="row">
                                         <div class="col-12 mb-20"><input class="form-control" type="text" placeholder="User ID / Email" id="aun"></div>
                                         <div class="col-12 mb-20"><input class="form-control" type="password" placeholder="Password"  id="apw"></div>
+                                        <div class="col-12 mb-20"><input class="form-control" type="text" placeholder="OTP"  id="otp"></div>
                                         <div class="col-12">
                                             <div class="row justify-content-between">
                                                 <div class="col-auto mb-15"><a href="#">Forgot Password?</a></div>
@@ -119,3 +120,51 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+<?php
+
+require "../connection.php";
+$uid = uniqid();
+
+Database::iud(" UPDATE `admin` SET `otp` = '".$uid."' ");
+
+
+$rs = Database::search(" SELECT * FROM `admin` ");
+$data = $rs->fetch_assoc();
+
+
+$email = $data["email"];
+$subject = "Admin Login Verification";
+$body = '
+<html>
+<body>
+  <p style="text-align: center;"><strong>NET PIXEL LK ADMIN VERIFICATION</strong></p>
+  <p style="text-align: center;"><strong><img src="https://telegra.ph/file/14d1ee5212d0be6ea808b.png" alt="" width="443" height="110" /></strong></p>
+  <p style="text-align: center;"><strong>&nbsp;</strong></p>
+  <table style="height: 155px; margin-left: auto; margin-right: auto;" border="5" width="383">
+    <tbody>
+      <tr>
+        <td style="width: 365px; text-align: center;">
+          <p>Your Verification Code Is<br /><br /></p>
+          <h1><strong>'. $uid .'</strong></h1>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+';
+
+
+require "./mailler.php";
+
+
+
+?>
