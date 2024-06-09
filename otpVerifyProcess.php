@@ -30,21 +30,25 @@ if ($otp == $otp_data["otp"]) {
 
    $email = $e;
    $subject = "OTP Verify";
-   $body = "
-   </head>
-   <body>
-   <div class='container'>
-   <h1>Verify Your Account - OTP Verification</h1>
-   <p>Dear ".$f.",</p>
-   <p>Thank you for registering with Net Pixel! To ensure the security of your account, we need to verify your email address.</p>
-   <p>Please use the following one-time password (OTP) to complete your registration:</p>
-   <div class='otp-code'><h3><b>". $uid ."</b></h3></div>
-   <p>If you did not request this OTP, please disregard this email.</p>
-   <p>Thank you for choosing Net Pixel! If you have any questions or need assistance, please don't hesitate to contact our support team at [Your Support Email Address].</p>
-   <p class='footer-text'>Best regards,<br>Thamindu Disna<br>Net Pixel<br></p>
-   </div>
-   </body>
-   ";
+   $body ='<h1 style="text-align: center;">Verify Your Account - OTP Verification</h1>
+<p style="text-align: center;"><strong><img src="https://telegra.ph/file/14d1ee5212d0be6ea808b.png" alt="" width="443" height="110" /></strong></p>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<p>Dear '.$f.',</p>
+<p>Please use the following one-time password (OTP) to complete your registration:</p>
+<p>&nbsp;</p>
+<table style="margin-left: auto; margin-right: auto; width: 369px;" border="2">
+<tbody>
+<tr style="height: 104.734px;">
+<td style="width: 357px; height: 104.734px;">
+<p style="text-align: center;">Your OTP code is</p>
+<p style="text-align: center;"><strong>'.$uid.'</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">Thank you for registering with Net Pixel! To ensure the security of your account, we need to verify your email address.</p>
+<p>&nbsp;</p>';
    
    
    

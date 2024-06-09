@@ -71,8 +71,16 @@ if (isset($_SESSION["u"])) {
 
     echo("success");
     $subject = "Your Item is Placed";
-    $body = '<center><h1>Hello..! '.$udata["fname"].' ,</h1><p>An item has been placed in Net Pixel LK . Your Total Price Is Rs.'.$product1_data["total"].'.00 Please check your dashboard for more details.</p></center>';
+    $body = '<p style="text-align: center;"><strong>Product is Placed..</strong></p>
+<p style="text-align: center;"><strong><img src="https://telegra.ph/file/14d1ee5212d0be6ea808b.png" alt="" width="443" height="110" /></strong></p>
+<p style="text-align: center;"><strong>&nbsp;</strong></p>
+<p style="text-align: center;">&nbsp;Hello '.$udata["fname"].' ,&nbsp;<br /><br /><span style="color: #00ff00;"><strong>Your Product has been Places Successfull</strong></span></p>';
     $email = $udata["email"];
+
+
+
+
+
     require  "./admin/mailler.php";
    
     http_response_code(303);
