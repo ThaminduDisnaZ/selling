@@ -1,11 +1,11 @@
-$(function () {
+function downinv(name) {
 
     'use strict';
 
     /**
      * Generating PDF from HTML using jQuery
      */
-    $(document).on('click', '#invoice_download_btn', function () {
+  
         var contentWidth = $("#invoice_wrapper").width();
         var contentHeight = $("#invoice_wrapper").height();
         var topLeftMargin = 20;
@@ -24,7 +24,7 @@ $(function () {
                 pdf.addPage(pdfWidth, pdfHeight);
                 pdf.addImage(imgData, 'JPG', topLeftMargin, -(pdfHeight * i) + (topLeftMargin * 4), canvasImageWidth, canvasImageHeight);
             }
-            pdf.save("sample-invoice.pdf");
+            pdf.save(name+".pdf");
         });
-    });
-})
+    
+}

@@ -35,9 +35,6 @@ if (isset($_SESSION["checkout"])) {
 
 </head>
 
-<body onload="downloadPDF('sdfsfsffdsdsf');">
-
-
 <?php
 $cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_id`='" . $id . "' ");
 $cart_num = $cart_rs->num_rows;
@@ -45,6 +42,8 @@ $cart_data = $cart_rs->fetch_assoc();
  $product_rs = Database::search("SELECT * FROM `product` WHERE `product_id`='" . $cart_data["product_id"] . "'");
  $product_data = $product_rs->fetch_assoc();
 
+ $user_rs = Database::search("SELECT * FROM `user` WHERE `user_id` = '".$id."' ");
+ $user_data = $user_rs->fetch_assoc();
 
  $order_rs = Database::search("SELECT * FROM `orders` WHERE `product_id` = '". $cart_data["product_id"]."' ");
  $order_data = $order_rs->fetch_assoc();
@@ -54,7 +53,8 @@ $cart_data = $cart_rs->fetch_assoc();
  
  $unit_amount =   $unit_amount * 10;
 
-
+$city_rs = Database::search("SELECT * FROM `city` WHERE `city_id` = '".$user_data["city_id"]."' ");
+$city_data = $city_rs->fetch_assoc();
 
 
 $pqty = $product_data["qty"];
@@ -63,14 +63,19 @@ $nqty = $pqty - 1;
 Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$cart_data["product_id"] . "' ");
 
 
-
-
-
-
-
-
-
 ?>
+
+
+<?php
+
+$fname = $user_data["fname"];
+$oid = $order_data["order_id"];
+?>
+
+
+
+
+<body onload="downinv('Net Pixel LK | <?php echo($fname) ?> Invoice_ID-#<?php echo( $oid)  ?> ');">
 
 
 
@@ -79,19 +84,19 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
 
 
 <!-- Invoice 1 start -->
-<div class="invoice-1 invoice-content">
+<div class="invoice-1 invoice-content" >
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="invoice-inner clearfix">
+                <div class="invoice-inner clearfix" id="myBillingArea">
                     <div class="invoice-info clearfix" id="invoice_wrapper">
                         <div class="invoice-headar">
                             <div class="row g-0">
                                 <div class="col-sm-6">
-                                    <div class="invoice-logo">
+                                    <div class="">
                                         <!-- logo started -->
                                         <div class="logo">
-                                            <img src="assets/img/logos/logo.png" alt="logo">
+                                            <img width="250px" src="assets/img/2.png" alt="logo">
                                         </div>
                                         <!-- logo ended -->
                                     </div>
@@ -99,8 +104,8 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                                 <div class="col-sm-6 invoice-id">
                                     <div class="info">
                                         <h1 class="color-white inv-header-1">Invoice</h1>
-                                        <p class="color-white mb-1">Invoice Number <span>#45613</span></p>
-                                        <p class="color-white mb-0">Invoice Date <span>21 Sep 2021</span></p>
+                                        <p class="color-white mb-1">Invoice Number <span>#<?php echo(  $order_data["order_id"])  ?></span></p>
+                                        <p class="color-white mb-0">Invoice Date <span><?php echo(  $order_data["date"])  ?></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -110,11 +115,11 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                                 <div class="col-sm-6">
                                     <div class="invoice-number mb-30">
                                         <h4 class="inv-title-1">Invoice To</h4>
-                                        <h2 class="name mb-10">Jhon Smith</h2>
+                                        <h2 class="name mb-10"><?php echo($user_data["fname"]) ?> <?php echo($user_data["lname"]) ?></h2>
                                         <p class="invo-addr-1">
-                                            Theme Vessel <br/>
-                                            info@themevessel.com <br/>
-                                            21-12 Green Street, Meherpur, Bangladesh <br/>
+                                        <?php echo($user_data["mobile"]) ?> <br/>
+                                        <?php echo($user_data["email"]) ?> <br/>
+                                        <?php echo($user_data["no"]) ?>, <?php echo($user_data["street"]) ?>, <?php echo($city_data["name"]) ?><br/>
                                         </p>
                                     </div>
                                 </div>
@@ -122,11 +127,11 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                                     <div class="invoice-number mb-30">
                                         <div class="invoice-number-inner">
                                             <h4 class="inv-title-1">Invoice From</h4>
-                                            <h2 class="name mb-10">Animas Roky</h2>
+                                            <h2 class="name mb-10">Thamindu Disna</h2>
                                             <p class="invo-addr-1">
-                                                Apexo Inc  <br/>
-                                                billing@apexo.com <br/>
-                                                169 Teroghoria, Bangladesh <br/>
+                                                Net Pixel LK  <br/>
+                                                info@netpixel.com <br/>
+                                                Asgiriya, Gampaha. <br/>
                                             </p>
                                         </div>
                                     </div>
@@ -146,73 +151,49 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="tr">
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>01</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Businesscard Design</td>
-                                        <td class="text-center">$300</td>
-                                        <td class="text-center">2</td>
-                                        <td class="text-end">$600.00</td>
-                                    </tr>
-                                    <tr class="bg-grea">
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>02</span>
+                                    
+                                    <?php 
+                                    $cart_rs2 = Database::search("SELECT * FROM `cart` WHERE `user_id`='" . $id . "' ");
+                                    $cart_num2 = $cart_rs2->num_rows;
+                                    $order_total2 = 0;
+                                    for ($i=0; $i < $cart_num2 ; $i++) { 
 
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Fruit Flayer Design</td>
-                                        <td class="text-center">$400</td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-end">$60.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>03</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">Application Interface Design</td>
-                                        <td class="text-center">$240</td>
-                                        <td class="text-center">3</td>
-                                        <td class="text-end">$640.00</td>
-                                    </tr>
+                                     
+                                
+                                      $cart_data2 = $cart_rs2->fetch_assoc();
 
-                                    <tr>
+                                      $product_rs2 = Database::search("SELECT * FROM `product` WHERE `product_id`='" . $cart_data2["product_id"] . "'");
+                                      $product_data2 = $product_rs2->fetch_assoc();
+
+                                      $total2 =  ($product_data2["dprice"] * $cart_data2["qty"]);
+                                      $order_total2 = $total2 +     $order_total2;
+                      
+
+                                     ?>
+                                      <tr class="tr">
                                         <td>
                                             <div class="item-desc-1">
-                                                <span>04</span>
+                                                <span><?php echo($i + 1) ?></span>
                                             </div>
                                         </td>
-                                        <td class="pl0">Theme Development</td>
-                                        <td class="text-center">$720</td>
-                                        <td class="text-center">4</td>
-                                        <td class="text-end">$640.00</td>
+                                        <td class="pl0"><?php echo($product_data2["name"]); ?></td>
+                                        <td class="text-center">Rs.<?php echo($product_data2["dprice"]); ?>.00</td>
+                                        <td class="text-center"><?php echo($cart_data2["qty"]); ?></td>
+                                        <td class="text-end">Rs.<?php echo ($total2) ?>.00</td>
                                     </tr>
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center">SubTotal</td>
-                                        <td class="text-end">$710.99</td>
-                                    </tr>
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center">Tax</td>
-                                        <td class="text-end">$85.99</td>
-                                    </tr>
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center f-w-600 active-color">Grand Total</td>
-                                        <td class="f-w-600 text-end active-color">$795.99</td>
-                                    </tr>
+                                   
+                                     
+                                     
+                                     <?php
+                                     
+                                    
+                                    }
+                                    
+                                    ?>
+                                    
+                                   
+                                    
+
                                     </tbody>
                                 </table>
                             </div>
@@ -222,17 +203,15 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                                 <div class="col-lg-6 col-md-8 col-sm-7">
                                     <div class="mb-30 dear-client">
                                         <h3 class="inv-title-1">Terms & Conditions</h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been typesetting industry. Lorem Ipsum</p>
+                                        <p>
+
+Welcome to Net Pixel. By using this site, you agree to our terms: respect intellectual property, no republishing without consent, and be responsible for your own content. Owner: Thamindu Disna.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-4 col-sm-5">
                                     <div class="mb-30 payment-method">
-                                        <h3 class="inv-title-1">Payment Method</h3>
-                                        <ul class="payment-method-list-1 text-14">
-                                            <li><strong>Account No:</strong> 00 123 647 840</li>
-                                            <li><strong>Account Name:</strong> Jhon Doe</li>
-                                            <li><strong>Branch Name:</strong> xyz</li>
-                                        </ul>
+                                        <h3 class="inv-title-1">Payment Status</h3>
+                                        <h3 class="name">Payment successful! Thank you for your purchase.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -241,9 +220,9 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                             <div class="row g-0">
                                 <div class="col-lg-9 col-md-11 col-sm-12">
                                     <div class="contact-info">
-                                        <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i> +00 123 647 840</a>
-                                        <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i> info@themevessel.com</a>
-                                        <a href="tel:info@themevessel.com" class="mr-0 d-none-580"><i class="fa fa-map-marker"></i> 169 Teroghoria, Bangladesh</a>
+                                        <a href="tel:+94764501212"><i class="fa fa-phone"></i> +94 76 450 1212</a>
+                                        <a href="tel:thamindudisna.se@gmail.com"><i class="fa fa-envelope"></i> thamindudisna.se@gmail.com</a>
+                                        <a href="tel:thamindudisna.se@gmail.com" class="mr-0 d-none-580"><i class="fa fa-map-marker"></i> Asgiriya, Gampaha</a>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +232,9 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
                         <a href="javascript:window.print()" class="btn btn-lg btn-print">
                             <i class="fa fa-print"></i> Print Invoice
                         </a>
-                        <a id="invoice_download_btn" class="btn btn-lg btn-download btn-theme">
+
+
+                        <a onclick="downinv('<?php echo($fname) ?> ID-#<?php echo( $oid)  ?> ');"  class="btn btn-lg btn-download btn-theme">
                             <i class="fa fa-download"></i> Download Invoice
                         </a>
                     </div>
@@ -270,26 +251,7 @@ Database::iud("UPDATE product SET qty = '".$nqty."' WHERE  `product_id`='" .$car
 <script src="assets2/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script>
-    window.jsPDF = window.jspdf.jsPDF;
-    var docPDF = new jsPDF();
 
-    function downloadPDF(invoiceNo) {
-
-      var elementHTML = document.querySelector("#myBillingArea");
-
-      
-      docPDF.html(elementHTML, { 
-        callback: function(docPDF) {
-          docPDF.save(invoiceNo + '.pdf');
-        },
-        x: 15,
-        y: 15,
-        width: 170,
-        windowWidth: 650
-      });
-    }
-  </script>
  
 </body>
 
