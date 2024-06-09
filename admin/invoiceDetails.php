@@ -107,8 +107,8 @@ if (isset($_SESSION["a"])) {
                     <div class="row mbn-30">
 
                         <!--Invoice Head Start-->
-                        <div class="col-12 mb-30">
-                            <div class="invoice-head">
+                        <div class="col-12 mb-30" >
+                            <div class="invoice-head" id="invoice2">
                                 <h2 class="fw-700 mb-15">Invoice #<?php echo ($_GET["id"]);
                                                                     ?></h2>
                                 <hr>
@@ -232,7 +232,7 @@ if (isset($_SESSION["a"])) {
                         <!--Invoice Action Button Start-->
                         <div class="col-12 d-flex justify-content-end mb-30">
                             <div class="buttons-group">
-                                <button class="button button-outline button-primary">Download PDF</button>
+                                <button class="button button-outline button-primary" id="download-button">Download Report</button>
                                 <button class="button button-outline button-info">Send Print</button>
                                 <button class="button button-outline button-warning" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delivery Process</button>
                                 <div class="modal fade" id="exampleModal3">
@@ -327,7 +327,18 @@ if (isset($_SESSION["a"])) {
         <!--Main JS-->
         <script src="assets/js/main.js"></script>
         <script src="admin.js"></script>
+        <script>
+			const button = document.getElementById('download-button');
 
+			function generatePDF() {
+				// Choose the element that your content will be rendered to.
+				const element = document.getElementById('invoice2');
+				// Choose the element and save the PDF for your user.
+				html2pdf().from(element).save();
+			}
+
+			button.addEventListener('click', generatePDF);
+		</script>
     </body>
 
     </html>

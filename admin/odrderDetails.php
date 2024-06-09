@@ -74,15 +74,20 @@ if (isset($_SESSION["a"])) {
                             <h3>eCommerce <span>/ Order Details</span></h3>
                         </div>
                     </div><!-- Page Heading End -->
-
+                    <div class="col-12 col-lg-auto mb-20">
+                    <div class="buttons-group">
+                        <button id="download-button" class="button button-outline button-primary">Download Report</button>
+                        
+                    </div>
+                </div>
                 </div><!-- Page Headings End -->
-
-                <div class="row mbn-30">
+              
+                <div id="invoice" class="row mbn-30">
 
 
 
                     <!--Order Details List Start-->
-                    <div class="col-12 mb-30">
+                    <div class="col-12 mb-30" >
                         <div class="table-responsive">
                             <table class="table table-bordered table-vertical-middle">
                                 <thead>
@@ -126,6 +131,7 @@ if (isset($_SESSION["a"])) {
 
 
 
+                                        
 
                                     <?php
 
@@ -137,6 +143,7 @@ if (isset($_SESSION["a"])) {
 
                                 </tbody>
                             </table>
+                          
                         </div>
                     </div>
                     <!--Order Details List End-->
@@ -171,7 +178,18 @@ if (isset($_SESSION["a"])) {
         <script src="assets/js/plugins/tippy4.min.js.js"></script>
         <!--Main JS-->
         <script src="assets/js/main.js"></script>
+        <script>
+			const button = document.getElementById('download-button');
 
+			function generatePDF() {
+				// Choose the element that your content will be rendered to.
+				const element = document.getElementById('invoice');
+				// Choose the element and save the PDF for your user.
+				html2pdf().from(element).save();
+			}
+
+			button.addEventListener('click', generatePDF);
+		</script>
     </body>
 
     </html>

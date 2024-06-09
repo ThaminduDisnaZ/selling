@@ -27,7 +27,7 @@ try {
 
     //Recipients
     $mail->setFrom('thamindudisna121@gmail.com', 'Net Pixel LK');
-    $mail->addAddress('thamindudisna.se@gmail.com');     //Add a recipient
+    $mail->addAddress($email);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
