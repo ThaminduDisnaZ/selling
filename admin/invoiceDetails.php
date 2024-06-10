@@ -96,19 +96,21 @@ if (isset($_SESSION["a"])) {
 
                         <!-- Page Heading Start -->
                         <div class="col-12 col-lg-auto mb-20">
-                            <div class="page-heading">
+                            <div class="page-heading ">
                                 <h3>eCommerce <span>/ Invoice Details</span></h3>
+
+                                <button class="button button-outline button-primary" onclick="generatePrint();" id="download-button">Download Report</button>
 
                             </div>
                         </div><!-- Page Heading End -->
 
                     </div><!-- Page Headings End -->
 
-                    <div class="row mbn-30">
+                    <div class="row mbn-30"  id="invoice">
 
                         <!--Invoice Head Start-->
                         <div class="col-12 mb-30" >
-                            <div class="invoice-head" id="invoice2">
+                            <div class="invoice-head">
                                 <h2 class="fw-700 mb-15">Invoice #<?php echo ($_GET["id"]);
                                                                     ?></h2>
                                 <hr>
@@ -203,7 +205,7 @@ if (isset($_SESSION["a"])) {
                                     <?php
 
                                     if ($dda["dis"] > 0) {
-                                        echo ($dda["dis"]);
+                                        echo ($dda["dis"]+"%");
                                     } else {
                                         echo ("Not Discount");
                                     }
@@ -211,10 +213,7 @@ if (isset($_SESSION["a"])) {
 
                                     ?>
 
-
-
-
-                                    %</h6>
+</h6>
                                 <hr class="mb-10">
                                 <h3 class="fw-600 mb-0">Total: Rs.<?php echo ($oda["total"]) ?>.00</h3>
                             </div>
@@ -229,10 +228,17 @@ if (isset($_SESSION["a"])) {
                         $oid =  $_GET["id"];
 
                         ?>
+                        
+
+
+
+
+
+
                         <!--Invoice Action Button Start-->
-                        <div class="col-12 d-flex justify-content-end mb-30">
+                        <!-- <div class="col-12 d-flex justify-content-end mb-30">
                             <div class="buttons-group">
-                                <button class="button button-outline button-primary" id="download-button">Download Report</button>
+                               
                                 <button class="button button-outline button-info">Send Print</button>
                                 <button class="button button-outline button-warning" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delivery Process</button>
                                 <div class="modal fade" id="exampleModal3">
@@ -270,7 +276,7 @@ if (isset($_SESSION["a"])) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Invoice Action Button Start-->
 
                     </div>
@@ -327,18 +333,7 @@ if (isset($_SESSION["a"])) {
         <!--Main JS-->
         <script src="assets/js/main.js"></script>
         <script src="admin.js"></script>
-        <script>
-			const button = document.getElementById('download-button');
-
-			function generatePDF() {
-				// Choose the element that your content will be rendered to.
-				const element = document.getElementById('invoice2');
-				// Choose the element and save the PDF for your user.
-				html2pdf().from(element).save();
-			}
-
-			button.addEventListener('click', generatePDF);
-		</script>
+    
     </body>
 
     </html>

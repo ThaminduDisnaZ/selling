@@ -95,7 +95,8 @@ require "sideheader.php";
                                             <input type="text" placeholder="Search Here" id="userid">
                                             <button data-bs-toggle="modal" data-bs-target="#exampleModal3"
                                                 onclick="searchuserid();"><i class="zmdi zmdi-search"></i></button>
-                                      
+                                                <button class="button button-outline button-primary m-5" onclick="generatePrint();" id="download-button">Download Users Report</button>
+
                                         <button class="header-search-close d-block d-xl-none"><i
                                                 class="zmdi zmdi-close"></i></button>
                                     </div>
@@ -120,7 +121,7 @@ require "sideheader.php";
                             <!-- Modal -->
                             <div class="modal fade " id="exampleModal3">
                                 <div class=" modal-dialog modal-dialog-centered" id="udm2">
-                                    <div class="modal-content">
+                                    <div class="modal-content" >
 
                                         <div class="modal-body" id="udm3">
                                             <h5>User Name</h5>
@@ -166,7 +167,7 @@ require "sideheader.php";
 
                         </div>
 
-                        <div class="box-body">
+                        <div class="box-body" id="invoice">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>

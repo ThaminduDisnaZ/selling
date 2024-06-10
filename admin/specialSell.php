@@ -87,20 +87,7 @@ require "sideheader.php";
 
                 <div class="add-edit-product-form">
 
-                    <div class="row align-items-center mb-25">
-                        <label for="formLayoutUsername1">Add New Discount Code</label>
-                        <div class="col-4 ">
-                            <input type="text" class="form-control secondary" placeholder="Input New Discount Code" id="dcode">
-                        </div>
-                        <div class="col-3 ">
-                            <input type="number" class="form-control secondary" placeholder="Presentage (%)" id="dnum">
-                        </div>
-                        <div class="col-2 ">
-                            <button class="button button-outline button-secondary  "  onclick="addDisCode();"><span>Add</span></button>
-                        </div>
-                    </div>
-
-                    
+          
 
 
 

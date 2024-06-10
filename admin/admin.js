@@ -1002,3 +1002,19 @@ function changeFlashsellStatus(id) {
     request.send(f);
     
 }
+
+function generatePrint() {
+
+
+    var htmlContent = document.getElementById('invoice').innerHTML;
+
+    var printWindow = window.open('', '_blank', 'width=600');
+
+    printWindow.document.write('<html><head><title>Print</title></head><body>');
+    printWindow.document.write(htmlContent);
+    printWindow.document.write('</body></html>');
+
+    printWindow.document.close();
+
+    printWindow.print();
+}
