@@ -15,35 +15,35 @@ if (isset($_SESSION["a"])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Adomx - Responsive Bootstrap 4 Admin Template</title>
+        <title>Invoice Details | Net Pixel LK</title>
         <meta name="robots" content="noindex, follow" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Favicon -->
+        
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
         <!-- CSS
 	============================================ -->
 
-        <!-- Bootstrap CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 
-        <!-- Icon Font CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/material-design-iconic-font.min.css">
         <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/vendor/themify-icons.css">
         <link rel="stylesheet" href="assets/css/vendor/cryptocurrency-icons.css">
 
-        <!-- Plugins CSS -->
+        
         <link rel="stylesheet" href="assets/css/plugins/plugins.css">
 
-        <!-- Helper CSS -->
+        
         <link rel="stylesheet" href="assets/css/helper.css">
 
-        <!-- Main Style CSS -->
+        
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Custom Style CSS Only For Demo Purpose -->
+        
         <link id="cus-style" rel="stylesheet" href="assets/css/style-primary.css">
 
     </head>
@@ -88,13 +88,13 @@ if (isset($_SESSION["a"])) {
 
             ?>
 
-                <!-- Content Body Start -->
+                
                 <div class="content-body">
 
-                    <!-- Page Headings Start -->
+                    
                     <div class="row justify-content-between align-items-center mb-10">
 
-                        <!-- Page Heading Start -->
+                        
                         <div class="col-12 col-lg-auto mb-20">
                             <div class="page-heading ">
                                 <h3>eCommerce <span>/ Invoice Details</span></h3>
@@ -102,26 +102,26 @@ if (isset($_SESSION["a"])) {
                                 <button class="button button-outline button-primary" onclick="generatePrint();" id="download-button">Download Report</button>
 
                             </div>
-                        </div><!-- Page Heading End -->
+                        </div>
 
-                    </div><!-- Page Headings End -->
+                    </div>
 
                     <div class="row mbn-30"  id="invoice">
 
-                        <!--Invoice Head Start-->
+                        
                         <div class="col-12 mb-30" >
                             <div class="invoice-head">
                                 <h2 class="fw-700 mb-15">Invoice #<?php echo ($_GET["id"]);
                                                                     ?></h2>
                                 <hr>
                                 <div class="d-flex justify-content-between row mbn-20">
-                                    <!--Invoice Form-->
+                                    
                                     <div class="text-left col-12 col-sm-auto mb-20">
                                         <h4 class="fw-600"><?php echo $udata["fname"] ?> <?php echo $udata["lname"] ?></h4>
                                         <p> <?php echo $udata["no"] ?>,<br> <?php echo $udata["street"] ?> ,<br>
                                             <?php echo $uadata["name"] ?> .</p>
                                     </div>
-                                    <!--Invoice To-->
+                                    
                                     <div class="text-left text-sm-right col-12 col-sm-auto mb-20">
                                         <h4 class="fw-600">Contact</h4>
                                         <p><?php echo $udata["mobile"] ?> <br>
@@ -132,9 +132,9 @@ if (isset($_SESSION["a"])) {
                                 </div>
                             </div>
                         </div>
-                        <!--Invoice Head End-->
+                        
 
-                        <!--Invoice Details Table Start-->
+                        
                         <div class="col-12 mb-30">
                             <div class="table-responsive">
                                 <table class="table table-bordered mb-0">
@@ -191,9 +191,9 @@ if (isset($_SESSION["a"])) {
                                 </table>
                             </div>
                         </div>
-                        <!--Invoice Details Table End-->
+                        
 
-                        <!--Invoice Total Start-->
+                        
                         <div class="col-12 d-flex justify-content-end mb-15">
                             <div class="text-right">
                                 <h6>Sub Total: Rs.<?php echo  $opda["price"] ?>.00</h6>
@@ -218,7 +218,7 @@ if (isset($_SESSION["a"])) {
                                 <h3 class="fw-600 mb-0">Total: Rs.<?php echo ($oda["total"]) ?>.00</h3>
                             </div>
                         </div>
-                        <!--Invoice Total Start-->
+                        
 
                         <div class="col-12 mb-15">
                             <hr>
@@ -235,7 +235,7 @@ if (isset($_SESSION["a"])) {
 
 
 
-                        <!--Invoice Action Button Start-->
+                        
                         <!-- <div class="col-12 d-flex justify-content-end mb-30">
                             <div class="buttons-group">
                                
@@ -277,11 +277,11 @@ if (isset($_SESSION["a"])) {
                                 </div>
                             </div>
                         </div> -->
-                        <!--Invoice Action Button Start-->
+                        
 
                     </div>
 
-                </div><!-- Content Body End -->
+                </div>
 
 
             <?php
@@ -306,31 +306,32 @@ if (isset($_SESSION["a"])) {
             ?>
 
 
-            <!-- Footer Section Start -->
-            <div class="footer-section">
-                <div class="container-fluid">
+            
+        <div class="footer-section">
+            <div class="container-fluid">
 
-                    <div class="footer-copyright text-center">
-                        <p class="text-body-light">2022 &copy; <a href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
-                    </div>
-
+                <div class="footer-copyright text-center">
+                    <p class="text-body-light">2024 &copy; <a
+                            href="https://thamindudisna.info">Net Pixel LK</a></p>
                 </div>
-            </div><!-- Footer Section End -->
+
+            </div>
+        </div>
 
         </div>
 
         <!-- JS
 ============================================ -->
 
-        <!-- Global Vendor, plugins & Activation JS -->
+        
         <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
         <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
         <script src="assets/js/vendor/popper.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <!--Plugins JS-->
+        
         <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="assets/js/plugins/tippy4.min.js.js"></script>
-        <!--Main JS-->
+        
         <script src="assets/js/main.js"></script>
         <script src="admin.js"></script>
     

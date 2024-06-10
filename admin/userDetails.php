@@ -22,37 +22,37 @@ if (isset($_SESSION["a"])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Adomx - Responsive Bootstrap 4 Admin Template</title>
+        <title>User Details | Net Pixel </title>
         <meta name="robots" content="noindex, follow" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Favicon -->
+        
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
         <!-- CSS
 	============================================ -->
 
-        <!-- Bootstrap CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 
-        <!-- Icon Font CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/material-design-iconic-font.min.css">
         <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/vendor/themify-icons.css">
         <link rel="stylesheet" href="assets/css/vendor/cryptocurrency-icons.css">
 
-        <!-- Plugins CSS -->
+        
         <link rel="stylesheet" href="assets/css/plugins/plugins.css">
 
-        <!-- Helper CSS -->
+        
         <link rel="stylesheet" href="assets/css/helper.css">
 
-        <!-- Main Style CSS -->
+        
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Custom Style CSS Only For Demo Purpose -->
+        
         <link id="cus-style" rel="stylesheet" href="assets/css/style-primary.css">
 
     </head>
@@ -114,21 +114,21 @@ if (isset($_SESSION["a"])) {
 
 
 
-                <!-- Page Headings Start -->
+                
                 <div class="row justify-content-between align-items-center mb-10">
 
-                    <!-- Page Heading Start -->
+                    
                     <div class="col-12 col-lg-auto mb-20">
                         <div class="page-heading">
                             <h3>User Profile | ID:-<?php echo ($uid); ?></h3>
                         </div>
-                    </div><!-- Page Heading End -->
+                    </div>
 
-                </div><!-- Page Headings End -->
+                </div>
 
                 <div class="row mbn-50">
 
-                    <!--Author Top Start-->
+                    
                     <div class="col-12 mb-50">
                         <div class="author-top">
                             <div class="inner">
@@ -167,9 +167,9 @@ if ($statusdata["status_id"] == 1 ) {
                             </div>
                         </div>
                     </div>
-                    <!--Author Top End-->
+                    
 
-                    <!--Timeline / Activities Start-->
+                    
                     <div class="col-xlg-8 col-12 mb-50">
                         <div class="box">
 
@@ -397,13 +397,13 @@ if ($statusdata["status_id"] == 1 ) {
 
                         </div>
                     </div>
-                    <!--Timeline / Activities End-->
+                    
 
-                    <!--Right Sidebar Start-->
+                    
                     <div class="col-xlg-4 col-12 mb-50">
                         <div class="row mbn-30">
 
-                            <!--Author Information Start-->
+                            
                             <div class="col-xlg-12 col-lg-6 col-12 mb-30">
                                 <div class="box">
                                     <div class="box-head">
@@ -432,9 +432,9 @@ if ($statusdata["status_id"] == 1 ) {
 
                                 </div>
                             </div>
-                            <!--Author Information End-->
+                            
 
-                            <!-- To Do List Start -->
+                            
                             <div class="col-xlg-12 col-lg-6 col-12 mb-30">
                                 <div class="box">
 
@@ -444,10 +444,10 @@ if ($statusdata["status_id"] == 1 ) {
 
                                     <div class="box-body p-0">
 
-                                        <!--Todo List Start-->
+                                        
                                         <ul class="todo-list">
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li class="done">
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -461,9 +461,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li>
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -477,9 +477,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li>
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -493,9 +493,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li>
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -509,9 +509,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li class="done">
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -525,9 +525,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li>
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -541,9 +541,9 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
-                                            <!--Todo Item Start-->
+                                            
                                             <li>
                                                 <div class="list-action">
                                                     <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
@@ -557,24 +557,24 @@ if ($statusdata["status_id"] == 1 ) {
                                                     <button class="remove"><i class="zmdi zmdi-delete"></i></button>
                                                 </div>
                                             </li>
-                                            <!--Todo Item End-->
+                                            
 
                                         </ul>
-                                        <!--Todo List End-->
+                                        
 
-                                        <!--Add Todo List Start-->
+                                        
                                         <form action="#" class="todo-list-add-new" data-date="false">
                                             <label class="status"><input type="checkbox"><i class="icon zmdi zmdi-star-outline"></i></label>
                                             <input class="content" type="text" placeholder="Type new Task">
                                             <button class="submit"><i class="zmdi zmdi-plus-circle-o"></i></button>
                                         </form>
-                                        <!--Add Todo List End-->
+                                        
 
                                     </div>
                                 </div>
-                            </div><!-- To Do List End -->
+                            </div>
 
-                            <!-- Daily Sale Report Start -->
+                            
                             <div class="col-xlg-12 col-lg-6 col-12 mb-30">
 
                                 <div class="box">
@@ -585,16 +585,16 @@ if ($statusdata["status_id"] == 1 ) {
                                         <div class="table-responsive">
                                             <table class="table">
 
-                                                <!-- Table Head Start -->
+                                                
                                                 <thead>
                                                     <tr>
                                                         <th>Client</th>
                                                         <th>Detail</th>
                                                         <th>Payment</th>
                                                     </tr>
-                                                </thead><!-- Table Head End -->
+                                                </thead>
 
-                                                <!-- Table Body Start -->
+                                                
                                                 <tbody>
                                                     <tr>
                                                         <td class="fw-600">Alexander</td>
@@ -636,78 +636,79 @@ if ($statusdata["status_id"] == 1 ) {
                                                         <td><span class="text-warning d-flex justify-content-between fw-600">$165.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span>
                                                         </td>
                                                     </tr>
-                                                </tbody><!-- Table Body End -->
+                                                </tbody>
 
                                             </table>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div><!-- Daily Sale Report End -->
+                            </div>
 
                         </div>
                     </div>
-                    <!--Right Sidebar End-->
+                    
 
                 </div>
 
-            </div><!-- Content Body End -->
+            </div>
 
-            <!-- Footer Section Start -->
-            <div class="footer-section">
-                <div class="container-fluid">
+  
+  <div class="footer-section">
+            <div class="container-fluid">
 
-                    <div class="footer-copyright text-center">
-                        <p class="text-body-light">2022 &copy; <a href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
-                    </div>
-
+                <div class="footer-copyright text-center">
+                    <p class="text-body-light">2024 &copy; <a
+                            href="https://thamindudisna.info">Net Pixel LK</a></p>
                 </div>
-            </div><!-- Footer Section End -->
+
+            </div>
+        </div>
 
         </div>
 
         <!-- JS
 ============================================ -->
-        <!-- Global Vendor, plugins & Activation JS -->
+        
         <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
         <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
         <script src="assets/js/vendor/popper.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <!--Plugins JS-->
+        
         <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="assets/js/plugins/tippy4.min.js.js"></script>
-        <!--Main JS-->
+        
         <script src="assets/js/main.js"></script>
 
-        <!-- Plugins & Activation JS For Only This Page -->
+        
         <script src="assets/js/plugins/datatables/datatables.min.js"></script>
         <script src="assets/js/plugins/datatables/datatables.active.js"></script>
-        <!-- Global Vendor, plugins & Activation JS -->
+        
         <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
         <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
         <script src="assets/js/vendor/popper.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <!--Plugins JS-->
+        
         <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="assets/js/plugins/tippy4.min.js.js"></script>
-        <!--Main JS-->
+        
         <script src="assets/js/main.js"></script>
         <script src="admin.js"></script>
 
-        <!-- Plugins & Activation JS For Only This Page -->
+        
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <!--Moment-->
+        
         <script src="assets/js/plugins/moment/moment.min.js"></script>
 
-        <!--Daterange Picker-->
+        
         <script src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
         <script src="assets/js/plugins/daterangepicker/daterangepicker.active.js"></script>
 
-        <!--Echarts-->
+        
         <script src="assets/js/plugins/chartjs/Chart.min.js"></script>
         <script src="assets/js/plugins/chartjs/chartjs.active.js"></script>
 
-        <!--VMap-->
+        
         <script src="assets/js/plugins/vmap/jquery.vmap.min.js"></script>
         <script src="assets/js/plugins/vmap/maps/jquery.vmap.world.js"></script>
         <script src="assets/js/plugins/vmap/maps/samples/jquery.vmap.sampledata.js"></script>

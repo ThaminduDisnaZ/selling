@@ -14,35 +14,35 @@ if (isset($_SESSION["a"])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Adomx - Responsive Bootstrap 4 Admin Template</title>
+        <title>Order Details | Net Pixel </title>
         <meta name="robots" content="noindex, follow" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Favicon -->
+        
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
         <!-- CSS
 	============================================ -->
 
-        <!-- Bootstrap CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 
-        <!-- Icon Font CSS -->
+        
         <link rel="stylesheet" href="assets/css/vendor/material-design-iconic-font.min.css">
         <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/vendor/themify-icons.css">
         <link rel="stylesheet" href="assets/css/vendor/cryptocurrency-icons.css">
 
-        <!-- Plugins CSS -->
+        
         <link rel="stylesheet" href="assets/css/plugins/plugins.css">
 
-        <!-- Helper CSS -->
+        
         <link rel="stylesheet" href="assets/css/helper.css">
 
-        <!-- Main Style CSS -->
+        
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- Custom Style CSS Only For Demo Purpose -->
+        
         <link id="cus-style" rel="stylesheet" href="assets/css/style-primary.css">
 
     </head>
@@ -62,31 +62,31 @@ if (isset($_SESSION["a"])) {
             ?>
 
 
-            <!-- Content Body Start -->
+            
             <div class="content-body">
 
-                <!-- Page Headings Start -->
+                
                 <div class="row justify-content-between align-items-center mb-10">
 
-                    <!-- Page Heading Start -->
+                    
                     <div class="col-12 col-lg-auto mb-20">
                         <div class="page-heading">
                             <h3>eCommerce <span>/ Order Details</span></h3>
                         </div>
-                    </div><!-- Page Heading End -->
+                    </div>
                     <div class="col-12 col-lg-auto mb-20">
                     <div class="buttons-group">
                         <button id="download-button" class="button button-outline button-primary">Download Report</button>
                         
                     </div>
                 </div>
-                </div><!-- Page Headings End -->
+                </div>
               
                 <div id="invoice" class="row mbn-30">
 
 
 
-                    <!--Order Details List Start-->
+                    
                     <div class="col-12 mb-30" >
                         <div class="table-responsive">
                             <table class="table table-bordered table-vertical-middle">
@@ -146,37 +146,37 @@ if (isset($_SESSION["a"])) {
                           
                         </div>
                     </div>
-                    <!--Order Details List End-->
+                    
 
                 </div>
 
-            </div><!-- Content Body End -->
+            </div>
+  
+  <div class="footer-section">
+            <div class="container-fluid">
 
-            <!-- Footer Section Start -->
-            <div class="footer-section">
-                <div class="container-fluid">
-
-                    <div class="footer-copyright text-center">
-                        <p class="text-body-light">2022 &copy; <a href="https://themeforest.net/user/codecarnival">Codecarnival</a></p>
-                    </div>
-
+                <div class="footer-copyright text-center">
+                    <p class="text-body-light">2024 &copy; <a
+                            href="https://thamindudisna.info">Net Pixel LK</a></p>
                 </div>
-            </div><!-- Footer Section End -->
+
+            </div>
+        </div>
 
         </div>
 
         <!-- JS
 ============================================ -->
 
-        <!-- Global Vendor, plugins & Activation JS -->
+        
         <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
         <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
         <script src="assets/js/vendor/popper.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <!--Plugins JS-->
+        
         <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="assets/js/plugins/tippy4.min.js.js"></script>
-        <!--Main JS-->
+        
         <script src="assets/js/main.js"></script>
         <script>
 			const button = document.getElementById('download-button');
