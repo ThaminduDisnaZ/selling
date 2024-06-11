@@ -961,7 +961,6 @@ function changeFlashsellStatus(id) {
 
                 swal("Action", "Change Flash Sell Status Successfull", "success");
                 window.location.reload();
-
             }
 
         }
