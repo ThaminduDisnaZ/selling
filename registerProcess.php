@@ -1,7 +1,5 @@
 <?php
-
 include "connection.php";
-
 $fname = $_POST["f"];
 $lname = $_POST["l"];
 $email = $_POST["e"];
@@ -25,8 +23,6 @@ if (empty($fname)) {
     echo("Your Email Address is Invalid");
 }else if(empty($mobile)){
     echo("Please Enter Your Mobile Number");
-// }else if(strlen($mobile) == 10){
-//     echo("Your Mobile Number must contain 10 Characters");
 }else if(!preg_match("/07[0,1,2,4,5,6,7,8]{1}[0-9]{7}/" ,$mobile)){
     echo("Your Mobile Address is Invalid");
 }elseif (empty($password)) {
@@ -36,19 +32,16 @@ if (empty($fname)) {
 }else{
 
     $rs = Database::search("SELECT * FROM `user` WHERE `email` = '".$email."' OR `mobile` = '".$mobile."' ");
-    $num = $rs->num_rows;
-    
+    $num = $rs->num_rows;    
     if ($num > 0) {
-        echo("Your Email or Mobile Number Already Exists");
-        
+        echo("Your Email or Mobile Number Already Exists");        
     } else {
         Database::iud("INSERT INTO `user` (`fname`,`lname`,`email`,`mobile`,`password`,`status_id`,`otp`,`uev_id`) 
-        VALUES ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."','".$uid."','2') ");
-          echo("Success"); 
-           
+        VALUES
+         ('".$fname."','".$lname."','".$email."','".$mobile."','".$password."','".$status."','".$uid."','2') ");
+          echo("Success");            
     }
 }
-
 $email = $email;
 $subject = "OTP Verify";
 $body = '<h1 style="text-align: center;">Verify Your Account - OTP Verification</h1>
@@ -70,16 +63,6 @@ $body = '<h1 style="text-align: center;">Verify Your Account - OTP Verification<
 <p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;">Thank you for registering with Net Pixel! To ensure the security of your account, we need to verify your email address.</p>
 <p>&nbsp;</p>';
-
-
-
-
 $altbody = "Net Pixel";
-
-
-
 require "admin/mailler.php";
-
-
-
 ?>

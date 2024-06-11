@@ -150,23 +150,6 @@ require "sideheader.php";
             <div class="row mbn-30">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
                 <div class="col-12 mb-30">
                     <div class="box">
                         <div class="box-head">
@@ -192,21 +175,6 @@ require "sideheader.php";
                                 </div>
                             </div>
 
-
-
-
-
-
-
-
-
-
-                            
-
-
-
-
-                            
                             <div class="modal fade " id="exampleModal3">
                                 <div class=" modal-dialog modal-dialog-centered" id="udm2">
                                     <div class="modal-content">
@@ -241,18 +209,6 @@ require "sideheader.php";
 
                             </div>
 
-                            
-
-
-
-
-
-
-
-
-
-
-
                         </div>
 
                         <div class="box-body">
@@ -270,12 +226,6 @@ require "sideheader.php";
                                         </tr>
                                     </thead>
                                     <tbody id="tb">
-
-                                        
-
-
-
-                                        
 
                                     </tbody>
                                 </table>
@@ -353,48 +303,6 @@ require "sideheader.php";
                 <div class="col-xlg-4 col-lg-6 col-12 mb-30">
                     <div class="box">
                         <div class="box-head">
-                            <h4 class="title">Daily Sale Report</h4>
-                        </div>
-                        <div class="box-body">
-                            <div class="table-responsive">
-                                <table class="table daily-sale-report">
-
-                                    
-                                    <thead>
-                                        <tr>
-                                            <th>Client</th>
-                                            <th>Detail</th>
-                                            <th>Payment</th>
-                                        </tr>
-                                    </thead>
-
-                                    
-                                    <tbody>
-
-                                        <tr>
-                                            <td class="fw-600">Alexander</td>
-                                            <td>
-                                                <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                            </td>
-                                            <td><span
-                                                    class="text-success d-flex justify-content-between fw-600">$500.00<span
-                                                        class="tippy"
-                                                        data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i
-                                                            class="zmdi zmdi-info-outline"></i></span></span></td>
-                                        </tr>
-                                        
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="col-xlg-4 col-lg-6 col-12 mb-30">
-                    <div class="box">
-                        <div class="box-head">
                             <h4 class="title">To-do List</h4>
                         </div>
                         <div class="box-body p-0">
@@ -445,27 +353,15 @@ require "sideheader.php";
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
     <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    
+    <script src="assets/js/vendor/bootstrap.min.js"></script>    
     <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/plugins/tippy4.min.js.js"></script>
-    
-    <script src="assets/js/main.js"></script>
-
-    
-
-    
-    <script src="assets/js/plugins/moment/moment.min.js"></script>
-
-    
+    <script src="assets/js/plugins/tippy4.min.js.js"></script>    
+    <script src="assets/js/main.js"></script>    
+    <script src="assets/js/plugins/moment/moment.min.js"></script>    
     <script src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
-    <script src="assets/js/plugins/daterangepicker/daterangepicker.active.js"></script>
-
-    
+    <script src="assets/js/plugins/daterangepicker/daterangepicker.active.js"></script>    
     <script src="assets/js/plugins/chartjs/Chart.min.js"></script>
-    <script src="assets/js/plugins/chartjs/chartjs.active.js"></script>
-
-    
+    <script src="assets/js/plugins/chartjs/chartjs.active.js"></script>    
     <script src="assets/js/plugins/vmap/jquery.vmap.min.js"></script>
     <script src="assets/js/plugins/vmap/maps/jquery.vmap.world.js"></script>
     <script src="assets/js/plugins/vmap/maps/samples/jquery.vmap.sampledata.js"></script>

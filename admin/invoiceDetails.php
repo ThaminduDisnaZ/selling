@@ -69,10 +69,7 @@ if (isset($_SESSION["a"])) {
             $ors = Database::search("SELECT * FROM `orders` WHERE `order_id` = '" . $_GET["id"] . "' ");
             $oda = $ors->fetch_assoc();
             $onr = $ors->num_rows;
-
-
             if ($onr == 1) {
-
                 $oprs = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $oda["product_id"] . "' ");
                 $opda = $oprs->fetch_assoc();
                 $opimg = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $oda["product_id"] . "' ");
@@ -81,7 +78,6 @@ if (isset($_SESSION["a"])) {
                 $udata = $urs->fetch_assoc();
                 $uars = Database::search("SELECT * FROM `city` WHERE `city_id` = '" . $udata["city_id"] . "'  ");
                 $uadata = $uars->fetch_assoc();
-
                 $drs = Database::search(" SELECT * FROM `discode` WHERE `discode_id` = '" . $oda["discode_id"] . "' ");
                 $dda = $drs->fetch_assoc();
 

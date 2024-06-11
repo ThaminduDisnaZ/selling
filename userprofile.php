@@ -2,7 +2,7 @@
 require_once "./connection.php";
 
 ?>
-<?php $titlewindow = "User Profile"; 
+<?php $titlewindow = "User Profile";
 
 ?>
 
@@ -23,29 +23,14 @@ require_once "./connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-    <!-- CSS
-	============================================ -->
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/assets/css/vendor/bootstrap.min.css">
-
-    <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/assets/css/vendor/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="assets/assets/css/vendor/font-awesome.min.css">
     <link rel="stylesheet" href="assets/assets/css/vendor/themify-icons.css">
     <link rel="stylesheet" href="assets/assets/css/vendor/cryptocurrency-icons.css">
-
-    <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/assets/css/plugins/plugins.css">
-
-    <!-- Helper CSS -->
     <link rel="stylesheet" href="assets/assets/css/helper.css">
-
-    <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/assets/css/style.css">
-
-    <!-- Custom Style CSS Only For Demo Purpose -->
     <link id="cus-style" rel="stylesheet" href="assets/assets/css/style-primary.css">
     <link rel="stylesheet" href="assets/css/preloader.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -86,8 +71,8 @@ require_once "./connection.php";
 
 <div class="main-wrapper">
 
- <!-- preloader area start -->
- <div id="loading">
+    <!-- preloader area start -->
+    <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <div id="object"></div>
@@ -159,7 +144,8 @@ require_once "./connection.php";
                                     }
                                     ?>
 
-                                    <label for="profileimg" onclick="changeImage();" class="edit">Change Profile Picture</label>
+                                    <label for="profileimg" onclick="changeImage();" class="edit">Change Profile
+                                        Picture</label>
                                     <input type="file" id="profileimg" class="d-none" accept="image/*">
 
                                 </div>
@@ -199,11 +185,16 @@ require_once "./connection.php";
                                                 </div>
 
                                                 <?php if ($udata["uev_id"] == 1) {
-                                                ?> <span class="time text-success zmdi zmdi-check-square"> Your Email is Verified</span> <?php
-                                                                                                                                        } else {
-                                                                                                                                            ?> <span class="time text-danger zmdi zmdi-close-circle"> Your Email is Not Verify</span> <br> <button onclick="emailverify();" class="t-y-btn t-y-btn-close">Verify Your Email</button> <?php
-                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                        ?>
+                                                ?> <span class="time text-success zmdi zmdi-check-square"> Your Email
+                                                        is Verified</span>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <span class="time text-danger zmdi zmdi-close-circle"> Your Email is Not
+                                                        Verify</span> <br> <button onclick="emailverify();" class="t-y-btn t-y-btn-close">Verify Your Email</button>
+                                                <?php
+                                                }
+                                                ?>
                                                 <span class="time"></span>
 
 
@@ -223,8 +214,8 @@ require_once "./connection.php";
                                                     <?php
                                                     if ($udata["no"] == null || $udata["street"] == null) {
                                                     ?><p><b>NO ADDRESS UPDATED. PLEASE UPDATE</b></p><?php
-                                                    } else {
-                                                    ?>
+                                                                                                    } else {
+                                                                                                        ?>
 
                                                         <p><b><?php echo ($udata["no"]) ?>,</b></p>
                                                         <p><b><?php echo ($udata["street"]) ?>,</b></p>
@@ -234,7 +225,7 @@ require_once "./connection.php";
                                                     <?php
 
 
-                                                    }
+                                                                                                    }
 
                                                     ?>
 
@@ -254,49 +245,49 @@ require_once "./connection.php";
                                                     <?php
                                                     $ors = Database::search("SELECT * FROM `orders` WHERE `user_id` = '" . $uid . "' ");
                                                     $onr = $ors->num_rows;
-if ($onr >= 1) {
-    while ($odata = $ors->fetch_assoc()) {
+                                                    if ($onr >= 1) {
+                                                        while ($odata = $ors->fetch_assoc()) {
 
 
-        $product_data1 = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $odata["product_id"] . "' ");
-        $prs = $product_data1->fetch_assoc();
+                                                            $product_data1 = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $odata["product_id"] . "' ");
+                                                            $prs = $product_data1->fetch_assoc();
 
-        $product_img = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $prs["product_id"] . "' ");
-        $pimg = $product_img->fetch_assoc();
+                                                            $product_img = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $prs["product_id"] . "' ");
+                                                            $pimg = $product_img->fetch_assoc();
 
 
 
-    ?>
+                                                    ?>
 
-        <!--Basic Example Start-->
-        <div class="col-lg-6 col-12 mb-30">
-            <div class="box">
+                                                            <!--Basic Example Start-->
+                                                            <div class="col-lg-6 col-12 mb-30">
+                                                                <div class="box">
 
-                <div class="box-body">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <img width="45px" src="admin/<?php echo $pimg["code"] ?>" alt="...">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h6 class="mt-0"><?php echo $prs["stitle"] ?></h6>
-                           
+                                                                    <div class="box-body">
+                                                                        <div class="d-flex">
+                                                                            <div class="flex-shrink-0">
+                                                                                <img width="45px" src="admin/<?php echo $pimg["code"] ?>" alt="...">
+                                                                            </div>
+                                                                            <div class="flex-grow-1 ms-3">
+                                                                                <h6 class="mt-0"><?php echo $prs["stitle"] ?></h6>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Basic Example End-->
 
-    <?php
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Basic Example End-->
 
-    }
-}else{
+                                                    <?php
 
-    echo("Not Orders");
-}
+                                                        }
+                                                    } else {
 
-                                                 
+                                                        echo ("Not Orders");
+                                                    }
+
+
 
                                                     ?>
 
@@ -314,39 +305,7 @@ if ($onr >= 1) {
                                     </ul>
                                 </div>
 
-                                <div class="col-12 mb-50"><span class="timeline-date">12 february 2018</span></div>
-
-                                <div class="col-12 mb-50">
-                                    <ul class="timeline-list">
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details">
-                                                <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
-                                                <div class="content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id dolores, assumenda quaerat inventore atque dolore sapiente doloribus iusto quisquam ullam autem labore, laborum beatae repudiandae! Recusandae ullam cumque, non temporibus?</p>
-                                                </div>
-                                                <span class="time">at 7pm</span>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <span class="icon"><i class="zmdi zmdi-receipt"></i></span>
-                                            <div class="details">
-                                                <h5 class="title"><a href="#">Create New Task for New Marketing</a></h5>
-                                                <div class="gallery">
-                                                    <div class="row mbn-30">
-
-                                                        <div class="col-12 mb-30"><a href="#"><img src="assets/images/gallery/profile-gallery-4.jpg" alt=""></a></div>
-
-                                                    </div>
-                                                </div>
-                                                <span class="time">at 12:30pm</span>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
+                                
 
                             </div>
 
@@ -387,28 +346,32 @@ if ($onr >= 1) {
                                                     <?php
 
                                                     if ($cdata["city_id"] == NULL) {
-                                                       ?><option value="0">Selet Your  City</option><?php
-                                                    }else{
+                                                    ?><option value="0">Selet Your City</option><?php
+                                                                                                } else {
 
-                                                    ?> 
-                                                    
+                                                                                                    ?>
 
-                                                    
-                                                    <option value="<?php echo ($cdata["city_id"]) ?>"><?php echo ($cdata["name"]) ?></option>
-                                                    
-                                                    
-                                                    
-                                                    
+
+
+                                                        <option value="<?php echo ($cdata["city_id"]) ?>">
+                                                            <?php echo ($cdata["name"]) ?></option>
+
+
+
+
                                                     <?php
 
-                                                    }
-                                                                                                                                                $crs1 = Database::search("SELECT * FROM `city` ");
+                                                                                                }
+                                                                                                $crs1 = Database::search("SELECT * FROM `city` ");
 
-                                                                                                                                                while ($cdata1 = $crs1->fetch_assoc()) {
-                                                                                                                                                ?> <option value="<?php echo ($cdata1["city_id"]) ?>"><?php echo ($cdata1["name"]) ?></option><?php
-                                                                                                                                                                                                                                            }
+                                                                                                while ($cdata1 = $crs1->fetch_assoc()) {
+                                                    ?>
+                                                        <option value="<?php echo ($cdata1["city_id"]) ?>">
+                                                            <?php echo ($cdata1["name"]) ?></option>
+                                                    <?php
+                                                                                                }
 
-                                                                                                                                                                                                                                                ?>
+                                                    ?>
 
 
                                                 </select></div>
@@ -432,211 +395,8 @@ if ($onr >= 1) {
                         </div>
                         <!--Author Information End-->
 
-                        <!-- To Do List Start -->
-                        <div class="col-xlg-12 col-lg-6 col-12 mb-30">
-                            <div class="box">
+                       
 
-                                <div class="box-head">
-                                    <h3 class="title">To-do List</h3>
-                                </div>
-
-                                <div class="box-body p-0">
-
-                                    <!--Todo List Start-->
-                                    <ul class="todo-list">
-
-                                        <!--Todo Item Start-->
-                                        <li class="done">
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li>
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Mistaken idea of denouncing pleasure.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li>
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Encounter consequences that are.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li>
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li class="done">
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li>
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Nor again is there anyone who loves.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                        <!--Todo Item Start-->
-                                        <li>
-                                            <div class="list-action">
-                                                <button class="status"><i class="zmdi zmdi-star-outline"></i></button>
-                                                <label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label>
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                            <div class="list-content">
-                                                <p>Sed ut perspiciatis unde omnis iste natus error.</p>
-                                            </div>
-                                            <div class="list-action right">
-                                                <button class="remove"><i class="zmdi zmdi-delete"></i></button>
-                                            </div>
-                                        </li>
-                                        <!--Todo Item End-->
-
-                                    </ul>
-                                    <!--Todo List End-->
-
-                                    <!--Add Todo List Start-->
-                                    <form action="#" class="todo-list-add-new" data-date="false">
-                                        <label class="status"><input type="checkbox"><i class="icon zmdi zmdi-star-outline"></i></label>
-                                        <input class="content" type="text" placeholder="Type new Task">
-                                        <button class="submit"><i class="zmdi zmdi-plus-circle-o"></i></button>
-                                    </form>
-                                    <!--Add Todo List End-->
-
-                                </div>
-                            </div>
-                        </div><!-- To Do List End -->
-
-                        <!-- Daily Sale Report Start -->
-                        <div class="col-xlg-12 col-lg-6 col-12 mb-30">
-
-                            <div class="box">
-                                <div class="box-head">
-                                    <h3 class="title">Daily Sale Report</h3>
-                                </div>
-                                <div class="box-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
-
-                                            <!-- Table Head Start -->
-                                            <thead>
-                                                <tr>
-                                                    <th>Client</th>
-                                                    <th>Detail</th>
-                                                    <th>Payment</th>
-                                                </tr>
-                                            </thead><!-- Table Head End -->
-
-                                            <!-- Table Body Start -->
-                                            <tbody>
-                                                <tr>
-                                                    <td class="fw-600">Alexander</td>
-                                                    <td>
-                                                        <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                                    </td>
-                                                    <td><span class="text-success d-flex justify-content-between fw-600">$500.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-600">Linda</td>
-                                                    <td>
-                                                        <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                                    </td>
-                                                    <td><span class="text-success d-flex justify-content-between fw-600">$20.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-600">Patrick</td>
-                                                    <td>
-                                                        <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                                    </td>
-                                                    <td><span class="text-danger d-flex justify-content-between fw-600">$120.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-600">Jose</td>
-                                                    <td>
-                                                        <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                                    </td>
-                                                    <td><span class="text-success d-flex justify-content-between fw-600">$1750.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-600">Amber</td>
-                                                    <td>
-                                                        <p>Sed do eiusmod tempor <br>incididunt ut labore.</p>
-                                                    </td>
-                                                    <td><span class="text-warning d-flex justify-content-between fw-600">$165.00<span class="tippy ml-10" data-tippy-content="Sed do eiusmod tempor <br/> incididunt ut labore."><i class="zmdi zmdi-info-outline"></i></span></span></td>
-                                                </tr>
-                                            </tbody><!-- Table Body End -->
-
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- Daily Sale Report End -->
 
                     </div>
                 </div>

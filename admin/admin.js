@@ -1,7 +1,4 @@
-
 function adminLogin() {
-
-
     var aun = document.getElementById("aun");
     var apw = document.getElementById("apw");
     var otp = document.getElementById("otp");
@@ -12,29 +9,19 @@ function adminLogin() {
     f.append("otp", otp.value);
 
     var request = new XMLHttpRequest();
-
     request.onreadystatechange = function () {
-
         if (request.readyState == 4 & request.status == 200) {
             var response = request.responseText;
-
-
-
             if (response == "Success") {
                 document.getElementById("msg").innerHTML = response;
-
                 window.location = "index.php";
             } else {
-
                 document.getElementById("msg").innerHTML = response;
             }
-
-
         }
     }
     request.open("POST", "adminloginprocess.php", true);
     request.send(f);
-
 }
 
 
@@ -116,26 +103,12 @@ function loading() {
 function searchuserid() {
 
     var uid = document.getElementById("userid");
-
-
-
     var f = new FormData;
-
     f.append("u", uid.value);
-
-
-
-
     var request = new XMLHttpRequest();
-
     request.onreadystatechange = function () {
-
         if (request.readyState == 4 && request.status == 200) {
-
             var response = request.responseText;
-
-
-
             if (response == "Pleace Enter User ID") {
                 swal("Oops....", "Pleace Enter User ID", "error");
                 document.getElementById("udm2").className = "modal-dialog modal-dialog-centered d-none ";
@@ -563,10 +536,7 @@ function caldis() {
 
 
 
-function addProduct(param) {
-
-
-
+function addProduct() {
     var title = document.getElementById("pname");
     var stitle = document.getElementById("psname");
     var price = document.getElementById("pprice");
@@ -586,7 +556,6 @@ function addProduct(param) {
     var image = document.getElementById("imageuploader");
     var delivery = document.getElementById("delivery");
     var dispc = document.getElementById("caldis").innerHTML;
-
     var priced = document.getElementById("pprice").value;
     var discountd = document.getElementById("pdiscount").value;
     var totalamountd = (discountd * priced) / 100;
@@ -877,38 +846,38 @@ function addDisCode() {
     var code = document.getElementById("dcode").value;
     var num = document.getElementById("dnum").value;
 
-if (code == "") {
-    swal("Add Discount Code Error", "Empty Discount Code" , "warning");
-}else if (num == "") {
-    swal("Add Discount Code Error", "Empty Discount Presentage" , "warning");
-}else if (num > 100) {
-    swal("Add Discount Code Error", "Please enter discount code is less than 100%" , "warning");
-}else{
+    if (code == "") {
+        swal("Add Discount Code Error", "Empty Discount Code", "warning");
+    } else if (num == "") {
+        swal("Add Discount Code Error", "Empty Discount Presentage", "warning");
+    } else if (num > 100) {
+        swal("Add Discount Code Error", "Please enter discount code is less than 100%", "warning");
+    } else {
 
 
-    var f = new FormData();
+        var f = new FormData();
 
-    f.append("code",code);
-    f.append("num",num);
-    
-    var request = new XMLHttpRequest();
-    
-    request.onreadystatechange = function (){
-        if (request.readyState == 4 && request.status == 200) {
-    
-            var response = request.responseText;
-    
-            swal("Add Discount Code", response, "success");
-            
+        f.append("code", code);
+        f.append("num", num);
+
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+
+                var response = request.responseText;
+
+                swal("Add Discount Code", response, "success");
+
+            }
         }
-    }
-    
-    request.open("POST","disCodeProcess.php",true);
-    request.send(f);
-    
-    
 
-}
+        request.open("POST", "disCodeProcess.php", true);
+        request.send(f);
+
+
+
+    }
 
 
 
@@ -922,56 +891,56 @@ function disStatusChange(id) {
 
     var f = new FormData();
 
-    f.append("id",id);
+    f.append("id", id);
 
-   var request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
 
-   request.onreadystatechange = function () {
-    
-    if (request.readyState == 4 && request.status == 200) {
-        
-        var response = request.responseText;
+    request.onreadystatechange = function () {
 
-        if (response == "ok") {
-            swal("Action", "Change Discount Status Successfull", "success");
-            window.location.reload();
+        if (request.readyState == 4 && request.status == 200) {
+
+            var response = request.responseText;
+
+            if (response == "ok") {
+                swal("Action", "Change Discount Status Successfull", "success");
+                window.location.reload();
+            }
+
         }
 
     }
 
-   }
+    request.open("POST", "discountStatusChangeProcess.php", true);
+    request.send(f);
 
-   request.open("POST","discountStatusChangeProcess.php",true);
-   request.send(f);
-    
 }
 
 function changeBestsellStatus(id) {
 
     var f = new FormData();
 
-    f.append("pid",id);
+    f.append("pid", id);
 
     var request = new XMLHttpRequest();
 
-        request.onreadystatechange = function(){
+    request.onreadystatechange = function () {
 
-            if (request.readyState == 4 && request.status == 200) {
-                var response = request.responseText;
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
 
-              if (response == "ok") {
-                
+            if (response == "ok") {
+
                 swal("Action", "Change Best Sell Status Successfull", "success");
                 window.location.reload();
 
-              }
-
             }
-        }
 
-    request.open("POST","bestsellStatusChangeProcess.php",true);
+        }
+    }
+
+    request.open("POST", "bestsellStatusChangeProcess.php", true);
     request.send(f);
-    
+
 }
 
 
@@ -979,28 +948,28 @@ function changeFlashsellStatus(id) {
 
     var f = new FormData();
 
-    f.append("pid",id);
+    f.append("pid", id);
 
     var request = new XMLHttpRequest();
 
-        request.onreadystatechange = function(){
+    request.onreadystatechange = function () {
 
-            if (request.readyState == 4 && request.status == 200) {
-                var response = request.responseText;
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
 
-              if (response == "ok") {
-                
+            if (response == "ok") {
+
                 swal("Action", "Change Flash Sell Status Successfull", "success");
                 window.location.reload();
 
-              }
-
             }
-        }
 
-    request.open("POST","flashsellStatusChangeProcess.php",true);
+        }
+    }
+
+    request.open("POST", "flashsellStatusChangeProcess.php", true);
     request.send(f);
-    
+
 }
 
 function generatePrint() {

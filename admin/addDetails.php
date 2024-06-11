@@ -16,7 +16,7 @@ if (isset($_SESSION["a"])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Adomx - Responsive Bootstrap 4 Admin Template</title>
+    <title>Add Details</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -74,17 +74,13 @@ require "sideheader.php";
                 <!-- Page Heading Start -->
                 <div class="col-12 col-lg-auto mb-20">
                     <div class="page-heading">
-                        <h3>eCommerce <span>/ Add Product</span></h3>
+                        <h3>eCommerce <span>/ Add Details</span></h3>
                     </div>
                 </div><!-- Page Heading End -->
 
                 <!-- Page Button Group Start -->
                 <div class="col-12 col-lg-auto mb-20">
-                    <div class="buttons-group">
-                        <button class="button button-outline button-primary">Save & Publish</button>
-                        <button class="button button-outline button-info">Save to Draft</button>
-                        <button class="button button-outline button-danger">Delete Product</button>
-                    </div>
+                  
                 </div><!-- Page Button Group End -->
 
             </div><!-- Page Headings End -->

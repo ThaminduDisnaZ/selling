@@ -104,43 +104,33 @@ if (isset($_SESSION["a"])) {
 
 
                                     <?php
-
-                                    $ors = Database::search("SELECT * FROM `orders` ORDER BY `date` ");
-
-
+                                    $ors = Database::search("SELECT * 
+                                    FROM `orders` ORDER BY `date` ");
                                     while ($oda = $ors->fetch_assoc()) {
-
-                                        $oprs = Database::search("SELECT * FROM `product` WHERE `product_id` = '" . $oda["product_id"] . "' ");
+                                        $oprs = Database::search("SELECT * 
+                                        FROM `product` WHERE 
+                                        `product_id` = '" . $oda["product_id"] . "' ");
                                         $opda = $oprs->fetch_assoc();
-                                        $opimg = Database::search("SELECT * FROM `images` WHERE `product_id` = '" . $oda["product_id"] . "' ");
+                                        $opimg = Database::search("SELECT
+                                         * FROM `images` WHERE
+                                          `product_id` = '" . $oda["product_id"] . "' ");
                                         $opimgdata = $opimg->fetch_assoc();
-                                        $urs = Database::search("SELECT * FROM `user` WHERE `user_id` = '" . $oda["user_id"] . "' ");
+                                        $urs = Database::search("SELECT *
+                                         FROM `user` WHERE `user_id` =
+                                          '" . $oda["user_id"] . "' ");
                                         $udata = $urs->fetch_assoc();
-
                                     ?>
-
                                         <tr>
                                             <td><?php echo ($oda["order_id"]) ?></td>
                                             <td><img width="55px" src="<?php echo ($opimgdata["code"]) ?>" alt="" class="product-image rounded-circle"></td>
                                             <td><a href="invoiceDetails.php?id=<?php echo $oda["order_id"]?> "><?php echo ($opda["stitle"]) ?></a></td>
                                             <td>Rs.<?php echo ($oda["total"]) ?>.00</td>
                                             <td><?php echo ($udata["fname"]) ?></td>
-
                                             <td><?php echo ($oda["date"]) ?></td>
                                         </tr>
-
-
-
-                                        
-
-                                    <?php
-
+                                       <?php
                                     }
-
                                     ?>
-
-
-
                                 </tbody>
                             </table>
                           

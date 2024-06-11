@@ -3,8 +3,6 @@
  session_start();
  ?>
 
-
-<!-- header area start -->
 <header>
     <div class="header__area mt-50">
         <div class="header__top d-none d-sm-block">
@@ -83,7 +81,7 @@
                                         <input type="text" id="searchinput" placeholder="Search For Products...">
                                         <button onclick="basicsearch(0);">Search</button>
                                     </div>
-                                    <div class="header__search-cat">
+                                    <div class="header__search-cat ">
                                         <select id="searchcat">
                                             <option value="0">All Categories</option>
                                             <?php

@@ -62,101 +62,46 @@
 
     $b10_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '1' ");
     $b10_data = $b10_rs->fetch_assoc();
-
     $img10 = $b10_data["path"];
-
-
     $b11_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1'  AND `banner_type_id` = '1'");
     $b11_data = $b11_rs->fetch_assoc();
-
     $img11 = $b11_data["path"];
-
-
     $b12_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2'  AND `banner_type_id` = '1'");
     $b12_data = $b12_rs->fetch_assoc();
-
     $img12 = $b12_data["path"];
-
-
-
-
     $b20_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '2' ");
     $b20_data = $b20_rs->fetch_assoc();
-
     $img20 = $b20_data["path"];
-
-
-
     $b30_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '3' ");
     $b30_data = $b30_rs->fetch_assoc();
-
     $img30 = $b30_data["path"];
-
     $b31_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '3' ");
     $b31_data = $b31_rs->fetch_assoc();
-
     $img31 = $b31_data["path"];
-
-
-
-
-
     $b60_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '4' ");
     $b60_data = $b60_rs->fetch_assoc();
-
     $img60 = $b60_data["path"];
-
     $b61_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '4' ");
     $b61_data = $b61_rs->fetch_assoc();
-
     $img61 = $b61_data["path"];
-
     $b62_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2' AND `banner_type_id` = '4' ");
     $b62_data = $b62_rs->fetch_assoc();
-
     $img62 = $b62_data["path"];
-
-
-
-
-
-
-
     $b40_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '5' ");
     $b40_data = $b40_rs->fetch_assoc();
-
     $img40 = $b40_data["path"];
-
     $b41_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '5' ");
     $b41_data = $b41_rs->fetch_assoc();
-
     $img41 = $b41_data["path"];
-
-
-
-
-
-
-
     $b50_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '0' AND `banner_type_id` = '6' ");
     $b50_data = $b50_rs->fetch_assoc();
-
     $img50 = $b50_data["path"];
-
-
-
     $b51_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '1' AND `banner_type_id` = '6' ");
     $b51_data = $b51_rs->fetch_assoc();
-
     $img51 = $b51_data["path"];
-
-
-
     $b52_rs = Database::search("SELECT * FROM `banner` WHERE `b_id` = '2' AND `banner_type_id` = '6' ");
     $b52_data = $b52_rs->fetch_assoc();
-
     $img52 = $b52_data["path"];
-
 
 
     ?>
@@ -168,16 +113,10 @@
         <section class="slider__area pt-50 pb-50" id="banners" data-background="admin/<?php echo $img20; ?>" style="background-image: url(&quot; admin/<?php echo $img20; ?>  &quot;);">
             <div class="container">
                 <div class="row">
-
                     <div class="col-xl-10 custom-col-10 col-lg-12">
                         <div class="row">
                             <div class="col-xl-9 custom-col-9 col-lg-8">
                                 <div class="slider__inner slider-active">
-
-
-
-
-
                                     <div class="single-slider w-img">
                                         <img src="admin/<?php echo $img10; ?>" alt="slider">
                                     </div>
@@ -187,13 +126,6 @@
                                     <div class="single-slider w-img">
                                         <img src="admin/<?php echo $img12; ?>" alt="slider">
                                     </div>
-
-
-
-
-
-
-
                                 </div>
                             </div>
                             <div class="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
@@ -306,21 +238,14 @@
 
         <!-- best selling area start -->
 
-
-
-
         <section class="best__sell pt-15 pb-40 grey-bg-2" id="hp1">
             <div class="container">
                 <div class="row">
-
                     <?php
                     $c_rs = Database::search("SELECT*FROM `category`");
                     $c_num = $c_rs->num_rows;
-
                     for ($y = 0; $y < $c_num; $y++) {
                         $cdata = $c_rs->fetch_assoc();
-
-
                     ?>
                         <div class="col-xl-12">
                             <div class="section__head d-md-flex justify-content-between mb-40">
@@ -328,18 +253,7 @@
                                     <h3><?php echo $cdata["category"]; ?></h3>
                                 </div>
                             </div>
-
                         </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
@@ -349,15 +263,16 @@
 
                                     <?php
 
-                                    $product_rs = Database::search("SELECT*FROM `product`WHERE `category_id`='" . $cdata["category_id"] . "'AND
-`produt_status_id`='1'ORDER BY `date`");
+                                    $product_rs = Database::search("SELECT*FROM `product`
+                                    WHERE `category_id`='" . $cdata["category_id"] . "'
+                                    AND `produt_status_id`='1'ORDER BY `date`");
                                     $product_num = $product_rs->num_rows;
 
                                     for ($z = 0; $z < $product_num; $z++) {
                                         $product_data = $product_rs->fetch_assoc();
                                         $image_rs = Database::search("SELECT*FROM `images`WHERE `product_id`='" . $product_data["product_id"] . "'");
                                         $image_data = $image_rs->fetch_assoc();
-$pid = $product_data["product_id"];
+                                        $pid = $product_data["product_id"];
                                     ?>
 
                                         <div class="product__item white-bg">
@@ -512,7 +427,7 @@ $pid = $product_data["product_id"];
                                 <?php
 
                                 $product_rs = Database::search("SELECT*FROM `product`WHERE 
-`flashsell_id`='1'ORDER BY `date`");
+                                `flashsell_id`='1'ORDER BY `date`");
                                 $product_num = $product_rs->num_rows;
 
                                 for ($z = 0; $z < $product_num; $z++) {
@@ -533,7 +448,7 @@ $pid = $product_data["product_id"];
                                             </a>
                                             <div class="product__action p-absolute">
                                                 <ul>
-                                                    <li><a onclick="addwatchlist();" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
+                                                    <li><a onclick="addwatchlist(<?php echo ($pid)?>);" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
                                                     </li>
                                                     <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-search"></i></a></li>
 
@@ -669,17 +584,13 @@ $pid = $product_data["product_id"];
                                     <?php
 
                                     $product_rs = Database::search("SELECT*FROM `product`WHERE 
-`bestsell_id`='1'ORDER BY `date`");
+                                    `bestsell_id`='1'ORDER BY `date`");
                                     $product_num = $product_rs->num_rows;
 
                                     for ($z = 0; $z < $product_num; $z++) {
                                         $product_data = $product_rs->fetch_assoc();
-
-
-
                                         $image_rs = Database::search("SELECT*FROM `images`WHERE `product_id`='" . $product_data["product_id"] . "'");
                                         $image_data = $image_rs->fetch_assoc();
-
                                     ?>
 
                                         <div class="product__thumb product__thumb-sale p-relative">
@@ -1145,23 +1056,6 @@ $pid = $product_data["product_id"];
                                 </div>
                             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </div>
                     </div>
                     <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
@@ -1174,49 +1068,17 @@ $pid = $product_data["product_id"];
                                             <div class="product__filter-left d-sm-flex align-items-center">
                                                 <div class="product__col">
                                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link active" id="FourCol-tab" data-bs-toggle="tab" data-bs-target="#FourCol" type="button" role="tab" aria-controls="FourCol" aria-selected="true">
-                                                                <i class="fal fa-border-all"></i>
-                                                            </button>
-                                                        </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="FiveCol-tab" data-bs-toggle="tab" data-bs-target="#FiveCol" type="button" role="tab" aria-controls="FiveCol" aria-selected="false">
-                                                                <i class="fal fa-th"></i>
-                                                            </button>
-                                                        </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false">
-                                                                <i class="fal fa-list"></i>
-                                                            </button>
-                                                        </li>
+                                                        
                                                     </ul>
                                                 </div>
                                                 <div class="product__result pl-60">
 
-                                                    <?php
-
-                                                    ?>
-                                                    <p>Showing 1-20 of 29 relults</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                             <div class="product__filter-right d-flex align-items-center justify-content-md-end">
-                                                <div class="product__sorting product__show-no">
-                                                    <select>
-                                                        <option>10</option>
-                                                        <option>20</option>
-                                                        <option>30</option>
-                                                        <option>40</option>
-                                                    </select>
-                                                </div>
-                                                <div class="product__sorting product__show-position ml-20">
-                                                    <select>
-                                                        <option>Position</option>
-                                                        <option>Poduct Name</option>
-                                                        <option>Price</option>
-                                                    </select>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -2032,31 +1894,7 @@ $pid = $product_data["product_id"];
                                 </div>
                                 <div class="row">
                                     <div class="col-xxl-12">
-                                        <div class="basic-pagination pt-30 pb-30">
-                                            <nav>
-                                                <ul>
-                                                    <li>
-                                                        <a href="blog.html">
-                                                            <i class="fal fa-chevron-double-left"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.html">1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.html" class="active">2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.html">3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog.html">
-                                                            <i class="fal fa-chevron-double-right"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -2065,21 +1903,7 @@ $pid = $product_data["product_id"];
                 </div>
             </div>
         </section>
-        <!-- product area end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- subscribe area start -->
         <section class="subscribe__area pt-35 pb-30">
             <div class="container">
                 <div class="row align-items-center">
