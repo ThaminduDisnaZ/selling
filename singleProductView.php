@@ -57,21 +57,21 @@ if (isset($_GET["id"])) {
         <!-- Add your site or application content here -->
 
         <!-- preloader area start -->
-        <div id="loading">
+        <!-- <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
                     <div id="object"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- preloader area end -->
 
         <!-- back to top start -->
-        <div class="progress-wrap">
+        <!-- <div class="progress-wrap">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
-        </div>
+        </div> -->
         <!-- back to top end -->
 
         <?php
@@ -329,9 +329,9 @@ if (isset($_GET["id"])) {
                                         <?php
                                         } else {
                                         ?> <span class="new">Rs.<?php echo ($product_dataz["price"])  ?>.00</span><?php
-                                                                                                        }
+                                                                                                                }
 
-                                                                                                            ?>
+                                                                                                                    ?>
 
 
 
@@ -345,10 +345,10 @@ if (isset($_GET["id"])) {
                                         ?> <span class="text-success">In Stock</span> <?php
                                                                                     } else {
                                                                                         ?> <span class="text-danger">Out Of Stock</span> <?php
-                                                                                        }
+                                                                                                                                        }
 
 
-                                                                                            ?>
+                                                                                                                                            ?>
 
 
 
@@ -371,12 +371,12 @@ if (isset($_GET["id"])) {
                                                 if ($product_dataz["qty"] > 0) {
                                                 ?> <span>Hurry Up!</span> Only <?php echo ($product_dataz["qty"]); ?> products
                                                     left in stock.</h3><?php
-                                                  } else {
-                                                   ?> <span>How Sad</span> This Laptop is Sold out</h3><?php
-                                                                                            }
+                                                                    } else {
+                                                                        ?> <span>How Sad</span> This Laptop is Sold out</h3><?php
+                                                                                                    }
 
 
-                                                                                                ?>
+                                                                                                        ?>
 
 
                                         <div class="progress">
@@ -523,9 +523,7 @@ if (isset($_GET["id"])) {
 
                                     <?php
 
-                                    $sizez = Database::search(" SELECT
-                                     * FROM `size` WHERE `
-                                     size_id` = '" . $product_dataz["size_id"] . "' ");
+                                    $sizez = Database::search(" SELECT* FROM `size` WHERE `size_id` = '" . $product_dataz["size_id"] . "' ");
                                     $sized = $sizez->fetch_assoc();
 
                                     ?>

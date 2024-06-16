@@ -77,7 +77,7 @@ if (isset($_SESSION["a"])) {
                                                 </ul>
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-settings"></i>Setting</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-lock-open"></i>Sing out</a></li>
+                                                    <li><a href="adminSignoutProcess.php"><i class="zmdi zmdi-lock-open"></i>Sing out</a></li>
                                                 </ul>
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-paypal"></i>Payment</a></li>

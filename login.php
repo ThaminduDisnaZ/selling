@@ -28,20 +28,20 @@
 
 
 
-<?php
+  <?php
 
-$email = "";
-$password = "";
+  $email = "";
+  $password = "";
 
-if (isset($_COOKIE["email"])) {
-  $email = $_COOKIE["email"];
-}
+  if (isset($_COOKIE["email"])) {
+    $email = $_COOKIE["email"];
+  }
 
-if (isset($_COOKIE["password"])) {
-  $password = $_COOKIE["password"];
-}
+  if (isset($_COOKIE["password"])) {
+    $password = $_COOKIE["password"];
+  }
 
-?>
+  ?>
 
 
   <!--start wrapper-->
@@ -50,9 +50,7 @@ if (isset($_COOKIE["password"])) {
       <nav class="navbar navbar-expand-lg navbar-light bg-transparent p-3">
         <div class="container-fluid">
           <a href="javascript:;"><img src="assets/images/logo-icon-3.png" alt="" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -63,12 +61,12 @@ if (isset($_COOKIE["password"])) {
               <li class="nav-item">
                 <a class="nav-link" href="javascript:;">About Us</a>
               </li>
-       
+
               <li class="nav-item">
                 <a class="nav-link" href="javascript:;">Contact</a>
               </li>
             </ul>
-           
+
           </div>
         </div>
       </nav>
@@ -94,46 +92,46 @@ if (isset($_COOKIE["password"])) {
                 <div class="col-12 col-lg-6">
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="rm">
-                    <label class="form-check-label" for="flexSwitchCheckRemember" >Remember Me</label>
+                    <label class="form-check-label" for="flexSwitchCheckRemember">Remember Me</label>
                   </div>
                 </div>
                 <div class="col-12 col-lg-6 text-end">
-                  <a  data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#exampleVerticallycenteredModal">Forgot Password?</a>
+                  <a data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#exampleVerticallycenteredModal">Forgot Password?</a>
 
                   <div class="modal fade" id="exampleVerticallycenteredModal" tabindex="-1" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title">Frogot Password</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                        
-                  <input type="text" class="form-control m-100" id="fpw" placeholder="Enter Your Email" id="fpem">
-                 <br>
-                  <input type="text" class="form-control m-100 d-none" id="otp" placeholder="Enter Your OTP" id="otp">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Frogot Password</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                          <input type="text" class="form-control m-100" id="fpw" placeholder="Enter Your Email" id="fpem">
+                          <br>
+                          <input type="text" class="form-control m-100 d-none" id="otp" placeholder="Enter Your OTP" id="otp">
 
 
-                  <div id="npwdiv">
-                   
-                  </div>
+                          <div id="npwdiv">
 
                           </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" id="seb" class="btn btn-primary d-block" onclick="frogotpw();">Send Email</button>
-                            <button type="button"  id="otpb" class="btn btn-primary d-none" onclick="otpconfirm();">Confirm OTP</button>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" id="seb" class="btn btn-primary d-block" onclick="frogotpw();">Send Email</button>
+                          <button type="button" id="otpb" class="btn btn-primary d-none" onclick="otpconfirm();">Confirm OTP</button>
 
 
 
 
-                            <button type="button"  id="cpb" class="btn btn-primary d-none" onclick="changepw();">Change Password</button>
+                          <button type="button" id="cpb" class="btn btn-primary d-none" onclick="changepw();">Change Password</button>
 
 
-                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
 
                 </div>
                 <div class="col-12 col-lg-12">
@@ -143,15 +141,15 @@ if (isset($_COOKIE["password"])) {
                 </div>
 
                 <div class="alert alert-dismissible fade show py-2 bg-info d-none" id="msgdiv2">
-                <div class="d-flex align-items-center">
-                  <div class="fs-3 text-dark"><ion-icon name="information-circle-sharp"></ion-icon>
+                  <div class="d-flex align-items-center">
+                    <div class="fs-3 text-dark"><ion-icon name="information-circle-sharp"></ion-icon>
+                    </div>
+                    <div class="ms-3">
+                      <div class="text-dark" id="msg2"></div>
+                    </div>
                   </div>
-                  <div class="ms-3">
-                    <div class="text-dark" id="msg2"></div>
-                  </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
 
 
                 <div class="col-12 col-lg-12">

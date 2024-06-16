@@ -31,27 +31,23 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent p-3">
                 <div class="container-fluid">
                     <a href="javascript:;"><img src="assets/images/logo-icon-3.png" alt="" /></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">About Us</a>
-              </li>
-       
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Contact</a>
-              </li>
-            </ul>
-                        <form class="d-flex">
-                            <a href="javascript:;" class="btn btn-sm btn-primary px-4 radius-30">Buy Now</a>
-                        </form>
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;">Contact</a>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </nav>
@@ -90,8 +86,7 @@
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                            checked>
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                                         <label class="form-check-label" for="flexCheckChecked">
                                             I agree the Terms and Conditions
                                         </label>
@@ -99,27 +94,23 @@
                                 </div>
                                 <div class="col-12 col-lg-12">
                                     <div class="d-grid">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            onclick="signup();">Sign Up</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="signup();">Sign Up</button>
                                     </div>
                                 </div>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="regbtn" data-bs-backdrop="static" data-bs-keyboard="false"
-                                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="regbtn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 ...
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary">Understood</button>
                                             </div>
                                         </div>
@@ -135,8 +126,7 @@
                                             <div class="text-dark" id="msg1"></div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
 
 
@@ -147,14 +137,10 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-12">
-                                    <div
-                                        class="social-login d-flex flex-row align-items-center justify-content-center gap-2 my-2">
-                                        <a href="javascript:;" class=""><img src="assets/images/icons/facebook.png"
-                                                alt=""></a>
-                                        <a href="javascript:;" class=""><img
-                                                src="assets/images/icons/apple-black-logo.png" alt=""></a>
-                                        <a href="javascript:;" class=""><img src="assets/images/icons/google.png"
-                                                alt=""></a>
+                                    <div class="social-login d-flex flex-row align-items-center justify-content-center gap-2 my-2">
+                                        <a href="javascript:;" class=""><img src="assets/images/icons/facebook.png" alt=""></a>
+                                        <a href="javascript:;" class=""><img src="assets/images/icons/apple-black-logo.png" alt=""></a>
+                                        <a href="javascript:;" class=""><img src="assets/images/icons/google.png" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-12 text-center">
